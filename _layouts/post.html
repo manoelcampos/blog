@@ -5,6 +5,18 @@ layout: default
 
 {% block content %}
     {% include 'post.html' with { 'post': page } %}
+	<div class='shareaholic-canvas' data-app='share_buttons' data-app-id='14207366'></div>
+	
+	<!-- Google AdSense -->
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Horizontal Pequeno 234x60 -->
+	<ins class="adsbygoogle"
+	     style="display:inline-block;width:234px;height:60px"
+	     data-ad-client="ca-pub-5921494036699240"
+	     data-ad-slot="4233313528"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>	                  
 {% endblock %}
 
 {% block javascript %}
@@ -19,4 +31,5 @@ layout: default
             })();
         </script>
     {% endif %}
+	
 {% endblock %}

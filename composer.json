@@ -12,7 +12,9 @@
         }
     ],
     "require": {
-        "yosymfony/spress-installer": ">=1.0,<2.0"
+        "yosymfony/spress-installer": ">=1.0,<2.0",
+        "enzolutions/spress-plugin-google-analytics": "1.0.*@dev",
+		"yosymfony/spress-plugin-more-tag": "~1.0"
     },
     "config": {
         "vendor-dir": "_plugins/vendors"
