@@ -1,25 +1,26 @@
-title: "Welcome to Spress"
-description: "A site creted by Spress"
+title: "Manoel Campos Blog"
+description: "Desenvolvimento de Software e Software Livre"
 logo: spresso-logo.png
 
 # Your site's domain. E.g: http://yoursite.com
-url: http://localhost:8080
+url: http://manoelcampos.com
+permalink: "/:year/:month/:day/:title"
 
 # Comments in posts
 comments:
     enabled: true
-    disqus_shortname: 
+    disqus_shortname: manoelcampos
 
 # Information about author
 author:
-    name: Your Name
+    name: "Manoel Campos"
     
     # Social networks
-    twitter: spress_cms
-    github: https://github.com/yosymfony/Spress
+    twitter: manoelcampos
+    github: https://github.com/manoelcampos
     bitbucket:
     facebook:
-    linkedin:
+    linkedin: http://linkedin.com/in/manoelcampos
     gplus:
     youtube:
 
@@ -29,19 +30,24 @@ feed:
     
 # Facebook Open Graph
 open_graph:
-    locale: en_US
+    locale: pt_BR
     
-# Code highlight for <pre> and <code> tags
+# Code code_highlight for <pre> and <code> tags
 # Powered by http://highlightjs.org/
 code_highlight: true
 
 # Site validation
-google_verify:
+google_verify: UA-2501696-2 
 bing_verify:
 
 # Page menus
 top_menu:
     - { name: Home, url: / }
+    - { name: "TV Digital", url: /tvd }
+    - { name: Delphi, url: /delphi }
+    - { name: Sistemas, url: /sistemas }
+    - { name: Sobre, url: /sobre }
+    - { name: Contato, url: /contato }
     
 bottom_menu:
     - { name: Go to Spresso theme web, url: https://github.com/yosymfony/Spress-theme-spresso }
@@ -49,3 +55,7 @@ bottom_menu:
 paginate: 5
 
 exclude: ['README.md', 'LICENSE','composer.json']
+
+google_analytics:
+    id: UA-2501696-2
+    site: manoelcampos.com
