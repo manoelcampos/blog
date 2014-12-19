@@ -20,7 +20,13 @@ Para acompanhar este artigo, são necessários conhecimentos básicos de NCL, Lu
 
 Um [tutorial de como estruturar o ambiente de desenvolvimento](http://www.peta5.com.br/br/tutoriais/88-como-estruturar-seu-ambiente-de-desenvolvimento-para-o-ginga-ncl) está disponível [aqui](http://www.peta5.com.br/br/tutoriais/88-como-estruturar-seu-ambiente-de-desenvolvimento-para-o-ginga-ncl).
 
-Não vou explicar detalhes básicos de NCL como regiões e descritores, sendo assumido que o leitor já conhece tais recursos.<!-- more -->
+Não vou explicar detalhes básicos de NCL como regiões e descritores, sendo assumido que o leitor já conhece tais recursos.
+
+
+--more Leia Mais--
+
+
+
 
 
 ## Iniciando

@@ -18,7 +18,13 @@ tags:
 
 [![](http://manoelcampos.com/wp-content/uploads/validar.jpg)](http://pt.fotolia.com/id/13746204)Validação de CPF e CNPJ é algo que se encontra exemplos na Web em tudo quanto é linguagem que se imaginar. No entanto, não encontrei nenhuma implementação disponível em Lua.
 
-Como estou construindo uma aplicação de TV Digital utilizando NCL e Lua, onde o usuário informa seu CPF, precisei de tal rotina e não encontrei nada pronto. <!-- more -->Assim, criei um módulo em lua, chamado **valid** para validação de dados, como CPF, CNPJ, data, hora e outros dados.
+Como estou construindo uma aplicação de TV Digital utilizando NCL e Lua, onde o usuário informa seu CPF, precisei de tal rotina e não encontrei nada pronto. 
+
+
+--more Leia Mais--
+
+
+Assim, criei um módulo em lua, chamado **valid** para validação de dados, como CPF, CNPJ, data, hora e outros dados.
 
 Para usar em suas aplicações Lua (de TV Digital ou não), basta colocar o arquivo disponível no final do post no mesmo diretório do seu script lua que chamará a rotina (ou em um diretório do path de pacotes de Lua).
 

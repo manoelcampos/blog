@@ -23,7 +23,13 @@ tags:
 
 Mas como tenho usado muito a mesma, resolvi falar dela hoje. Vou mostrar uma dica bastante útil para programadores Lua que estejam no meio acadêmico e também usem [![A document preparation system](http://manoelcampos.com/arquivos/latex.png)](http://www.latex-project.org/) em trabalhos desta categoria.
 
-O [![A document preparation system](http://manoelcampos.com/arquivos/latex.png)](http://www.latex-project.org/) possui um pacote denominado **listings** que permite destaquer a sintaxe de trechos de códigos fonte em diferentes linguagens. No entanto, o suporte à Linguagem Lua parece ainda não ser oficial<!-- more -->. Buscando na Web encontrei uma implementação de [Roland Smith](http://www.xs4all.nl/~rsmith/). Para usá-la, precisaremos baixar os fontes do pacote listings e adicionar tal suporte. Então vamos lá. Vou mostrar como fazer isso em linux. Estou utilizando o Ubuntu 10.10 já com [![A document preparation system](http://manoelcampos.com/arquivos/latex.png)](http://www.latex-project.org/) instalado.
+O [![A document preparation system](http://manoelcampos.com/arquivos/latex.png)](http://www.latex-project.org/) possui um pacote denominado **listings** que permite destaquer a sintaxe de trechos de códigos fonte em diferentes linguagens. No entanto, o suporte à Linguagem Lua parece ainda não ser oficial
+
+
+--more Leia Mais--
+
+
+. Buscando na Web encontrei uma implementação de [Roland Smith](http://www.xs4all.nl/~rsmith/). Para usá-la, precisaremos baixar os fontes do pacote listings e adicionar tal suporte. Então vamos lá. Vou mostrar como fazer isso em linux. Estou utilizando o Ubuntu 10.10 já com [![A document preparation system](http://manoelcampos.com/arquivos/latex.png)](http://www.latex-project.org/) instalado.
 
 
 ## Instalação

@@ -4,8 +4,16 @@ title: Manoel Campos Blog
 ---
 {% if site.paginate > 0 %}
     {% for post in paginator.posts %}
-		{% include "post.html" %}
-    {% endfor %}
+		{% if post.excerpt is defined %}
+			<header>
+			<h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h1>
+			</header>
+			{{ post.excerpt }}
+			<a href="{{ site.url }}{{ post.url }}">{{ post.excerpt_label }}</a>
+		{% else %}
+			{% include "post.html" %}
+		{% endif %}
+	{% endfor %}
     
     {% if paginator.posts | length < 1 %}
         <div class="page-header">

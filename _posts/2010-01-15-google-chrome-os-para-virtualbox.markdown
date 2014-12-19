@@ -17,7 +17,13 @@ tags:
 - VirtualBox
 ---
 
-[![](http://manoelcampos.com/wp-content/uploads/chrome-os.jpg)](http://tremarinti.blogspot.com/2010/11/chrome-os-nao-chegara-este-ano-e-culpa.html)Para quem deseja testar o Google Chrome OS, sem alterar as configurações do seu computador, [neste link do Superdownloads você pode baixar uma imagem de disco rígido para o VMWare](http://superdownloads.uol.com.br/download/174/google-chrome-%2873373%29/), e criar uma máquina virtual para testar o novo sistema operacional do Google. O problema é que, para criar novas máquinas virtuais no VMWare, você precisa adquirir a versão completa do mesmo.<!-- more -->
+[![](http://manoelcampos.com/wp-content/uploads/chrome-os.jpg)](http://tremarinti.blogspot.com/2010/11/chrome-os-nao-chegara-este-ano-e-culpa.html)Para quem deseja testar o Google Chrome OS, sem alterar as configurações do seu computador, [neste link do Superdownloads você pode baixar uma imagem de disco rígido para o VMWare](http://superdownloads.uol.com.br/download/174/google-chrome-%2873373%29/), e criar uma máquina virtual para testar o novo sistema operacional do Google. O problema é que, para criar novas máquinas virtuais no VMWare, você precisa adquirir a versão completa do mesmo.
+
+
+--more Leia Mais--
+
+
+
 
 [![Google Chrome OS rodando no VirtualBox no Ubuntu](http://manoelcampos.com/wp-content/uploads/2010/01/google-chrome-os-no-virtualbox-1.png)](http://manoelcampos.com/wp-content/uploads/2010/01/google-chrome-os-no-virtualbox-1.png)
 

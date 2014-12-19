@@ -19,7 +19,13 @@ tags:
 - Virtual Directory
 ---
 
-Devido a versão mobile do meu [Sistema de Pesquisa de Opinião e Mercado - SIPOM](http://manoelcampos.com/sipom/) utilizar um WebService ASP.NET para transferência de dados entre o servidor e os Pocket PC's, e para automatizar a instalação desse WebService no servidor Web IIS (Internet Information Services), desenvolvi uma pequena aplicação<!-- more --> que permite criar e excluir diretórios virtuais no IIS, além de registrar o ASP.NET 2.[![IIS Virtual Directory Registration](http://manoelcampos.com/wp-content/uploads/2009/10/iisvirtualdirreg.png)](http://manoelcampos.com/wp-content/uploads/2009/10/iisvirtualdirreg.png)0 no mesmo.
+Devido a versão mobile do meu [Sistema de Pesquisa de Opinião e Mercado - SIPOM](http://manoelcampos.com/sipom/) utilizar um WebService ASP.NET para transferência de dados entre o servidor e os Pocket PC's, e para automatizar a instalação desse WebService no servidor Web IIS (Internet Information Services), desenvolvi uma pequena aplicação
+
+
+--more Leia Mais--
+
+
+ que permite criar e excluir diretórios virtuais no IIS, além de registrar o ASP.NET 2.[![IIS Virtual Directory Registration](http://manoelcampos.com/wp-content/uploads/2009/10/iisvirtualdirreg.png)](http://manoelcampos.com/wp-content/uploads/2009/10/iisvirtualdirreg.png)0 no mesmo.
 
 A aplicação foi desenvolvida no Delphi 2007 Win32. Para abrir o código fonte do projeto você precisará da biblioteca [JVCL](http://jvcl.sourceforge.net). A criação de diretórios virtuais e registro do ASP.NET 2.0 podem ser feitos via linha de comando da seguinte forma:
 

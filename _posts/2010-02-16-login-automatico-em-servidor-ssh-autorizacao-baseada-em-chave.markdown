@@ -18,7 +18,13 @@ tags:
 
 [![](http://manoelcampos.com/wp-content/uploads/user-login-icon.png)](http://www.iconarchive.com/show/cms-icons-by-iconshock/user-login-icon.html)Este artigo mostra como conectar em um servidor SSH, sem necessidade de informar senha.
 
-Existem alguns tutoriais explicando este processo, porém, muitos não deixam claro em qual computador cada passo deve ser executado, causando confusão. Assim, isto me motivou a escrever este pequeno tutorial, que é basicamente uma tradução do [tutorial disponível aqui](http://philippe-millet.blogspot.com/2008/07/automatic-ssh-login-key-based.html).<!-- more -->
+Existem alguns tutoriais explicando este processo, porém, muitos não deixam claro em qual computador cada passo deve ser executado, causando confusão. Assim, isto me motivou a escrever este pequeno tutorial, que é basicamente uma tradução do [tutorial disponível aqui](http://philippe-millet.blogspot.com/2008/07/automatic-ssh-login-key-based.html).
+
+
+--more Leia Mais--
+
+
+
 
 Uma necessidade que tive de usar autorização SSH automática foi no uso do Ginga Virtual Set-top Box, para teste de aplicações para o Sistema Brasileiro de TV Digital (SBTVD), pois sempre achei uma chatice ter que informar senha para logar numa máquina virtual, algo que faço com bastante frequência.
 

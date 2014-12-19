@@ -12,7 +12,13 @@ categories:
 
 Este exemplo mostra uma [aplicação de TV Digital](http://manoelcampos.com/wp-content/uploads/lua-data-files-tvd.zip), desenvolvida com as linguagens NCL e Lua, que exibe dados a partir de um arquivo de dados Lua, ao invês de usar arquivos XML, arquivos de texto .conf (como os do Apache Web Server) ou até mesmo arquivos de texto em um formato definido por você.
 
-Este artigo mostra como aplicar a linguagem Lua com uma das finalidades para qual a mesma foi desenvolvida: representação de dados estruturados. Com isto, dispensa-se a complexidade de tratar arquivos de texto ou XML, lendo os dados diretamente de um arquivo lua, de forma simples e transparente, usando os recursos básicos da linguagem.<!-- more -->
+Este artigo mostra como aplicar a linguagem Lua com uma das finalidades para qual a mesma foi desenvolvida: representação de dados estruturados. Com isto, dispensa-se a complexidade de tratar arquivos de texto ou XML, lendo os dados diretamente de um arquivo lua, de forma simples e transparente, usando os recursos básicos da linguagem.
+
+
+--more Leia Mais--
+
+
+
 
 
 ## Pré-requisitos

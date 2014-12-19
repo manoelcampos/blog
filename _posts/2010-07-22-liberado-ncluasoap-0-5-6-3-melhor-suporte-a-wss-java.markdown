@@ -31,7 +31,13 @@ Mais uma versão do NCLua SOAP liberada. As novidades são:
   * Incluído suporte a Web Services que usam um arquivo XSD externo para as definições de tipos, como os Web Services Java, construídos com a biblioteca JAX-WS. Colaboração de Marco Aurelio Freesz Junior.
 
 
-<!-- more -->
+
+
+
+--more Leia Mais--
+
+
+
 No caso dos Web Services Java, construídos com a biblioteca JAX-WS (feitos normalmente pelo Netbeans), estes utilizam um XML Schema Definition (arquivo XSD) externo (pelo menos na versão com a qual fiz testes). Desta forma, as definições dos tipos utilizados pelo Web Service não são definidos diretamente no documento WSDL. Isto faz com que tal documento utilize uma tag xsd:import para fazer a importação do XSD. Com isto, a requisição SOAP para tais Web Services é diferente do padrão utilizado pela maioria dos Web Services em diversas linguagens. A importação do arquivo XSD faz com que seja atribuído um prefixo ao namespace definido em tal arquivo, o que obriga o uso deste prefixo nas chamadas dos métodos remotos.
 
 Desta forma, como o NCLua SOAP ainda não possui uma ferramenta capaz de descobrir automaticamente todos os parâmetros necessários para a realização das chamadas aos métodos remotos (pois o script wsdlParser.lua ainda está em fase inicial), gerando o código Lua necessário para fazer tais chamadas, o desenvolvedor, quando for consumir um Web Service feito em Java, com a biblioteca JAX-WS, ou qualquer outro que utilize um arquivo XSD externo ao WSDL, precisará informar isto ao NCLua SOAP, na chamada do método call.

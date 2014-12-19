@@ -35,7 +35,13 @@ Mais uma versão do NCLua SOAP liberada. As novidades são:
 
 Colaboração de Samuel da Costa Alves Basilio.
 
-<!-- more -->
+
+
+
+--more Leia Mais--
+
+
+
 
 
 Para consumir tais métodos remotos, dentro da sub-tabela params, da tabela msgTable que deve ser passada como parâmetro para o método ncluasoap.call, deve-se incluir uma tabela lua com índices numéricos (quando o parâmetro do método remoto for um array) e uma tabela lua com índices nomeados (quando o parâmetro do método remoto for um struct/record).

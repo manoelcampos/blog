@@ -11,7 +11,11 @@ tags:
 - Ginga
 ---
 
-Com a liberação da [Consulta Pública sobre a obrigatoriedade da inclusão do Ginga](http://www.mdic.gov.br/portalmdic/arquivos/dwnl_1317060321.pdf), middleware do Sistema Brasileiro de TV Digital (SBTVD), nas TV's LCD produzidas no Brasil, o professor Luiz Fernando Gomes Soares da PUC-Rio, a partir de um questionamento de um usuário de uma lista de discussão, publicou um texto elencando vários motivos para apoiar o Ginga. A consulta pública infelizmente encerra no dia 04/10/2011 e o apoio deve ser manifestado por meio de carta, fax ou e-mail encaminhado ao Ministério do Desenvolvimento, Indústria e Comércio Exterior.<!-- more -->
+Com a liberação da [Consulta Pública sobre a obrigatoriedade da inclusão do Ginga](http://www.mdic.gov.br/portalmdic/arquivos/dwnl_1317060321.pdf), middleware do Sistema Brasileiro de TV Digital (SBTVD), nas TV's LCD produzidas no Brasil, o professor Luiz Fernando Gomes Soares da PUC-Rio, a partir de um questionamento de um usuário de uma lista de discussão, publicou um texto elencando vários motivos para apoiar o Ginga. A consulta pública infelizmente encerra no dia 04/10/2011 e o apoio deve ser manifestado por meio de carta, fax ou e-mail encaminhado ao Ministério do Desenvolvimento, Indústria e Comércio Exterior.
+
+
+--more Leia Mais--
+
 
 Uma [carta modelo](http://grupogingagoias.com.br/blog/?p=414) pode ser baixada no site do Grupo Ginga Goias [aqui](http://grupogingagoias.com.br/blog/?p=414).
 

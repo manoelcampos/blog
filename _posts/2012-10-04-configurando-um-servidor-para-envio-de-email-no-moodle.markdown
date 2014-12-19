@@ -22,7 +22,11 @@ Atualmente muitas instituições têm utilizado servidores de email externos (co
 
 No entanto, muitos destes servidores impõem um limite diário para envio de emails. Usando o Moodle, facilmente este limite é atingido (que no caso do Gmail é de 500 emails/dia).
 
-Além disto, o envio de emails usando uma conta do Google tem outras [restrições](http://docs.moodle.org/23/en/Email_setup_gmail) como não aceitar que seja utilizado o email do usuário que acessou o Moodle como remetente da mensagem. Isto pode ser resolvido, mas requer [alterações no código fonte do Moodle](http://tracker.moodle.org/browse/MDL-26283) (pelo menos até a versão 2.2).<!-- more -->
+Além disto, o envio de emails usando uma conta do Google tem outras [restrições](http://docs.moodle.org/23/en/Email_setup_gmail) como não aceitar que seja utilizado o email do usuário que acessou o Moodle como remetente da mensagem. Isto pode ser resolvido, mas requer [alterações no código fonte do Moodle](http://tracker.moodle.org/browse/MDL-26283) (pelo menos até a versão 2.2).
+
+
+--more Leia Mais--
+
 
 Assim, para resolver estes problemas, segue um breve tutorial mostrando como configurar um servidor de email postfix, em um servidor Linux Ubuntu, para realizar o envio de emails a partir do Moodle.
 

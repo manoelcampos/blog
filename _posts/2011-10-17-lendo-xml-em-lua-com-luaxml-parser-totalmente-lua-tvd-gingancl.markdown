@@ -21,7 +21,11 @@ tags:
 Tenho visto ainda nos fóruns de discussão algumas perguntas de como ler arquivos XML em Lua.
 Existem alguns módulos Lua que utilizam bibliotecas em C para fazer isto, como o [LuaXML](http://viremo.eludi.net/) do site [viremo.eludi.net](http://viremo.eludi.net/LuaXML/).
 
-No entanto, no Ginga-NCL (subsistema do middleware Ginga do Sistema Brasileiro de TV Digital), não é possível usar módulos em C em aplicações enviadas via broadcast. Assim, para fazer o parse de arquivos XML em aplicações Lua para TVD, é preciso usar um parser escrito inteiramente em Lua.<!-- more -->
+No entanto, no Ginga-NCL (subsistema do middleware Ginga do Sistema Brasileiro de TV Digital), não é possível usar módulos em C em aplicações enviadas via broadcast. Assim, para fazer o parse de arquivos XML em aplicações Lua para TVD, é preciso usar um parser escrito inteiramente em Lua.
+
+
+--more Leia Mais--
+
 
 No site [LuaUsers](http://lua-users.org/wiki/LuaXml) existem algumas opções de parsers XML para Lua, alguns deles usam módulos escritos em C também.
 Na seção Lua-only XML parsers existem algumas opções de módulos escritos inteiramente em Lua. Destes, o que acho mais completo e fácil de usar é o módulo LuaXML (isso mesmo, o mesmo nome do anterior, por isso há certa confusão quando se fala em LuaXML) .

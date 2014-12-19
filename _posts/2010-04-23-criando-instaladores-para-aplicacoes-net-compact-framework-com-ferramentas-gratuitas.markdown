@@ -29,7 +29,13 @@ tags:
 
 No artigo [Gerador de setup gratuito para aplicações em .NET Compact Framework](http://manoelcampos.com/2009/10/25/gerador-de-setup-gratuito-para-aplicacoes-em-net-compact-framework-net-cf/) apresentei a ferramenta [Pocket PC Installation Creator (PPCIC)](http://www.aperitto.com/products/ppcic). Tal ferramenta é um IDE muito prático para a geração de instaladores para aplicações .NET Compact Framework, cuja versão gratuita tem o incoveniente de exibir um Message Box na inicialização do instalador no Pocket PC/Smartphone. Desta forma, vou apresentar neste artigo outras ferramentas gratuitas para geração de tais instaladores.
 
-Infelizmente tais ferramentas não possuem um IDE como o PPCIC, mas devido os instaladores de aplicações .NET CF serem geralmente bastante simples, o IDE não faz tanta falta, mas com certeza ajuda demais :).<!-- more -->
+Infelizmente tais ferramentas não possuem um IDE como o PPCIC, mas devido os instaladores de aplicações .NET CF serem geralmente bastante simples, o IDE não faz tanta falta, mas com certeza ajuda demais :).
+
+
+--more Leia Mais--
+
+
+
 
 
 ## Ferramentas Necessárias

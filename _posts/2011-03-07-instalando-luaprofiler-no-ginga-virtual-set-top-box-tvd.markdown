@@ -22,7 +22,13 @@ tags:
 
 A forma mais fácil de instalar módulos Lua em uma distribuição Linux, como no caso do Ginga Virtual Set-top Box 0.11.2 que utiliza Ubuntu, é por meio do [LuaRocks](http://luarocks.org). No entanto, alguns módulos como o LuaProfiler não funcionam no Ginga se instalados com o LuaRocks, que automatiza o processo de instalação de módulos da mesma forma que a ferramenta apt-get (existente em várias distribuições Linux).
 
-<!-- more -->
+
+
+
+--more Leia Mais--
+
+
+
 
 Assim, para usar o LuaProfiler no Ginga Virtual STB, precisaremos compilar o código fonte e fazer uma pequena alteração em tal processo.
 

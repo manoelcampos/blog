@@ -25,7 +25,13 @@ tags:
 
 Já escrevi uns 2 artigos aqui falando do assunto e mostrando alternativas para fazer o modem funcionar no Linux. Nas versões mais recentes do Ubuntu, como a 10.04, nenhuma configuração é necessária (a não ser a da escolha do provedor, feita por meio de um assistente). Se você não utiliza uma versão recente do Ubuntu, recomendo que atualize e tenha seus problemas com modem resolvidos, não precisando deste tutorial. Se não tem uma versão mais nova, continue lendo.
 
-<!-- more -->Infelizmente, no meu notebook, nenhuma das alternativas havia funcionado para nenhum dos modens que já tive (Huawei e266 e agora um ZTE MF622). Assim, estou disponibilizando este tutorial como uma alternativa a outros métodos existentes, que dispensa o uso de programas como o usb_modeswitch (que nunca funcionou comigo e já vi relatos de outros usuários que também não tiveram sucesso).
+
+
+
+--more Leia Mais--
+
+
+Infelizmente, no meu notebook, nenhuma das alternativas havia funcionado para nenhum dos modens que já tive (Huawei e266 e agora um ZTE MF622). Assim, estou disponibilizando este tutorial como uma alternativa a outros métodos existentes, que dispensa o uso de programas como o usb_modeswitch (que nunca funcionou comigo e já vi relatos de outros usuários que também não tiveram sucesso).
 
 Graças ao lançamento do kernel 2.6.30, "seus problemas com modens 3g no linux acabaram-se"  (eu acho).
 Esse novo kernel tem melhor suporte aos modens 3g. Desta forma, você não precisa mais usar aqueles programas para configurar seu modem e usar o tal do usb-modeswitch para desmontar a unidade de disco e montar o modem, nem ter que fazer configurações chatas e usar discadores como o gnome-ppp e wvdial, você poderá fazer a conexão usando o próprio Network Manager que é padrão no Ubuntu.

@@ -19,7 +19,13 @@ tags:
 
 [![](http://manoelcampos.com/wp-content/uploads/stop.png)](http://manoelcampos.com/wp-content/uploads/stop.png)Hoje estou iniciando uma nova seção no Blog, onde mostrarei algumas dicas de desenvolvimento de aplicações de TV Digital utilizando as linguagens NCL e Lua. Como vejo muitas dúvidas recorrentes nos fóruns que participo, resolvi registrar aqui estas dicas, de uma forma didática e em exemplos completos.
 
-Nesta primeira dica, vou mostrar como incluir um botão para interromper uma aplicação NCL após o usuário/telespectador pressionar um botão no controle remoto. Isto é algo simples de ser feito e tem sido uma dúvida recorrente.<!-- more -->
+Nesta primeira dica, vou mostrar como incluir um botão para interromper uma aplicação NCL após o usuário/telespectador pressionar um botão no controle remoto. Isto é algo simples de ser feito e tem sido uma dúvida recorrente.
+
+
+--more Leia Mais--
+
+
+
 
 
 ## Pré-requisitos

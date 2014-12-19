@@ -24,7 +24,13 @@ Convencionalmente utiliza-se o comando da seguinte forma:
 
 [bash]ssh usuario-remoto@ip-ou-nome-dns-servidor-remoto[/bash]
 
-Tal comando abre um shell para o servidor remoto, permitindo a execução de comandos no servidor, via terminal. A partir de uma sessão ssh, pode ser possível a realização de qualquer tarefa que o usuário faria a partir da interface gráfica do servidor (dependendo obviamente das permissões e conhecimento do usuário). Pode-se executar editores de texto como pico<!-- more --> e [nano](http://www.nano-editor.org/), e assim alterar configurações de programas, editando os famosos arquivos .conf. Pode-se navegar na internet usando browsers textuais como o [links](http://links.sourceforge.net/), baixar arquivos com [wget](http://www.gnu.org/software/wget/), instalar e remover programas com apt-get, dentre outras possibilidades.
+Tal comando abre um shell para o servidor remoto, permitindo a execução de comandos no servidor, via terminal. A partir de uma sessão ssh, pode ser possível a realização de qualquer tarefa que o usuário faria a partir da interface gráfica do servidor (dependendo obviamente das permissões e conhecimento do usuário). Pode-se executar editores de texto como pico
+
+
+--more Leia Mais--
+
+
+ e [nano](http://www.nano-editor.org/), e assim alterar configurações de programas, editando os famosos arquivos .conf. Pode-se navegar na internet usando browsers textuais como o [links](http://links.sourceforge.net/), baixar arquivos com [wget](http://www.gnu.org/software/wget/), instalar e remover programas com apt-get, dentre outras possibilidades.
 
 No entanto, algumas vezes podemos precisar acessar uma aplicação gráfica existente no servidor e poder operá-la remotamente, semelhante ao que ocorre no uso de programas como o [VNC](http://www.realvnc.com) (para Windows e Linux) ou o [Terminal Server Client](http://tsclient.sourceforge.net/) (para acessar máquinas Windows a partir do Linux).
 

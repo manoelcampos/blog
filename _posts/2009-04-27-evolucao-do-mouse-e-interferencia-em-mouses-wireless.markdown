@@ -16,7 +16,17 @@ tags:
 - Mouse Wireless
 ---
 
-O mouse vem passando por algumas revoluções ao longo do tempo. O primeiro que usei foi aqueles que o mecanismo de movimento era uma esfera (o chamado mouse de bolinha), sendo que o movimento tinha péssima sensibilidade<!-- more --> e juntava sujeira, sendo necessária uma limpeza semanal, senão ficava impossível de usar, pois a bolinha travava.   Os mouses ópticos foram uma revolução. Lembro quando comprei o meu primeiro por cerca de R$ 70,00, no Mercado Livre, há alguns anos atrás. Hoje você encontra no Mercado Livre por apenas R$ 8,00.  A grande revolução depois dos mouses ópticos foram os ópticos wireless (sem fio). Agora você tem maior liberdade e menos fios para carregar. Porém, ao escolher um mouse desses, é importante avaliar algumas características básicas:
+O mouse vem passando por algumas revoluções ao longo do tempo. O primeiro que usei foi aqueles que o mecanismo de movimento era uma esfera (o chamado mouse de bolinha), sendo que o movimento tinha péssima sensibilidade e juntava sujeira, sendo necessária uma limpeza semanal, senão ficava impossível de usar, pois a bolinha travava.   Os mouses ópticos foram uma revolução. Lembro quando comprei o meu primeiro por cerca de R$ 70,00, no Mercado Livre, há alguns anos atrás. Hoje você encontra no Mercado Livre por apenas R$ 8,00.  
+
+
+
+
+--more Leia Mais--
+
+
+ 
+
+A grande revolução depois dos mouses ópticos foram os ópticos wireless (sem fio). Agora você tem maior liberdade e menos fios para carregar. Porém, ao escolher um mouse desses, é importante avaliar algumas características básicas:
 
 
 

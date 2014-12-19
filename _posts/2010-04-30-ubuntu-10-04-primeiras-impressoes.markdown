@@ -14,7 +14,13 @@ tags:
 - Ubuntu 10.04
 ---
 
-[![](http://manoelcampos.com/wp-content/uploads/ubuntu-10.04.png)](http://manoelcampos.com/wp-content/uploads/ubuntu-10.04.png)Estava só esperando o Ubuntu 10.04 para trocar o HD do meu note, que estava me avisando que daria problemas em um futuro breve. Daí, como teria que instalar tudo novamente, que fosse com as versões mais novas dos softwares. Baixei o Ubuntu via Torrent rapidinho na UnB.<!-- more -->
+[![](http://manoelcampos.com/wp-content/uploads/ubuntu-10.04.png)](http://manoelcampos.com/wp-content/uploads/ubuntu-10.04.png)Estava só esperando o Ubuntu 10.04 para trocar o HD do meu note, que estava me avisando que daria problemas em um futuro breve. Daí, como teria que instalar tudo novamente, que fosse com as versões mais novas dos softwares. Baixei o Ubuntu via Torrent rapidinho na UnB.
+
+
+--more Leia Mais--
+
+
+
 
 
 ### Problemas Encontrados

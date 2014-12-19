@@ -24,7 +24,11 @@ Vou mostrar rapidamente como realizar um port scan no Linux usando o comando net
 nc -z -v IpOuHostname PortaInicial-PortaFinal
 [/bash]
 
-<!-- more -->
+
+
+
+--more Leia Mais--
+
 
 Ao executar o comando nc passando o parâmetro -z, solicitamos a execução de um port scanning.
 O parâmetro -v é para mostrar a saída no terminal.

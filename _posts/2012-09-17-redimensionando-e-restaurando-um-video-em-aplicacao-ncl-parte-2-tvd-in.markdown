@@ -21,7 +21,11 @@ tags:
 
 [![](http://manoelcampos.com/wp-content/uploads/resize1.png)](http://manoelcampos.com/wp-content/uploads/resize1.png)No [artigo anterior](http://manoelcampos.com/2012/09/13/redimensionando-e-restaurando-um-video-em-aplicacao-ncl-parte-1-tvd-in/), mostrei como redimensionar um vídeo e restaurar seu tamanho original usando apenas NCL. Como foi mostrado lá, a forma como tal recurso foi implementado é um pouco estático. Se você reduzir um vídeo para 50%, para restaurá-lo para o tamanho original, precisará alterar suas dimensões para 200% (de acordo com a regra de 3 apresentada no artigo anterior). No entanto, se resolver colocar um percentual diferente para reduzir o vídeo, precisará recalcular o percentual utilizado para restaurar seu tamanho original e alterar o documento NCL inserindo os novos valores.
 
-Vou mostrar neste artigo como tornar a restauração do vídeo dinâmica, usando novamente apenas NCL.<!-- more -->
+Vou mostrar neste artigo como tornar a restauração do vídeo dinâmica, usando novamente apenas NCL.
+
+
+--more Leia Mais--
+
 
 Vamos usar a mesma lógica da [aplicação anterior](http://manoelcampos.com/2012/09/13/redimensionando-e-restaurando-um-video-em-aplicacao-ncl-parte-1-tvd-in/), contendo um vídeo que, após 5 segundos de iniciado, será redimensionado e apresentará uma imagem de um botão vermelho. Quando o usuário acionar o respectivo botão no controle remoto, o vídeo volta ao tamanho original. Desta forma, você pode utilizar o código da aplicação anterior como base. Utilizaremos os mesmos conectores, sem alterar, adicionar nem remover nenhum. O que mudará será nos links.
 

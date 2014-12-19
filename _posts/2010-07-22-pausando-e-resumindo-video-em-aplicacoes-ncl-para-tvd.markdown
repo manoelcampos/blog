@@ -22,7 +22,13 @@ tags:
 
 Estes dias estava fazendo uma pequena aplicação NCL para permitir pausar e resumir um vídeo e acabei tendo que recorrer ao fórum do Ginga, pois o vídeo pausava mas não resumia ao ser dado o comando para isto. Então fui informado de um pequeno detalhe, que não é intuitivo, necessário para que tal comportamento funcionasse.
 
-Com isto, vou mostrar aqui como criar tal simples aplicação NCL.<!-- more -->
+Com isto, vou mostrar aqui como criar tal simples aplicação NCL.
+
+
+--more Leia Mais--
+
+
+
 
 
 ## Pré-requisitos

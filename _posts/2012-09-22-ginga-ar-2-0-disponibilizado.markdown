@@ -21,7 +21,11 @@ tags:
 
 O Ginga.ar é baseado na implementação de referência da PUC-Rio mas a versão 2.0 foi quase totalmente reescrita, tendo apenas 17% do código original da PUC, assim, temos realmente uma implementação diferente.
 
-Além disto, a comunidade argentina desenvolveu uma suite de testes para verificar as funcionalidades da implementação, reduzindo o total de bugs.<!-- more -->
+Além disto, a comunidade argentina desenvolveu uma suite de testes para verificar as funcionalidades da implementação, reduzindo o total de bugs.
+
+
+--more Leia Mais--
+
 
 Um dos grandes benefícios desta versão é a completa implementação do módulo canvas de NCLua e a adição de um player HTML melhor, até com suporte a HTML5 (não sei qual browser usaram).
 

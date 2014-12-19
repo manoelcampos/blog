@@ -28,7 +28,13 @@ tags:
 
 O SQL Server Backup é uma ferramenta gráfica, desenvolvida em Delphi, que permite a realização de backups e restores de um banco de dados do SQL Server. A aplicação ainda aceita parâmetros via linha de comando, permitindo que tais operações sejam automatizadas por meio de arquivos bat ou pela criação de tarefas agendadas no Windows.
 
-As configurações para acesso ao banco de dados e o caminho e nome padrão para geração do arquivo de backup devem ser informados no arquivo SipomSQLServer.ini existente dentro da pasta do projeto (o nome do arquivo ini a ser carregado está definido dentro do código fonte da aplicação, podendo ser alterado lá para o nome que desejar e em seguida renomeando o ini para o nome lá indicado).<!-- more -->
+As configurações para acesso ao banco de dados e o caminho e nome padrão para geração do arquivo de backup devem ser informados no arquivo SipomSQLServer.ini existente dentro da pasta do projeto (o nome do arquivo ini a ser carregado está definido dentro do código fonte da aplicação, podendo ser alterado lá para o nome que desejar e em seguida renomeando o ini para o nome lá indicado).
+
+
+--more Leia Mais--
+
+
+
 
 A interface da aplicação possui um botão que exibe os parâmetros permitidos via linha de comando.
 

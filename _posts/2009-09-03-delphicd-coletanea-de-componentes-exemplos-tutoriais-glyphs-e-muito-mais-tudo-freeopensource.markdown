@@ -23,7 +23,13 @@ tags:
 
 Estou disponibilizando uma coletânea de material de Delphi, que juntei durante anos de navegação pela Web  (116MB compactada, 259MB descompactada).
 
-Existem muitos arquivos de dicas, exemplos, apostilas, tutoriais, glyphs, ícones e diversos componentes com código fonte.<!-- more --> Inclui apenas os componentes que não são bibliotecas gigantes, como a [JVCL](http://jvcl.sourceforge.net). Assim, você encontrará algumas bibliotecas de componentes pequenas, e muitos componentes individuais.
+Existem muitos arquivos de dicas, exemplos, apostilas, tutoriais, glyphs, ícones e diversos componentes com código fonte.
+
+
+--more Leia Mais--
+
+
+ Inclui apenas os componentes que não são bibliotecas gigantes, como a [JVCL](http://jvcl.sourceforge.net). Assim, você encontrará algumas bibliotecas de componentes pequenas, e muitos componentes individuais.
 
 Muita coisa, obviamente, está obsoleta, e você pode encontrar coisas mais novas na Web. Alguns componentes podem não funcionar nas versões mais novas do Delphi, mas como tem o código fonte, basta adaptar. Já fiz muito isso.
 

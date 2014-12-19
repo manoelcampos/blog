@@ -29,7 +29,13 @@ Neste artigo mostrarei como fazer acesso a tais Web Services, a partir de aplica
 ## Iniciando
 
 
-O acesso a WebServices em PHP com NCLua SOAP pode ter uma pequena particularidade. Tais WS, desenvolvidos com a biblioteca [nuSOAP](http://sourceforge.net/projects/nusoap/), desconsideram o nome dos parâmetros de entrada (isto pode depender da versão da biblioteca), considerando apenas a ordem em que foram passados.<!-- more -->
+O acesso a WebServices em PHP com NCLua SOAP pode ter uma pequena particularidade. Tais WS, desenvolvidos com a biblioteca [nuSOAP](http://sourceforge.net/projects/nusoap/), desconsideram o nome dos parâmetros de entrada (isto pode depender da versão da biblioteca), considerando apenas a ordem em que foram passados.
+
+
+--more Leia Mais--
+
+
+
 
 Como a requisição XML a ser enviada ao Web Service é gerada a partir de uma tabela Lua, que é percorrida com o comando pairs de Lua, tal comando acessa os elementos em ordem arbitrária (Programming in Lua, 2nd ed). Isto pode fazer com que os parâmetros sejam passados em ordem incorreta ao Web Service. Assim, para resolver esse problema com WS PHP, pode-se incluir cada parâmetro de entrada na tabela Lua, dentro de uma sub-tabela anônima, como no exemplo abaixo:
 

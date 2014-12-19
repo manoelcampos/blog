@@ -45,7 +45,13 @@ O script wsdlParser.lua, faz o parse de arquivos WSDL, exibindo algumas das info
       lua wsdlparser.lua url_do_wsdl
 
 
-O script requer a biblioteca luasocket (pois não é um script para TVD), que pode ser intalada via apt-get no Linux, ou via luarocks em qualquer SO. As bibliotecas util e LuaXML, também necessárias, já estão dentro do diretório. O uso do script é opcional, os parâmetros que ele obtém, para que você utilize na chamada da função ncluasoap.call, você pode obter lendo o documento WSDL do Web Service.<!-- more -->
+O script requer a biblioteca luasocket (pois não é um script para TVD), que pode ser intalada via apt-get no Linux, ou via luarocks em qualquer SO. As bibliotecas util e LuaXML, também necessárias, já estão dentro do diretório. O uso do script é opcional, os parâmetros que ele obtém, para que você utilize na chamada da função ncluasoap.call, você pode obter lendo o documento WSDL do Web Service.
+
+
+--more Leia Mais--
+
+
+
 
 Esta versão deixou muito mais fácil o acesso ao valor retornado pelo método remoto. O método getResponse, amplamente utilizado nos exemplos, teve o parâmetro xmlTable renomeado para result, para indicar que representa o retorno da função remota, que pode ou não ser uma tabela lua. Se o método remoto retornar uma variável primitiva simples (ou seja, com apenas um valor), result já será este valor, bastando imprimí-lo.
 

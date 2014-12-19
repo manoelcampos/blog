@@ -24,7 +24,13 @@ Estou disponibilizando uma máquina virtual para VirtualBox, que possui tanto a 
 
 
 
-Recomendo a utilização da última versão do VirtualBox, a 3.1.2. <!-- more -->O arquivo disponibilizado é apenas a imagem do HD da máquina virtual. Assim, é necessário criar a máquina. Para isto, use os comandos abaixo em um terminal (testados apenas em Linux). Leia os comentários, pois em uma das linhas é necessário informar o caminho onde descompactou o arquivo vdi baixado.
+Recomendo a utilização da última versão do VirtualBox, a 3.1.2. 
+
+
+--more Leia Mais--
+
+
+O arquivo disponibilizado é apenas a imagem do HD da máquina virtual. Assim, é necessário criar a máquina. Para isto, use os comandos abaixo em um terminal (testados apenas em Linux). Leia os comentários, pois em uma das linhas é necessário informar o caminho onde descompactou o arquivo vdi baixado.
 
 
 
