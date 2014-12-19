@@ -19,7 +19,7 @@ tags:
 
 [![](http://manoelcampos.com/wp-content/uploads/tabs.jpg)](http://manoelcampos.com/wp-content/uploads/tabs.jpg)Uma das grandes dificuldades que alguns desenvolvedores NCL/Lua tem é em alternar o controle de foco entre a aplicação NCL e Lua, para, quando estiver na aplicação NCL, esta controlar o foco, por exemplo, dos itens de um menu, quando o usuário utilizar as setas do controle remoto para navegar por eles. Quando uma aplicação Lua é iniciada, normalmente deseja-se que o controle de foco e captura de teclas passar para ela. Nestes casos, quando a aplicação lua é finalizada, é preciso fazer o controle de foco voltar para a aplicação NCL, para que o usuário continue alternando o foco entre os itens do menu.
 
---more--
+--more Leia Mais--
 
 Neste artigo vou mostrar como resolver esta questão. Para isto, vamos criar uma aplicação NCL contendo imagens que representarão itens de um menu.  A aplicação terá 3 itens no menu que ficará posicionado verticalmente, no canto superior esquerdo da tela. Quando o usuário utilizar as setas para cima e para baixo no controle remoto, o foco mudará de um item para o outro. Quando ele pressionar enter sobre o primeiro item, uma aplicação Lua será iniciada e um imagem de um botão vermelho será iniciado. A aplicação lua passará a ter o controle de foco, capturando os eventos ocorridos (como pressionamento de teclas) e exibindo isso na tela. Quando o usuário pressionar o botão vermelho, a aplicação Lua será finalizada, voltando para o NCL que passará a controlar o foco novamente.
 
