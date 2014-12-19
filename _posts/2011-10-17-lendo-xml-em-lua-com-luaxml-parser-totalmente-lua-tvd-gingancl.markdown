@@ -42,7 +42,7 @@ Vamos criar agora uma aplicação para mostrar como usar tal módulo. Primeiro c
 <pre>
 <code class="xml">
 
-<?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;pessoas&gt;
   &lt;pessoa tipo="F"&gt;
     &lt;nome&gt;Manoel&lt;/nome&gt;
