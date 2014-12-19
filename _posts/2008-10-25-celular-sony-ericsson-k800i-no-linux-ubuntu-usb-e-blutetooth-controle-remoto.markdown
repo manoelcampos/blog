@@ -21,13 +21,19 @@ tags:
 
 Bem, vamos começar pelo básico. Você pode acessar o cartão de memória adicional e o interno do celular via Bluetooth. Se não me engano, no Ubuntu, os recursos de bluetooth já são instalados por padrão. Caso não esteja instalado, no terminal digite:
 
-[bash]sudo apt-get install gnome-bluetooth bluez-utils bluez-gnome bluetooth[/bash]
+<pre>
+<code class="bash">sudo apt-get install gnome-bluetooth bluez-utils bluez-gnome bluetooth</code>
+</pre>
+
 
 **Existe um espaço entre as duas opções finais, o bluez-gnome e bluetooth. Devendo ser digitado tudo em uma mesma linha
 **
 
 Para iniciar o daemon bluetooth digite:
-[bash]sudo /etc/init.d/bluetooth start[/bash]
+<pre>
+<code class="bash">sudo /etc/init.d/bluetooth start</code>
+</pre>
+
 
 No meu caso ele já está iniciando automaticamente no boot.
 Após iniciar o daemon, aparecerá o ícone no System Tray do Gnome automaticamente. No meu caso, como meu Bluetooth é USB, não é onboard na placa-mãe, somente após conectá-lo na USB é que aparece o ícone.
@@ -68,18 +74,27 @@ KERNEL=="sd*1", SYMLINK+="sonye-int%n", GROUP="users"
 
 O valor 3995273 na terceira linha indica a capacidade de memória do cartão. Este é o valor para um cartão de 2GB, o máximo suportado por este celular. Não sei qual ligação tem esse valor com os 2GB, não faz sentido pra mim. Se você usa um cartão de capacidade diferente, veja [este link](http://forums.gentoo.org/viewtopic-t-540515.html). Após alterar ou criar novos arquivos no diretório do udev, você deve reiniciá-lo com o comando a seguir:
 
-[bash]sudo /etc/init.d/udev restart[/bash]
+<pre>
+<code class="bash">sudo /etc/init.d/udev restart</code>
+</pre>
+
 
 Depois disso, basta conectar o celular na USB, escolher nele o Modo de Transferência de Arquivos e pronto, será aberto um diretório para você navegar nos arquivos da memória interna e do cartão de memória do celular, além de serem adicionados ícones para eles no Desktop. Deve ser aberto automaticamente a aplicação [F-Spot](http://f-spot.org), para gerenciar as fotos no celular. Eu não gostei, ainda mais que ela dava uns erros ao abrir. Aí removi ela. Você pode fazer isso pelo menu Aplicações >> Adicionar/Remover  do Gnome, ou deve funcionar como sudo apt-get remove f-spot
 
 E agora, o mais interessante: permitir usar os recursos de controle remoto do celular Sony Ericsson K800i no Linux, via Bluetooth. Estas informações obtive a partir [deste link também](http://www.linux.it/~malattia/wiki/index.php/Sony_Ericsson_K800i_and_Linux). Com este tutorial, você poderá usar estes recursos de controle remoto bluetooth do seu K800i. Logo, o bluetooth deve ser configurado e conectado como mostrei anteriormente.
 
 Primeiro você precisa conectar no celular com este comando:
-[bash]rfcomm connect 0 aa:bb:cc:dd:ee:ff[/bash]
+<pre>
+<code class="bash">rfcomm connect 0 aa:bb:cc:dd:ee:ff</code>
+</pre>
+
 
 onde aa:bb:cc:dd:ee:ff é o MAC do seu celular. Para descobrir qual é o do seu faça:
 
-[bash]hcitool scan[/bash]
+<pre>
+<code class="bash">hcitool scan</code>
+</pre>
+
 
 Após conectar com o comando rfcomm, o celular pedirá permissão de acesso e talvez a senha
 (padrão é 1234). Conceda a permissão. Em seguida, o celular exibe a tela "Controle Remoto"

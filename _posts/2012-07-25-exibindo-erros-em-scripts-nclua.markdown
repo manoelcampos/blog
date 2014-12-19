@@ -23,7 +23,9 @@ Assim, estudando o problema, encontrei uma solução paleativa para o mesmo, po
 
 Desta forma, considerem o seguinte código, que deveria apenas mostrar um texto centralizado na tela, usando o módulo canvas de NCLua:
 
-[lua]
+<pre>
+<code class="lua">
+
   canvas:attrFont("vera",32)
   canvas:attrColor(255,255,255,255)
   local w, h = canvas:attrSize()
@@ -31,30 +33,43 @@ Desta forma, considerem o seguinte código, que deveria apenas mostrar um texto 
   canvas:attrColor(0,0,0,0,255)
   local text = "Desenhando com NCLua canvas"
 
-  local wText, hText = canvas:meansureText(text) --ERRO: nome da função está errada
-  local x, y = math.floor((w-wText)/2) --ERRO: faltou definir valor para y
+  --ERRO: nome da função está errada
+  local wText, hText = canvas:meansureText(text) 
+  
+  --ERRO: faltou definir valor para y
+  local x, y = math.floor((w-wText)/2) 
 
   --Sem um valor para y, ocorrerá erro aqui
   canvas:drawText(x,y,text)
   canvas:flush()
-[/lua]
+</code>
+</pre>
+
 
 Observe que há erros nas linhas 8 e 9. Na linha 8 o nome da função está errada (não deve ter a letra n) e na linha 9 faltou definir um valor para a variável y (que dará erro ao ser usada na linha seguinte).
 
 No entanto, se você incluir este script como uma mídia numa aplicação NCL e rodar no Ginga Virtual STB, provavelmente nenhum erro será apresentado e a aplicação apenas para de executar, dificultando saber onde o problema ocorreu.
 Para fazer as mensagens de erro aparecerem, uma solução paleativa simples é a seguinte, considerando que você tem um arquivo main.lua, coloque todo o código dele dentro de uma função chamada main, como mostrado abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 function main()
   --insira aqui todo o código da listagem acima
 end
-[/lua]
+</code>
+</pre>
+
 
 Agora, no lugar de chamar a função main diretamente, vamos usar a função pcall para chamar ela em modo protegido. Desta forma, a função pcall é que chamará a função main, não propagando nenhum erro ocorrido dentro dela. Como a função main não possui nenhum parâmetro, para fazer a função pcall chamá-la, basta usar o código a seguir:
 
-[lua]
+<pre>
+<code class="lua">
+
 local ok, res = pcall(main)
-[/lua]
+</code>
+</pre>
+
 
 A função pcall retorna pelo menos um valor:
 
@@ -69,12 +84,16 @@ A função pcall retorna pelo menos um valor:
 
 Caso a função chamada pelo pcall gere algum erro, o segundo valor retornado pelo pcall será a mensagem de erro. Desta forma, após a linha de código mostrada acima, podemos verificar se ocorreu erro usando o código abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 if not ok then
    print("\n\nError: "..res, "\n\n")
    return -1
 end
-[/lua]
+</code>
+</pre>
+
 
 É importante frisar que isto não está fazendo um tratamento de erros adequado, pois quando se captura um erro não fatal, é porque deseja-se contorná-lo (por exemplo, mostrando uma mensagem na interface gráfica para o usuário) e continuar a execução da aplicação normalmente. Neste caso, qualquer erro ocorrido fará com que a aplicação seja finalizada (como já acontecia caso você não tome nenhuma iniciativa para tratar o erro).
 

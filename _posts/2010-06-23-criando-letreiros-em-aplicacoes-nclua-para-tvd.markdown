@@ -27,61 +27,61 @@ Um [tutorial de como estruturar o ambiente de desenvolvimento](http://www.peta5
 
 --more Leia Mais--
 
-
-
-
-
 ## Iniciando
 
 
 Primeiro, crie um diretório para a aplicação. Depois crie os arquivos main.ncl, main.lua, marquee.lua e rotinas.lua. Não vou explicar o código NCL, pois o mesmo não traz nada além do básico. Assim, pode ver todo o código abaixo. O código está comentado para melhor entendimento. É necessário apenas alterar o src da mídia video1, para o nome de um arquivo de vídeo a ser colocado no diretório da aplicação.
 
-[xml]
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<ncl id="main" xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
-    <head>
-        <regionBase>
-            <region id="rgLua" width="100%" height="24%" left="0" top="76%" zIndex="1" />
-            <region id="rgVideo" width="100%" height="100%" zIndex="0" />
-        </regionBase>
+<pre>
+<code class="xml">
 
-        <descriptorBase>
-            <descriptor id="dLua" region="rgLua" focusIndex="luaIdx" />
-            <descriptor id="dVideo" region="rgVideo" />
-        </descriptorBase>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;ncl id="main" xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile"&gt;
+    &lt;head&gt;
+        &lt;regionBase&gt;
+            &lt;region id="rgLua" width="100%" height="24%" left="0" top="76%" zIndex="1" /&gt;
+            &lt;region id="rgVideo" width="100%" height="100%" zIndex="0" /&gt;
+        &lt;/regionBase&gt;
 
-        <!-- Quando uma mídia terminar, inicia outra -->
-        <connectorBase>
-            <causalConnector id="onEndStart">
-              <simpleCondition role="onEnd" />
-              <simpleAction role="start" />
-            </causalConnector>
-        </connectorBase>
-    </head>
+        &lt;descriptorBase&gt;
+            &lt;descriptor id="dLua" region="rgLua" focusIndex="luaIdx" /&gt;
+            &lt;descriptor id="dVideo" region="rgVideo" /&gt;
+        &lt;/descriptorBase&gt;
 
-    <body>
-        <port id="pVideo" component="video1"/>
-        <port id="pLua" component="lua"/>
+        &lt;!-- Quando uma mídia terminar, inicia outra --&gt;
+        &lt;connectorBase&gt;
+            &lt;causalConnector id="onEndStart"&gt;
+              &lt;simpleCondition role="onEnd" /&gt;
+              &lt;simpleAction role="start" /&gt;
+            &lt;/causalConnector&gt;
+        &lt;/connectorBase&gt;
+    &lt;/head&gt;
 
-        <!-- Define o controle de foco para o nó Lua -->
-        <media id="settings" type="application/x-ginga-settings">
-            <property name="service.currentKeyMaster" value="luaIdx"/>
-        </media>
+    &lt;body&gt;
+        &lt;port id="pVideo" component="video1"/&gt;
+        &lt;port id="pLua" component="lua"/&gt;
 
-        <!--Vídeo sob licença Creative Commons,
-        obtido em http://creativecommons.org/video -->
-        <media id="video1" src="media/video.avi" descriptor="dVideo" />
+        &lt;!-- Define o controle de foco para o nó Lua --&gt;
+        &lt;media id="settings" type="application/x-ginga-settings"&gt;
+            &lt;property name="service.currentKeyMaster" value="luaIdx"/&gt;
+        &lt;/media&gt;
 
-        <media id="lua" src="main.lua" descriptor="dLua" />
+        &lt;!--Vídeo sob licença Creative Commons,
+        obtido em http://creativecommons.org/video --&gt;
+        &lt;media id="video1" src="media/video.avi" descriptor="dVideo" /&gt;
 
-        <!-- Quando o video1 terminar, reinicia o mesmo -->
-        <link xconnector = "onEndStart">
-	    <bind component="video1" role="onEnd" />
-	    <bind component="video1" role="start" />
-        </link>
-    </body>
-</ncl>
-[/xml]
+        &lt;media id="lua" src="main.lua" descriptor="dLua" /&gt;
+
+        &lt;!-- Quando o video1 terminar, reinicia o mesmo --&gt;
+        &lt;link xconnector = "onEndStart"&gt;
+	    &lt;bind component="video1" role="onEnd" /&gt;
+	    &lt;bind component="video1" role="start" /&gt;
+        &lt;/link&gt;
+    &lt;/body&gt;
+&lt;/ncl&gt;
+</code>
+</pre>
+
 
 
 ## Criando a classe Marquee
@@ -91,13 +91,19 @@ Vamos implementar o código Lua seguindo uma abordagem orientada a objetos. Exis
 
 Então, abra o arquivo marquee.lua. Vamos iniciar adicionando o módulo rotinas (cujo arquivo ainda está vazio) com o código abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 require "rotinas"
-[/lua]
+</code>
+</pre>
+
 
 Classes em Lua nada mais são que tabelas. Assim, precisamos definir uma tabela para a nossa classe Marque, contendo os atributos da mesma, como pode ser visto abaixo. Todos os atributos estão comentados.
 
-[lua]
+<pre>
+<code class="lua">
+
 ---Classe para exibição de letreiros em aplicações de TVD,
 --como o marquee da HTML
 --@author Manoel Campos da Silva Filho - http://manoelcampos.com
@@ -142,11 +148,15 @@ Marquee = {
     --entre cada chamada do método animate.
     timeElapsed = 0
 }
-[/lua]
+</code>
+</pre>
+
 
 Vamos definir uma função para limpar a área ocupada pelo letreiro, utilizando o código abaixo. A função é bem simples, desenhando um retângulo para cobrir a área do letreiro.
 
-[lua]
+<pre>
+<code class="lua">
+
 ---Limpa a área do letreiro
 function Marquee:clear()
   --Define a fonte do canvas. Mesmo não sendo desenhado nenhum texto na tela,
@@ -165,21 +175,29 @@ function Marquee:clear()
   --limpando o conteúdo da mesma
   canvas:drawRect("fill", self.left, self.top, self.charWidth*tw, th)
 end
-[/lua]
+</code>
+</pre>
+
 
 Vamos agora definir uma função para interromper a animação do letreiro, usando o código abaixo. A função apenas altera o atributo active para false (para indicar, pro método animate que criaremos, que o letreiro não deve ser mais animado) e limpa a área do letreiro, chamando o método clear.
 
-[lua]
+<pre>
+<code class="lua">
+
 ---Interrompe a animação do letreiro
 function Marquee:cancel()
   self.active = false
   self:clear()
 end
-[/lua]
+</code>
+</pre>
+
 
 Agora vamos definir o método drawText, que desenhará o texto na tela. O método também é bem simples, apenas fazendo uso da classe canvas. O texto só é automaticamente exibido se o atributo autoFlush for igual a true (este é o valor default). Veja código do método drawText abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 ---Exibe um texto na tela. O mesmo só é desenhado imediatamente,
 --se o atributo autoFlush for true
 --@param txt Texto a ser exibido
@@ -192,20 +210,28 @@ function Marquee:drawText(txt)
      canvas:flush()
   end
 end
-[/lua]
+</code>
+</pre>
+
 
 Vamos definir o construtor da classe. Mas antes disto, precisamos criar uma função dentro do módulo rotinas.lua, que será responsável por criar uma cópia da tabela Marquee, que representará uma instância da classe. Assim, a instância nada mais é que outra tabela, contendo tudo que a tabela Marquee possui. Logo, abra o arquivo rotinas.lua e insira as linhas abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 local print, pairs = print, pairs
 module "rotinas"
-[/lua]
+</code>
+</pre>
+
 
 A primeira linha armazena as funções globais, que serão utilizadas dentro do módulo, como funções locais. Isto é necessário pois, ao definir um arquivo Lua como módulo, não sem tem mais acesso às variáveis e funções globais. A segunda linha define o arquivo rotinas.lua como um módulo de nome rotinas.
 
 Agora vamos adicionar o código da função que clonará uma tabela:
 
-[lua]
+<pre>
+<code class="lua">
+
 ---Clona uma tabela
 --@param tb Tabela ser clonada
 --@return Retorna a nova tabela
@@ -218,11 +244,15 @@ function cloneTable(tb)
   end
   return clone
 end
-[/lua]
+</code>
+</pre>
+
 
 Volte agora ao arquivo marquee.lua e vamos definir o construtor da classe Marquee, usando o código abaixo.
 
-[lua]
+<pre>
+<code class="lua">
+
 ---Construtor da classe
 --@param text Texto a ser exibido
 --@param top Posição vertical do letreiro
@@ -241,13 +271,17 @@ function Marquee:new(text, top, left, charWidth)
   --Retorna a instância criada
   return obj
 end
-[/lua]
+</code>
+</pre>
+
 
 Como pôde ver, o código é bem simples. Os parâmetros text, top, left, charWidth são atribuídos aos respectivos campos da instância. Caso algum destes atributos seja omitido, é utilizado o respectivo valor default definido na classe Marquee.
 
 Agora vamos definir a função principal, que realiza toda a "mágica" de fazer o texto ser movimentado. Veja o código abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 ---Executa a animação do letreiro
 function Marquee:animate()
   --Função local para animar o texto. Todo o código está dentro desta
@@ -309,7 +343,9 @@ function Marquee:animate()
 
   animateLocal()
 end
-[/lua]
+</code>
+</pre>
+
 
 Esta função é mais complexa, apenas pelo uso da função event.timer. Como o texto pode ser movimentado da direita para a esquerda (caso o atributo moveToLeft seja true, o valor default) ou o inverso, precisamos fazer com que o método animate da classe Marquee seja executado em um intervalo de tempo determinado. Para isso é que utilizamos a função event.timer, cujo primeiro parâmetro define o intervalo de tempo que será aguardado para ser executada a função informada no segundo parâmetro.
 
@@ -329,21 +365,29 @@ Nossa classe Marquee está pronta. Agora basta desenvolver o código do arquivo 
 
 Agora precisamos apenas incluir o código do arquivo main.lua. Assim, abra tal arquivo. Vamos iniciar incluindo o arquivo marquee.lua, usando o código abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 dofile("marquee.lua")
-[/lua]
+</code>
+</pre>
+
 
 Como tal arquivo não é um módulo (ele é um arquivo lua comum que contém apenas a definição da classe Marquee), precisamos usar dofile no lugar de require.
 
 Vamos incluir dois letreiros na aplicação, então, vamos ao primeiro. Você verá com o código abaixo que isto é muito simples.
 
-[lua]
+<pre>
+<code class="lua">
+
 
 local text = "    Letreiro Digital em Aplicações NCLua para o SBTVD.    "
 --Cria um letreiro      (text, top, left, charWidth)
 local let1 = Marquee:new(text, 0,   10,   50)
 let1:animate()
-[/lua]
+</code>
+</pre>
+
 
 Observe que foi definida uma variável com o texto a ser exibido, e chamamos o construtor da classe (Marquee:new) para criar a instância let1. Em seguida, o método animate é chamado e pronto. O letreiro se movimentará indefinidamente, da direta para a esquerda (o comportamento padrão).
 
@@ -351,14 +395,18 @@ O uso de espaços antes e depois do texto foi intencional. Execute a aplicação
 
 Agora vamos ao segundo letreiro, usando o código abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 text = "          Manoel Campos - http://manoelcampos.com           "
 local let2 = Marquee:new(text, 50,  10,   50)
 let2.moveToLeft = false
 --Após 20 segundos, o letreiro para
 let2.seconds = 20
 let2:animate()
-[/lua]
+</code>
+</pre>
+
 
 Note que agora, depois que chamamos o construtor, alteramos algumas propriedades do latreiro. Com moveToLeft igual a false, o letreiro é movido da esquerda para a direita. Com seconds igual a 20, o letreiro desaparece depois de 20 segundos.
 

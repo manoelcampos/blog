@@ -38,84 +38,112 @@ Para isto, precisamos de um vídeo e uma imagem para representar o botão vermel
 
 No vídeo, vamos incluir uma âncora quer marcará os 5 segundos de início do mesmo e vamos publicar a propriedade bounds (que define em um atributo só, o top, left, width e height da mídia) para permitir que alteremos ela por meio de um link. Segue código da mídia do vídeo:
 
-[xml]
-<media id="video" src="media/video.avi" descriptor="dVideo">
-<property name="bounds"/>
-<area id="a1" begin="5s"/>
-</media>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;media id="video" src="media/video.avi" descriptor="dVideo"&gt;
+	&lt;property name="bounds"/&gt;
+	&lt;area id="a1" begin="5s"/&gt;
+&lt;/media&gt;
+</code>
+</pre>
+
 
 Agora vamos precisar criar alguns conectores. O onBeginStart será utilizado para, quando uma mídia iniciar, iniciar dar start em outra. Veja código do conector abaixo:
 
-[xml]
-<causalConnector id="onBeginStart">
-<simpleCondition role="onBegin"/>
-<simpleAction role="start"/>
- </causalConnector>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;causalConnector id="onBeginStart"&gt;
+	&lt;simpleCondition role="onBegin"/&gt;
+	&lt;simpleAction role="start"/&gt;
+&lt;/causalConnector&gt;
+</code>
+</pre>
+
 
 O conector onBeginSet será usado para, quando uma mídia iniciar, alterar uma propriedade de outra. Segue código do conector:
 
-[xml]
-<causalConnector id="onBeginSet">
-<connectorParam name="var"/>
-<simpleCondition role="onBegin"/>
-<simpleAction role="set" value="$var"/>
- </causalConnector>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;causalConnector id="onBeginSet"&gt;
+	&lt;connectorParam name="var"/&gt;
+	&lt;simpleCondition role="onBegin"/&gt;
+	&lt;simpleAction role="set" value="$var"/&gt;
+&lt;/causalConnector&gt;
+</code>
+</pre>
+
 
 A variável (connectorParam)  "var" é usada para permitir, no link a ser adicionado posteriormente, especificar qual valor será setado para a propriedade lá especificada (no nosso caso, será a propriedade bounds do vídeo).
 
 Agora vamos adicionar um conector onKeySelectionStopSet para, quando o usuário pressionar um botão, parar uma mídia e setar uma propriedade de outra. Segue código:
 
-[xml]
-<causalConnector id="onKeySelectionStopSet">
-<connectorParam name="var"/>
-<connectorParam name="key"/>
-<simpleCondition role="onSelection" key="$key" />
-<compoundAction operator="seq">
-<simpleAction role="set" value="$var"/>
-<simpleAction role="stop"/>
-</compoundAction>
- </causalConnector>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;causalConnector id="onKeySelectionStopSet"&gt;
+	&lt;connectorParam name="var"/&gt;
+	&lt;connectorParam name="key"/&gt;
+	&lt;simpleCondition role="onSelection" key="$key" /&gt;
+	&lt;compoundAction operator="seq"&gt;
+		&lt;simpleAction role="set" value="$var"/&gt;
+		&lt;simpleAction role="stop"/&gt;
+	&lt;/compoundAction&gt;
+&lt;/causalConnector&gt;
+</code>
+</pre>
+
 
 A variável "var" é usada com a mesma finalidade do conector anterior. A variável key é usado para, somente no link, especificar qual tecla iniciará as ações do conector. Desta forma, o conector fica mais reutilizável.
 
 Bem, agora vamos para os links. O primeiro link iniciará a imagem do botão vermelho quando a âncora de 5 segundos do vídeo iniciar, usando o conector onBeginStart criado anteriormente:
 
-[xml]
-<link xconnector="onBeginStart">
-<bind role="onBegin" component="video" interface="a1"/>
-<bind role="start" component="botao" />
- </link>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;link xconnector="onBeginStart"&gt;
+	&lt;bind role="onBegin" component="video" interface="a1"/&gt;
+	&lt;bind role="start" component="botao" /&gt;
+&lt;/link&gt;
+</code>
+</pre>
+
 
 Agora, vamos inserir um link para, quando a âncora de 5 segundos do vídeo iniciar, alterar o tamanho do mesmo para 50%:
 
-[xml]
-<link xconnector="onBeginSet">
-<bind role="onBegin" component="video" interface="a1"/>
-<bind role="set" component="video" interface="bounds">
-<bindParam name="var" value="0,0,50%,50%"/>
-</bind>
- </link>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;link xconnector="onBeginSet"&gt;
+	&lt;bind role="onBegin" component="video" interface="a1"/&gt;
+	&lt;bind role="set" component="video" interface="bounds"&gt;
+		&lt;bindParam name="var" value="0,0,50%,50%"/&gt;
+	&lt;/bind&gt;
+&lt;/link&gt;
+</code>
+</pre>
+
 
 Por fim, vamos inserir um link para, quando o usuário pressionar o botão vermelho, parar a imagem e restaurar o tamanho do vídeo. Como reduzimos ele para 50%, para voltar ao normal precisamos alterar suas dimensões para 200%. Segue código do link:
 
-[xml]
-<link xconnector="onKeySelectionStopSet">
-<bind role="onSelection" component="botao">
-<bindParam name="key" value="RED"/>
-</bind>
+<pre>
+<code class="xml">
 
-<bind role="set" component="video" interface="bounds">
-<bindParam name="var" value="0,0,200%,200%"/>
-</bind>
-<bind role="stop" component="botao" />
- </link>
-[/xml]
+&lt;link xconnector="onKeySelectionStopSet"&gt;
+	&lt;bind role="onSelection" component="botao"&gt;
+		&lt;bindParam name="key" value="RED"/&gt;
+	&lt;/bind&gt;
+
+	&lt;bind role="set" component="video" interface="bounds"&gt;
+		&lt;bindParam name="var" value="0,0,200%,200%"/&gt;
+	&lt;/bind&gt;
+	&lt;bind role="stop" component="botao" /&gt;
+ &lt;/link&gt;
+</code>
+</pre>
+
 
 Bem, agora é rodar e testar. Ao iniciar a aplicação, depois de 5 segundos o vídeo é redimensionando e o botão vermelho aparece. Quando você pressionar o botão, o vídeo volta ao tamanho anterior.
 

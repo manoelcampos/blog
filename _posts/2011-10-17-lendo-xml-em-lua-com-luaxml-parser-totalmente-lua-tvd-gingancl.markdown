@@ -39,23 +39,27 @@ Na página do [LuaXML no LuaUsers ](http://lua-users.org/wiki/LuaXml) existe uma
 
 Vamos criar agora uma aplicação para mostrar como usar tal módulo. Primeiro crie um arquivo de nome dados.xml com o conteúdo abaixo (o arquivo está disponível no pacote para download):
 
-[xml]
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<pessoas>
-  <pessoa tipo="F">
-    <nome>Manoel</nome>
-    <cidade>Palmas-TO</cidade>
-  </pessoa>
-  <pessoa tipo="F">
-    <nome>Breno</nome>
-    <cidade>Palmas-TO</cidade>
-  </pessoa>
-  <pessoa tipo="J">
-    <nome>UnB</nome>
-    <cidade>Brasília-DF</cidade>
-  </pessoa>
-</pessoas>
-[/xml]
+<pre>
+<code class="xml">
+
+<?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;pessoas&gt;
+  &lt;pessoa tipo="F"&gt;
+    &lt;nome&gt;Manoel&lt;/nome&gt;
+    &lt;cidade&gt;Palmas-TO&lt;/cidade&gt;
+  &lt;/pessoa&gt;
+  &lt;pessoa tipo="F"&gt;
+    &lt;nome&gt;Breno&lt;/nome&gt;
+    &lt;cidade&gt;Palmas-TO&lt;/cidade&gt;
+  &lt;/pessoa&gt;
+  &lt;pessoa tipo="J"&gt;
+    &lt;nome&gt;UnB&lt;/nome&gt;
+    &lt;cidade&gt;Brasília-DF&lt;/cidade&gt;
+  &lt;/pessoa&gt;
+&lt;/pessoas&gt;
+</code>
+</pre>
+
 
 O arquivo XML armazena dados de pessoas físicas e jurídicas. Cada tag pessoa tem um atributo tipo que identifica isto.
 
@@ -66,7 +70,9 @@ Agora crie um arquivo de nome main.lua, na mesma pasta do dados.xml. A aplicaç
 O código de main.lua é mostrado abaixo, e comentado em seguida:
 (arquivo disponível no pacote para download no final do artigo)
 
-[lua]
+<pre>
+<code class="lua">
+
 dofile("LuaXML/xml.lua")
 dofile("LuaXML/handler.lua")
 
@@ -115,7 +121,9 @@ xmlparser:parse(xmltext)
 for k, p in pairs(xmlhandler.root.pessoas.pessoa) do
   print("Nome:", p.nome, "Cidade:", p.cidade, "Tipo:", p._attr.tipo)
 end
-[/lua]
+</code>
+</pre>
+
 
 Nas linhas 1 e 2 o módulo é carregado. Como o mesmo não foi implementado usando o recurso module da linguagem Lua, o mesmo não pode ser carregado com require.
 

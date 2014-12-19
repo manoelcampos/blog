@@ -26,9 +26,6 @@ Não vou explicar detalhes básicos de NCL como regiões e descritores, sendo as
 --more Leia Mais--
 
 
-
-
-
 ## Iniciando
 
 
@@ -41,44 +38,60 @@ Crie um sub-diretório media. Neste, coloque duas imagens: uma com o nome de img
 
 Abra o arquivo main.ncl e adicione 3 regiões (duas para as imagens e uma para a o nó lua):
 
-[xml]
-<regionBase>
-	<region id="rgImg1" width="40" height="32" left="2" top="2" />
-	<region id="rgImg2" width="40" height="32" left="2" top="100" />
-	<region id="rgLua"  width="100%" height="30%" left="0" top="70%" />
-</regionBase>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;regionBase&gt;
+	&lt;region id="rgImg1" width="40" height="32" left="2" top="2" /&gt;
+	&lt;region id="rgImg2" width="40" height="32" left="2" top="100" /&gt;
+	&lt;region id="rgLua"  width="100%" height="30%" left="0" top="70%" /&gt;
+&lt;/regionBase&gt;
+</code>
+</pre>
+
 
 Agora vamos criar os descritos para estas regiões:
 
-[xml]
-<descriptorBase>
-	<descriptor id="dImg1" region="rgImg1" />
-	<descriptor id="dImg2" region="rgImg2" />
-	<descriptor id="dLua"    region="rgLua" />
-</descriptorBase>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;descriptorBase&gt;
+	&lt;descriptor id="dImg1" region="rgImg1" /&gt;
+	&lt;descriptor id="dImg2" region="rgImg2" /&gt;
+	&lt;descriptor id="dLua"    region="rgLua" /&gt;
+&lt;/descriptorBase&gt;
+</code>
+</pre>
+
 
 Nossa aplicação NCL terá apenas um conector, definindo que, quando o valor de um atributo for setado, uma mídia será iniciada:
 
-[xml]
-<connectorBase>
-  <!--Quando um valor de uma propriedade for alterado, inicia uma determinada mídia -->
-	<causalConnector id="onEndAttributionStart">
-		<simpleCondition role="onEndAttribution" />
-		<simpleAction role="start" />
-	</causalConnector>
-</connectorBase>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;connectorBase&gt;
+  &lt;!--Quando um valor de uma propriedade for alterado, inicia uma determinada mídia --&gt;
+	&lt;causalConnector id="onEndAttributionStart"&gt;
+		&lt;simpleCondition role="onEndAttribution" /&gt;
+		&lt;simpleAction role="start" /&gt;
+	&lt;/causalConnector&gt;
+&lt;/connectorBase&gt;
+</code>
+</pre>
+
 
 A finalidade do conector ficará mais clara logo.
 
 Vamos agora adicionar as mídias para as imagens colocadas no diretório media:
 
-[xml]
-	<media id="img1" src="media/img1.png" descriptor="dImg1"/>
-	<media id="img2" src="media/img2.png" descriptor="dImg2"/>
-[/xml]
+<pre>
+<code class="xml">
+
+	&lt;media id="img1" src="media/img1.png" descriptor="dImg1"/&gt;
+	&lt;media id="img2" src="media/img2.png" descriptor="dImg2"/&gt;
+</code>
+</pre>
+
 
 
 ### Adicionando a mídia Lua
@@ -86,12 +99,16 @@ Vamos agora adicionar as mídias para as imagens colocadas no diretório media:
 
 Agora vamos incluir a mídia para o arquivo main.lua (que por enquanto está vazio). Esta mídia deverá conter duas propriedades que definiremos com os nomes de sinal1 e sinal2, como pode ser visto abaixo:
 
-[xml]
-	<media id="lua" src="main.lua" descriptor="dLua">
-		<property name="sinal1"/>
-		<property name="sinal2"/>
-	</media>
-[/xml]
+<pre>
+<code class="xml">
+
+	&lt;media id="lua" src="main.lua" descriptor="dLua"&gt;
+		&lt;property name="sinal1"/&gt;
+		&lt;property name="sinal2"/&gt;
+	&lt;/media&gt;
+</code>
+</pre>
+
 
 Tais propriedades são a chave para permitir iniciar mídias no NCL a partir do script Lua. O nome delas indica que serão utilizadas como um sinal para que mídias específicas sejam iniciadas. Assim, quando for atribuído, a partir do script Lua, um valor à propriedade sinal1 (qualquer valor), o NCL iniciará a mídia img1. O mesmo ocorrerá com a propriedade sinal2 e a mídia img2.
 
@@ -99,9 +116,13 @@ Agora fica clara a finalidade do conector onEndAttributionStart, que será usado
 
 Bem, agora precisamos incluir uma porta para iniciar a mídia Lua, com o código a seguir:
 
-[xml]
-	<port id="pInicio" component="lua"/>
-[/xml]
+<pre>
+<code class="xml">
+
+	&lt;port id="pInicio" component="lua"/&gt;
+</code>
+</pre>
+
 
 
 ### Adicionando links NCL
@@ -109,19 +130,23 @@ Bem, agora precisamos incluir uma porta para iniciar a mídia Lua, com o código
 
 Precisamos agora adicionar links NCL para detectar a alteração das propriedades do nó Lua, usando o código abaixo:
 
-[xml]
-  <!--Quando a propriedade sinal1 do nó lua for setada, inicia a img1-->
-	<link xconnector="onEndAttributionStart">
-		<bind role="onEndAttribution" component="lua" interface="sinal1"/>
-		<bind role="start" component="img1" />
-	</link>
+<pre>
+<code class="xml">
 
-  <!--Quando a propriedade sinal2 do nó lua for setada, inicia a img2-->
-	<link xconnector="onEndAttributionStart">
-		<bind role="onEndAttribution" component="lua" interface="sinal2"/>
-		<bind role="start" component="img2" />
-	</link>
-[/xml]
+  &lt;!--Quando a propriedade sinal1 do nó lua for setada, inicia a img1--&gt;
+	&lt;link xconnector="onEndAttributionStart"&gt;
+		&lt;bind role="onEndAttribution" component="lua" interface="sinal1"/&gt;
+		&lt;bind role="start" component="img1" /&gt;
+	&lt;/link&gt;
+
+  &lt;!--Quando a propriedade sinal2 do nó lua for setada, inicia a img2--&gt;
+	&lt;link xconnector="onEndAttributionStart"&gt;
+		&lt;bind role="onEndAttribution" component="lua" interface="sinal2"/&gt;
+		&lt;bind role="start" component="img2" /&gt;
+	&lt;/link&gt;
+</code>
+</pre>
+
 
 Observe que, no caso do primeiro link, quando for atribuído um valor à propriedade sinal1 do nó lua, a mídia img1 é iniciada. O mesmo ocorrerá para a propriedade sinal2 e a mídia img2.
 
@@ -133,7 +158,9 @@ Abra o arquivo main.lua. Poderia ser definida qualquer condição para o disparo
 
 Convencionalmente, para cada propriedade definida no nó lua dentro do NCL, criaremos uma função de mesmo nome no script Lua. Logo, teremos as funções sinal1 e sinal2. Vamos criar a definição das funções com o código abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 local function sinal1()
 
 end
@@ -141,20 +168,28 @@ end
 local function sinal2()
 
 end
-[/lua]
+</code>
+</pre>
+
 
 Vamos definir o corpo das funções depois. Agora, vamos incluir, após as funções, o código que define as condições para a atribuição dos valores às propriedades do nó lua, com o código abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 event.timer(2000, sinal1)
 event.timer(5000, sinal2)
-[/lua]
+</code>
+</pre>
+
 
 A função timer do módulo event, executa a função definida no seu segundo parâmetro, após o tempo (em milisegundos) definido no primeiro parâmetro. Assim, após 2 segundos, a função sinal1 será chamada; e após 5 segundos, a função sinal2.
 
 Bem, agora falta definir o código a ser inserido dentro das funções definidas anteriormente. Para a função sinal1, inserida o código abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 local evt = {
           class = 'ncl',
           type  = 'attribution',
@@ -163,7 +198,9 @@ local evt = {
        }
 evt.action = 'start'; event.post(evt)
 evt.action = 'stop' ; event.post(evt)
-[/lua]
+</code>
+</pre>
+
 
 Inicialmente é criada uma tabela de nome evt, que contém os dados necessários para disparar um evento a partir do script lua. Abaixo os campos desta tabela são explicados:
 
@@ -190,7 +227,9 @@ E pra finalizar, o código da função sinal2 é o mesmo (desculpem pela duplica
 
 Veja o código completo do arquivo main.lua abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 local function sinal1()
   local evt = {
     class = 'ncl',
@@ -215,57 +254,63 @@ end
 
 event.timer(2000, sinal1)
 event.timer(5000, sinal2)
-[/lua]
+</code>
+</pre>
+
 
 e o código do main.ncl:
 
-[xml]
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<ncl id="main" xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
-  <head>
-    <regionBase>
-	    <region id="rgImg1" width="40" height="32" left="2" top="2" />
-	    <region id="rgImg2" width="40" height="32" left="2" top="100" />
-	    <region id="rgLua"  width="100%" height="30%" left="0" top="70%" />
-    </regionBase>
+<pre>
+<code class="xml">
 
-    <descriptorBase>
-	    <descriptor id="dImg1" region="rgImg1" />
-	    <descriptor id="dImg2" region="rgImg2" />
-	    <descriptor id="dLua"  region="rgLua" />
-    </descriptorBase>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;ncl id="main" xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile"&gt;
+  &lt;head&gt;
+    &lt;regionBase&gt;
+	    &lt;region id="rgImg1" width="40" height="32" left="2" top="2" /&gt;
+	    &lt;region id="rgImg2" width="40" height="32" left="2" top="100" /&gt;
+	    &lt;region id="rgLua"  width="100%" height="30%" left="0" top="70%" /&gt;
+    &lt;/regionBase&gt;
 
-    <connectorBase>
-	    <causalConnector id="onEndAttributionStart">
-		    <simpleCondition role="onEndAttribution" />
-		    <simpleAction role="start" />
-	    </causalConnector>
-    </connectorBase>
-  </head>
+    &lt;descriptorBase&gt;
+	    &lt;descriptor id="dImg1" region="rgImg1" /&gt;
+	    &lt;descriptor id="dImg2" region="rgImg2" /&gt;
+	    &lt;descriptor id="dLua"  region="rgLua" /&gt;
+    &lt;/descriptorBase&gt;
 
-  <body>
-	  <port id="pInicio" component="lua"/>
+    &lt;connectorBase&gt;
+	    &lt;causalConnector id="onEndAttributionStart"&gt;
+		    &lt;simpleCondition role="onEndAttribution" /&gt;
+		    &lt;simpleAction role="start" /&gt;
+	    &lt;/causalConnector&gt;
+    &lt;/connectorBase&gt;
+  &lt;/head&gt;
 
-	  <media id="img1" src="media/img1.png" descriptor="dImg1"/>
-	  <media id="img2" src="media/img2.png" descriptor="dImg2"/>
+  &lt;body&gt;
+	  &lt;port id="pInicio" component="lua"/&gt;
 
-	  <media id="lua" src="main.lua" descriptor="dLua">
-		  <property name="sinal1"/>
-		  <property name="sinal2"/>
-	  </media>
+	  &lt;media id="img1" src="media/img1.png" descriptor="dImg1"/&gt;
+	  &lt;media id="img2" src="media/img2.png" descriptor="dImg2"/&gt;
 
-	  <link xconnector="onEndAttributionStart">
-		  <bind role="onEndAttribution" component="lua" interface="sinal1"/>
-		  <bind role="start" component="img1" />
-	  </link>
+	  &lt;media id="lua" src="main.lua" descriptor="dLua"&gt;
+		  &lt;property name="sinal1"/&gt;
+		  &lt;property name="sinal2"/&gt;
+	  &lt;/media&gt;
 
-	  <link xconnector="onEndAttributionStart">
-		  <bind role="onEndAttribution" component="lua" interface="sinal2"/>
-		  <bind role="start" component="img2" />
-	  </link>
-  </body>
-</ncl>
-[/xml]
+	  &lt;link xconnector="onEndAttributionStart"&gt;
+		  &lt;bind role="onEndAttribution" component="lua" interface="sinal1"/&gt;
+		  &lt;bind role="start" component="img1" /&gt;
+	  &lt;/link&gt;
+
+	  &lt;link xconnector="onEndAttributionStart"&gt;
+		  &lt;bind role="onEndAttribution" component="lua" interface="sinal2"/&gt;
+		  &lt;bind role="start" component="img2" /&gt;
+	  &lt;/link&gt;
+  &lt;/body&gt;
+&lt;/ncl&gt;
+</code>
+</pre>
+
 
 
 ## Conclusão

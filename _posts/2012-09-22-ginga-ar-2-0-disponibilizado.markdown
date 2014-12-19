@@ -40,7 +40,10 @@ O arquivo vmdk deve ser anexado à VM para permitir que seja dado boot na VM por
 O usuário da VM é ginga e a senha ginga. Aplicações de exemplo são disponibilizadas no diretório ~/ginga.ar_2.0/apps
 Para executar uma aplicação NCL, basta executar o comando a seguir no terminal:
 
-[bash]$ ginga --ncl path/to/document.ncl[/bash]
+<pre>
+<code class="bash">$ ginga --ncl path/to/document.ncl</code>
+</pre>
+
 
 Fiz poucos testes na VM, executando os exemplos disponibilizados (bem legais, diga-se de passagem).
 Tem um joguinho bem legal, chamado sokoban, em NCL e Lua.

@@ -79,7 +79,9 @@ Na última linha do exemplo abaixo, chamados o método call do módulo NCLua SOA
 A função getResponse processará a resposta, da mesma forma como tem sido feito nas versões anteriores do módulo. Tal exemplo apenas exibirá o resultado no terminal, não mostrando nada na tela para o usuário/telespectador, pois trata-se apenas de um exemplo.
 
 
-[lua]
+<pre>
+<code class="lua">
+
 require "ncluasoap"
 
 ---Função para processar a resposta da requisição SOAP enviada ao WS
@@ -110,13 +112,17 @@ local msgTable = {
 --O serviço sendo acessado só aceita SOAP 1.1
 local soapVersion = "1.1"
 ncluasoap.call(msgTable, getResponse, soapVersion)
-[/lua]
+</code>
+</pre>
+
 
 
 Para passar um array para um método remoto, basta construir o seu array como uma tabela lua de índices numéricos e incluí-la dentro do campo params da tabela msgTable, como mostra o exemplo de código abaixo:
 
 
-[lua]
+<pre>
+<code class="lua">
+
 require "ncluasoap"
 
 local function getResponse(result)
@@ -134,7 +140,9 @@ local msgTable = {
 }
 
 ncluasoap.call(msgTable, getResponse)
-[/lua]
+</code>
+</pre>
+
 
 No exemplo anterior, o método remoto a ser chamado deve receber um parâmetro de nome numeros, do tipo array de inteiros.
 

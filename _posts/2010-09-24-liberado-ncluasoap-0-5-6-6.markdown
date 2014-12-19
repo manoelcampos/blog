@@ -29,7 +29,9 @@ O parâmetro port do método call do módulo ncluasoap ainda existe, para que os
 ### Exemplo de chamada para um serviço na porta 8080, usando as versões anteriores do módulo:
 
 
-[lua]
+<pre>
+<code class="lua">
+
 local msgTable = {
   address = "http://myserver.com/MyWebService",
   namespace = "MyNamespace",
@@ -41,13 +43,17 @@ local msgTable = {
 
 --A porta 8080 é passada como parâmetro para o método call
 ncluasoap.call(msgTable, getResponse, "1.1", 8080)
-[/lua]
+</code>
+</pre>
+
 
 
 ### Mesmo exemplo usando a nova versão do módulo:
 
 
-[lua]
+<pre>
+<code class="lua">
+
 local msgTable = {
   --A porta 8080 é passada diretamente na URL do Web Service
   address = "http://myserver.com:8080/MyWebService",
@@ -59,6 +65,8 @@ local msgTable = {
 }
 
 ncluasoap.call(msgTable, getResponse, "1.1")
-[/lua]
+</code>
+</pre>
+
 
 Para baixar esta nova versão, acesse [http://ncluasoap.manoelcampos.com#download](http://ncluasoap.manoelcampos.com#download)

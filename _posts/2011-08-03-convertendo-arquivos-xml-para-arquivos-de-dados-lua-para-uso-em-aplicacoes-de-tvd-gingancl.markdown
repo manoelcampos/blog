@@ -61,13 +61,21 @@ A implementação realizada está disponível no final do artigo, juntamente com
 
 Para usar a ferramenta de linha de comando há duas opções. A primeira é entrar no diretório bin em um terminal e executar:
 
-[bash]java com.manoelcampos.Xml2LuaApp NomeArquivoXML[/bash]
+<pre>
+<code class="bash">
+java com.manoelcampos.Xml2LuaApp NomeArquivoXML</code>
+</pre>
+
 
 Note que deve-se informar o nome de um arquivo XML. A aplicação gerará um arquivo Lua de mesmo nome, dentro do diretório atual (bin).
 
 Outra forma de uso é por meio do pacote xml2lua.jar (que contém todos os arquivos dos subdiretório de bin, facilitando a distribuição da aplicação). Para executá-lo, no terminal digite:
 
-[bash]java -jar xml2lua.jar NomeArquivoXML[/bash]
+<pre>
+<code class="bash">
+java -jar xml2lua.jar NomeArquivoXML</code>
+</pre>
+
 
 
 ## Estudo de caso
@@ -77,39 +85,47 @@ Para exemplificar o uso da ferramenta, vamos imaginar que temos uma aplicação 
 
 Para isto, usaremos um arquivo de nome produtos.xml, com o conteúdo a seguir (tal arquivo está disponível no pacote para download).
 
-[xml]
-<produtos>
-	<produto id="12">
-	  <descricao>TV 32''</descricao>
-	  <marca>Samsung</marca>
-	  <preco>1200</preco>
-	</produto>
-	<produto id="150">
-	  <descricao>Netbook</descricao>
-	  <marca>Asus</marca>
-	  <preco>900</preco>
-	</produto>
-	<produto id="198">
-	  <descricao>Impressora Laser</descricao>
-	  <marca>Samsung</marca>
-	  <preco>399</preco>
-	</produto>	
-	<produto id="201">
-	  <descricao>Resma de Papel A4 (500 folhas)</descricao>
-	  <marca>Office</marca>
-	  <preco>9</preco>
-	</produto>
-	<produto id="17">
-	  <descricao>Resma de Papel A4 (100 folhas)</descricao>
-	  <marca>Office</marca>
-	  <preco>3</preco>
-	</produto>	
-</produtos>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;produtos>
+	&lt;produto id="12">
+	  &lt;descricao>TV 32''&lt;/descricao>
+	  &lt;marca>Samsung&lt;/marca>
+	  &lt;preco>1200&lt;/preco>
+	&lt;/produto>
+	&lt;produto id="150">
+	  &lt;descricao>Netbook&lt;/descricao>
+	  &lt;marca>Asus&lt;/marca>
+	  &lt;preco>900&lt;/preco>
+	&lt;/produto>
+	&lt;produto id="198">
+	  &lt;descricao>Impressora Laser&lt;/descricao>
+	  &lt;marca>Samsung&lt;/marca>
+	  &lt;preco>399&lt;/preco>
+	&lt;/produto>	
+	&lt;produto id="201">
+	  &lt;descricao>Resma de Papel A4 (500 folhas)&lt;/descricao>
+	  &lt;marca>Office&lt;/marca>
+	  &lt;preco>9&lt;/preco>
+	&lt;/produto>
+	&lt;produto id="17">
+	  &lt;descricao>Resma de Papel A4 (100 folhas)&lt;/descricao>
+	  &lt;marca>Office&lt;/marca>
+	  &lt;preco>3&lt;/preco>
+	&lt;/produto>	
+&lt;/produtos>
+</code>
+</pre>
+
 
 Para converter tal arquivo para Lua, entre no diretório bin por um terminal e execute:
 
-[bash]java -jar xml2lua.jar produtos.xml[/bash]
+<pre>
+<code class="bash">
+java -jar xml2lua.jar produtos.xml</code>
+</pre>
+
 
 Isto considerando que o arquivo produtos.xml está no diretório bin.
 
@@ -118,7 +134,9 @@ Como as tabelas da linguagem Lua possuem a excelente característica de poderem 
 
 Assim, o código Lua gerado no arquivo produtos.lua ficará como mostrado a seguir:
 
-[lua]
+<pre>
+<code class="lua">
+
 return  {
   [12]={
     descricao = "TV 32''", marca = "Samsung", preco = "1200",
@@ -136,19 +154,25 @@ return  {
     descricao = "Resma de Papel A4 (100 folhas)", marca = "Office", preco = "3",
   },
 }
-[/lua]
+</code>
+</pre>
+
 
 Os valores entre chaves são os índices da tabela. Desta forma, nossa tabela não tem índices sequenciais (1, 2, 3...) e sim 12, 150, 198, 201 e 17. O nome do atributo que será usado como índice da tabela Lua deve ser id, mas o código Java pode ser alterado para o nome de atributo que desejar (ao até mesmo alterado para passar tal informação por parâmetro para a aplicação).
 
 Tal recurso é de fundamental importância, considerando agora o seguinte cenário: a aplicação de TVD em NCL/Lua precisa exibir na tela inicial apenas os produtos em destaque. Tais produtos estão relacionados em outro arquivo XML de nome destaques.xml, cujo conteúdo é apresentado a seguir (também disponível no pacote para download).
 
-[xml]
-<destaques>
-  <destaque id="150" />
-  <destaque id="17" />  
-  <destaque id="198" />  
-</destaques>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;destaques&gt;
+  &lt;destaque id="150" /&gt;
+  &lt;destaque id="17" /&gt;  
+  &lt;destaque id="198" /&gt;  
+&lt;/destaques&gt;
+</code>
+</pre>
+
 
 No exemplo, de todos os produtos a serem exibidos na aplicação de TVD (no nosso exemplo são um total de 5), apenas 3 devem ser exibidos na tela inicial. Os outros produtos existentes poderiam ser encontrados pelo usuário por meio de um campo de busca na aplicação.
 
@@ -156,7 +180,9 @@ Com o requisito apresentado, o uso do id do produto como índice da tabela Lua (
 
 Usando o id dos produtos como índice da tabela produtos, para exibir os produtos em destaque, precisamos fazer um for apenas na tabela de destaques. Como o arquivo destaques.xml (apresentado anteriormente) não possui nenhum sub-elemento, tendo apenas o atributo id, tal atributo não é usado como índice da tabela destaques e sim como um campo normal. Assim, os índices da tabela destaque serão sequenciais. Desta forma, o código Lua gerado a partir do destaques.xml será como mostrado abaixo:
 
-[lua]
+<pre>
+<code class="lua">
+
 return  {
  {
   id=150
@@ -168,7 +194,9 @@ return  {
   id=198
  },
 }
-[/lua]
+</code>
+</pre>
+
 
 A partir de um for em tal tabela, pegando-se o valor do campo id, pode-se acessar a tabela produtos diretamente (sem precisar fazer um for nela) na posição do id da tabela destaques. Assim, serão apenas 3 iterações.
 
@@ -178,7 +206,9 @@ A partir de um for em tal tabela, pegando-se o valor do campo id, pode-se acessa
 
 Após terem sido convertidos os arquivos produtos.xml e destaques.xml para Lua, podemos ter uma aplicação Lua  para carregar tais arquivos Lua e exibir os dados, como pode ser visto no trecho de código a seguir. A aplicação não possui interface gráfica pois isto está fora do escopo do artigo. Ela apenas exibe os dados no terminal. Tal código está disponível no arquivo app.lua, no pacote para download.
 
-[lua]
+<pre>
+<code class="lua">
+
 local produtos = dofile("produtos.lua")
 local destaques = dofile("destaques.lua")
 
@@ -187,13 +217,19 @@ for i, dest in pairs(destaques) do
     prod = produtos[dest.id]
     print("Id: ", dest.id, "Marca:", prod.marca, "Preço:", prod.preco, "Descrição:", prod.descricao)
 end
-[/lua]
+</code>
+</pre>
+
 
 As duas primeiras linhas carregam os arquivos de dados Lua e armazenam a tabela contida neles em variáveis locais. Em seguida é feito um for na tabela de destaques, pegando o id de cada produto em destaque, e por meio dele, acessando diretamente os dados do produto na tabela produto, exibindo-os no terminal.
 
 Como tal aplicação é apenas de exemplo e não usa nenhum recurso do Ginga-NCL, a mesma pode ser executada fora dele, em um terminal (obviamente tendo o interpretador Lua instalado) com o comando:
 
-[bash]lua app.lua[/bash]
+<pre>
+<code class="bash">
+lua app.lua</code>
+</pre>
+
 
 
 ## Conclusão

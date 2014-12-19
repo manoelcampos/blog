@@ -42,19 +42,31 @@ Para iniciar o processo de instalação do LuaProfiler no Ginga Virtual Set-top 
 
 No terminal SSH, baixe o LuaProfiler 2.0.2 com o comando a seguir (você também pode baixar uma versão modificada para o Ginga-NCL no final deste artigo):
 
-[bash]wget http://luaforge.net/frs/download.php/3400/luaprofiler-2.0.2.tar.gz[/bash]
+<pre>
+<code class="bash">wget http://luaforge.net/frs/download.php/3400/luaprofiler-2.0.2.tar.gz</code>
+</pre>
+
 
 Agora descompacte o arquivo baixado:
 
-[bash]tar -zxvf luaprofiler-2.0.2.tar.gz[/bash]
+<pre>
+<code class="bash">tar -zxvf luaprofiler-2.0.2.tar.gz</code>
+</pre>
+
 
 Entre no diretório criado:
 
-[bash]cd luaprofiler-2.0.2[/bash]
+<pre>
+<code class="bash">cd luaprofiler-2.0.2</code>
+</pre>
+
 
 Edite o arquivo config.linux com o editor pico:
 
-[bash]pico config.linux[/bash]
+<pre>
+<code class="bash">pico config.linux</code>
+</pre>
+
 
 Altere o texto **/usr/local/include/lua51** para **/usr/local/include/**
 Este é o caminho dos arquivos header do Lua dentro do Ginga.
@@ -62,15 +74,24 @@ Para sair do pico, pressione CTRL+X, depois Y e ENTER para salvar
 
 Edite o arquivo Makefile.linux com o pico:
 
-[bash]pico Makefile.linux[/bash]
+<pre>
+<code class="bash">pico Makefile.linux</code>
+</pre>
+
 
 Altere a linha
 
-[bash]mkdir -p bin && $(LD) -Bshareable -o $(PROFILER_OUTPUT) $(OBJS)[/bash]
+<pre>
+<code class="bash">mkdir -p bin && $(LD) -Bshareable -o $(PROFILER_OUTPUT) $(OBJS)</code>
+</pre>
+
 
 para o valor abaixo
 
-[bash]mkdir -p bin && $(LD) -Bshareable -o $(PROFILER_OUTPUT) $(OBJS) /usr/local/lib/liblua.a[/bash]
+<pre>
+<code class="bash">mkdir -p bin && $(LD) -Bshareable -o $(PROFILER_OUTPUT) $(OBJS) /usr/local/lib/liblua.a</code>
+</pre>
+
 
 Isto fará com que as bibliotecas padrões de Lua sejam linkadas no módulo luaprofiler.so que será criado na compilação.
 Tal alteração é necessária pois, com a instalação padrão ou usando LuaRocks, provavelmente você receberá o erro "undefined symbol: luaL_openlib" quando tentar executar o LuaProfiler em uma aplicação NCLua, indicando que a função luaL_openlib não existe no interpretador Lua utilizado no Ginga. Procurando na web vi que tal função foi substituída por luaL_register, mas alterando o código para esta função também não compila, indicando que tal função não existe.
@@ -81,11 +102,17 @@ Feita a alteração, saia do editor pressionando CTRL+X, depois Y e ENTER para s
 
 Agora faça uma cópia do arquivo Makefile.linux com o nome de Makefile (pois o comando make procurará um arquivo com este nome):
 
-[bash]cp Makefile.linux Makefile[/bash]
+<pre>
+<code class="bash">cp Makefile.linux Makefile</code>
+</pre>
+
 
 Compile os fontes e instale o módulo com os comandos abaixo:
 
-[bash]make && make install[/bash]
+<pre>
+<code class="bash">make && make install</code>
+</pre>
+
 
 
 ## Usando o LuaProfiler
@@ -107,7 +134,10 @@ Usar o script summary.lua é bem simples. Para facilitar, copie o mesmo para o d
 
 Agora, estando dentro do diretório do arquivo profiler.log, basta executar o comando abaixo:
 
-[bash]lua summary.lua -v profiler.log > summary.xls[/bash]
+<pre>
+<code class="bash">lua summary.lua -v profiler.log > summary.xls</code>
+</pre>
+
 
 Tal comando vai ler o arquivo profiler.log e agrupar os resultados, gerando um arquivo summary.xls. Tal arquivo pode ser aberto em um aplicativo de planilhas eletrônicas como o OpenOffice Calc. O arquivo tem as colunas separadas por TAB. Assim, ao abrir no OpenOffice, será mostrada uma janela para importar o summary.xls para uma planilha. Nesta tela você deve informar que as colunas estão separadas por TAB. Após importar o arquivo, basta salvar para o formato nativo do OpenOffice ou do Microsoft Office.
 

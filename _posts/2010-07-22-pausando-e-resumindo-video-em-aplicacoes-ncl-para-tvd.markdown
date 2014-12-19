@@ -48,25 +48,33 @@ Vamos primeiro criar um diretório de nome pause-resume para a aplicação. Dent
 ## Criando o NCL
 
 
-Agora crie um documento main.ncl no diretório pause-resume. Vamos inserir duas regiões, uma para o vídeo e outra para exibir os botões de pause e play, usando o código abaixo dentro da tag <head>.
+Agora crie um documento main.ncl no diretório pause-resume. Vamos inserir duas regiões, uma para o vídeo e outra para exibir os botões de pause e play, usando o código abaixo dentro da tag &lt;head&gt;.
 
-[xml]
-<regionBase
-    <region id="rgVideo" width="100%" height="100%" zIndex="0" />
-    <region id="rgBtn" width="48" height="48" zIndex="1" left="0" top="85%" />
-</regionBase>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;regionBase
+    &lt;region id="rgVideo" width="100%" height="100%" zIndex="0" /&gt;
+    &lt;region id="rgBtn" width="48" height="48" zIndex="1" left="0" top="85%" /&gt;
+&lt;/regionBase&gt;
+</code>
+</pre>
+
 
 Observe que foi definido o atributo zIndex para a região dos botões (rgBtn), para que a mesma fique sobre a região do vídeo.
 
-A região do vídeo ocupará toda a tela e a dos botões ficarão no canto inferior esquerdo. Precisamos agora definir os descritos para apresentar as mídias (o vídeo e os botões), também dentro da tag <head>, como mostrado abaixo:
+A região do vídeo ocupará toda a tela e a dos botões ficarão no canto inferior esquerdo. Precisamos agora definir os descritos para apresentar as mídias (o vídeo e os botões), também dentro da tag &lt;head&gt;, como mostrado abaixo:
 
-[xml]
-<descriptorBase>
-    <descriptor id="dVideo" region="rgVideo" />
-    <descriptor id="dBtn" region="rgBtn" />
-</descriptorBase>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;descriptorBase&gt;
+    &lt;descriptor id="dVideo" region="rgVideo" /&gt;
+    &lt;descriptor id="dBtn" region="rgBtn" /&gt;
+&lt;/descriptorBase&gt;
+</code>
+</pre>
+
 
 Nossos descritos não vão definir nenhum comportamento adicional às mídias, mas são obrigatórios para que as mesmas possam ser apresentadas.
 
@@ -74,22 +82,30 @@ Nossos descritos não vão definir nenhum comportamento adicional às mídias, m
 ## Definindo as Mídias
 
 
-Agora vamos incluir nossas mídias na aplicação. Dentro da tag <body> adicione o codigo abaixo:
+Agora vamos incluir nossas mídias na aplicação. Dentro da tag &lt;body&gt; adicione o codigo abaixo:
 
-[xml]
-<media id="video"        src="media/video.avi"   descriptor="dVideo"/>
-<media id="btnPause"   src="media/pause.png"  descriptor="dBtn"/>
-<media id="btnPlay"     src="media/play.png"    descriptor="dBtn"/>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;media id="video"       src="media/video.avi"   descriptor="dVideo"/&gt;
+&lt;media id="btnPause"    src="media/pause.png"   descriptor="dBtn"/&gt;
+&lt;media id="btnPlay"     src="media/play.png"    descriptor="dBtn"/&gt;
+</code>
+</pre>
+
 
 Observe o nome do seu arquivo de vídeo para inserir corretamente no atributo src da mídia video.
 
 Precisamos agora definir as mídias que serão iniciadas quando a aplicação for executada. Para isto, vamos incluir uma porta para iniciar o vídeo e outra para iniciar o botão pause (poderíamos definir um elo para, quando iniciar o vídeo, iniciar o botão pause, mas prefiro definir duas portas), usando o código a seguir:
 
-[xml]
-<port id="pInicio" component="video"/>
-<port id="pBotao"  component="btnPause"/>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;port id="pInicio" component="video"/&gt;
+&lt;port id="pBotao"  component="btnPause"/&gt;
+</code>
+</pre>
+
 
 Se você executar a aplicação agora, aparecerá o vídeo, com o botão pause no canto inferior esquerdo.
 
@@ -97,49 +113,57 @@ Se você executar a aplicação agora, aparecerá o vídeo, com o botão pause n
 ## Definindo os conectores
 
 
-Para possibilitar o comportamento de pausar e resumir o vídeo, precisamos definir alguns conectores. Assim, dentro da tag <head>, insira uma tag <connectorBase>. Dentro desta, incluiremos os conectores.
+Para possibilitar o comportamento de pausar e resumir o vídeo, precisamos definir alguns conectores. Assim, dentro da tag &lt;head&gt;, insira uma tag &lt;connectorBase&gt;. Dentro desta, incluiremos os conectores.
 
 Precisamos definir um conector para quando uma tecla for pressionada, dar pausa em uma mídia, iniciar e parar determinadas mídias. Assim, inclua o conector abaixo:
 
-[xml]
-<!--Quando uma tecla for pressionada, 
-pausa, inicia e para determinadas mídias-->
-<causalConnector id="onKeySelecionPauseStartStop">
-		<connectorParam name="keyCode"/>
+<pre>
+<code class="xml">
 
-		<simpleCondition role="onSelection" key="$keyCode"/>
-		<compoundAction operator="par">
-                          <simpleAction role="pause" />
-                          <simpleAction role="start" />
-                          <simpleAction role="stop" />
-		</compoundAction>
-</causalConnector>
-[/xml]
+&lt;!--Quando uma tecla for pressionada, 
+pausa, inicia e para determinadas mídias--&gt;
+&lt;causalConnector id="onKeySelecionPauseStartStop"&gt;
+		&lt;connectorParam name="keyCode"/&gt;
+
+		&lt;simpleCondition role="onSelection" key="$keyCode"/&gt;
+		&lt;compoundAction operator="par"&gt;
+                          &lt;simpleAction role="pause" /&gt;
+                          &lt;simpleAction role="start" /&gt;
+                          &lt;simpleAction role="stop" /&gt;
+		&lt;/compoundAction&gt;
+&lt;/causalConnector&gt;
+</code>
+</pre>
+
 
 Observe que é definida um condição simples  para o conector, do tipo onSelection (quando uma tecla for pressionada). Tal condição precisa do atributo key para indicar qual tecla acionará a(s) ação(ões) do conector.
 
-Poderíamos definir uma tecla fixa para este atributo, como o valor GREEN, para especificar que a(s) ação(ões) será(ão) executada(s) quando a tecla verde for pressionada. Mas o ideal é definir um parâmetro, para que especifiquemos a tecla apenas ao definir o elo que usará o conector, tornando o mesmo mais flexível. Por este motivo é que temos a tag <connectorParam name="keyCode"/>, que define um parâmetro a ser usado no atributo key da tag <simpleCondition>.
+Poderíamos definir uma tecla fixa para este atributo, como o valor GREEN, para especificar que a(s) ação(ões) será(ão) executada(s) quando a tecla verde for pressionada. Mas o ideal é definir um parâmetro, para que especifiquemos a tecla apenas ao definir o elo que usará o conector, tornando o mesmo mais flexível. Por este motivo é que temos a tag &lt;connectorParam name="keyCode"/&gt;, que define um parâmetro a ser usado no atributo key da tag &lt;simpleCondition&gt;.
 
-O parâmetro, definido com a tag  <connectorParam>, pode ter qualquer nome. Ao referenciá-lo na tag <simpleCondition>, é preciso informar seu nome precedido de um $.
+O parâmetro, definido com a tag  &lt;connectorParam&gt;, pode ter qualquer nome. Ao referenciá-lo na tag &lt;simpleCondition&gt;, é preciso informar seu nome precedido de um $.
 
-Nosso conector ainda possui uma tag <compoundAction>, que define um conjunto de ações a serem executadas quando a condição, definida em <simpleCondition> for satisfeita. O atributo operator da tag <compoundAction> especifica se as ações serão executadas em paralelo (par) ou sequencialmente (seq). Dentro desta tag foram definidas as ações pause, start e stop.
+Nosso conector ainda possui uma tag &lt;compoundAction&gt;, que define um conjunto de ações a serem executadas quando a condição, definida em &lt;simpleCondition&gt; for satisfeita. O atributo operator da tag &lt;compoundAction&gt; especifica se as ações serão executadas em paralelo (par) ou sequencialmente (seq). Dentro desta tag foram definidas as ações pause, start e stop.
 
 Agora precisamos definir outro conector para, quando uma tecla for pressionada, resumir, iniciar e parar determinadas mídias. Tal conector é apresentado abaixo, possuindo a mesma estrutura do anterior, dispensando explicações:
 
-[xml]
-<!--Quando uma tecla for pressionada, 
-resume, inicia e para determinadas mídias-->
-<causalConnector id="onKeySelecionResumeStartStop">
-	<connectorParam name="keyCode"/>
+<pre>
+<code class="xml">
 
-	<simpleCondition role="onSelection" key="$keyCode"/>
-          <compoundAction operator="par">
-                  <simpleAction role="resume" />
-                  <simpleAction role="start" />
-                  <simpleAction role="stop" />
-          </compoundAction>
-</causalConnector>
-[/xml]
+&lt;!--Quando uma tecla for pressionada, 
+resume, inicia e para determinadas mídias--&gt;
+&lt;causalConnector id="onKeySelecionResumeStartStop"&gt;
+	&lt;connectorParam name="keyCode"/&gt;
+
+	&lt;simpleCondition role="onSelection" key="$keyCode"/&gt;
+          &lt;compoundAction operator="par"&gt;
+                  &lt;simpleAction role="resume" /&gt;
+                  &lt;simpleAction role="start" /&gt;
+                  &lt;simpleAction role="stop" /&gt;
+          &lt;/compoundAction&gt;
+&lt;/causalConnector&gt;
+</code>
+</pre>
+
 
 
 ## Definindo os Elos para Habilitar os Comportamentos da Aplicação
@@ -151,37 +175,45 @@ Como o Ginga Virtual STB não possui teclas de função associadas aos botões P
 
 Para controlar a exibição das imagens de play e pause, quando o botão azul for pressionado, será dado pausa no vídeo, a imagem do botão pause será parada e a do botão play será iniciada. Quando for pressionado o botão verde, o vídeo será resumido, a imagem do botão play será parada e a do botão pause será iniciada.
 
-Então, vamos definir os elos. O primeiro elo controlará a função de pausa, usando o código abaixo dentro da tag <body>:
+Então, vamos definir os elos. O primeiro elo controlará a função de pausa, usando o código abaixo dentro da tag &lt;body&gt;:
 
-[xml]
-<!--Quando a tecla azul for pressionada, pausa o vídeo,
-inicia a imagem play e para a imagem pause-->
-<link xconnector="onKeySelecionPauseStartStop">
-	<bind component="btnPause" role="onSelection">
-		<bindParam name="keyCode" value="BLUE"/>
-	</bind>
-	<bind component="video" role="pause" />
-     <bind role="start" component="btnPlay" />
-     <bind role="stop" component="btnPause" />
-</link>
-[/xml]
+<pre>
+<code class="xml">
 
-Observando o código acima, para o papel onSelecion (usado na primeira tag <bind>), que define que uma tecla deve ser pressionada para executar a(s) ação(ões) definida(s) em seguida, é incluída uma sub-tag <bindParam>. Esta especifica qual tecla deve ser pressionada para acionar as ações de parar, iniciar e pausar determinadas mídias. Dentro dela, é incluído um atributo name, onde devemos especificar o nome do parâmetro definido dentro do conector utilizado pelo elo (neste caso, o conector onKeySelecionPauseStartStop). O atributo value define qual tecla deve ser pressionada para executar as ações definidas no conector. Nele foi especificada que a tecla azul (BLUE) deve ser pressionada para executar as ações.
+&lt;!--Quando a tecla azul for pressionada, pausa o vídeo,
+inicia a imagem play e para a imagem pause--&gt;
+&lt;link xconnector="onKeySelecionPauseStartStop"&gt;
+	&lt;bind component="btnPause" role="onSelection"&gt;
+		&lt;bindParam name="keyCode" value="BLUE"/&gt;
+	&lt;/bind&gt;
+	&lt;bind component="video" role="pause" /&gt;
+     &lt;bind role="start" component="btnPlay" /&gt;
+     &lt;bind role="stop" component="btnPause" /&gt;
+&lt;/link&gt;
+</code>
+</pre>
+
+
+Observando o código acima, para o papel onSelecion (usado na primeira tag &lt;bind&gt;), que define que uma tecla deve ser pressionada para executar a(s) ação(ões) definida(s) em seguida, é incluída uma sub-tag &lt;bindParam&gt;. Esta especifica qual tecla deve ser pressionada para acionar as ações de parar, iniciar e pausar determinadas mídias. Dentro dela, é incluído um atributo name, onde devemos especificar o nome do parâmetro definido dentro do conector utilizado pelo elo (neste caso, o conector onKeySelecionPauseStartStop). O atributo value define qual tecla deve ser pressionada para executar as ações definidas no conector. Nele foi especificada que a tecla azul (BLUE) deve ser pressionada para executar as ações.
 
 Agora precisamos definir o outro elo, que controlará a função de resumir o vídeo. O mesmo é apresentado no código abaixo e tem a mesma estrutura do anterior, dispensando explicações:
 
-[xml]
-<!--Quando pressionada a tecla verde, resume o vídeo,
-inicia a imagem pause e para a imagem play-->
-<link xconnector="onKeySelecionResumeStartStop">
-	<bind component="btnPlay" role="onSelection">
-		<bindParam name="keyCode" value="GREEN"/>
-	</bind>
-	<bind component="video" role="resume" />
-     <bind role="start" component="btnPause" />
-     <bind role="stop"  component="btnPlay" />
-</link>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;!--Quando pressionada a tecla verde, resume o vídeo,
+inicia a imagem pause e para a imagem play--&gt;
+&lt;link xconnector="onKeySelecionResumeStartStop"&gt;
+	&lt;bind component="btnPlay" role="onSelection"&gt;
+		&lt;bindParam name="keyCode" value="GREEN"/&gt;
+	&lt;/bind&gt;
+	&lt;bind component="video" role="resume" /&gt;
+     &lt;bind role="start" component="btnPause" /&gt;
+     &lt;bind role="stop"  component="btnPlay" /&gt;
+&lt;/link&gt;
+</code>
+</pre>
+
 
 
 ## Conclusão

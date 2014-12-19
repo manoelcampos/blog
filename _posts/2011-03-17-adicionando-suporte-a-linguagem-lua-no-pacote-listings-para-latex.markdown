@@ -65,7 +65,9 @@ Pronto, módulo instalado. Para usar é bem simples, no seu arquivo tex, inclua 
 
 Com o comando \lstset, que precisa ser chamado apenas uma vez (antes de você incluir um trecho de código fonte para ser destacado pelo módulo) você deve configurar o estilo da listagem de código. Veja exemplo abaixo:
 
-[tex]
+<pre>
+<code class="tex">
+
 \lstset{
 %Numeração de linhas à esquerda
 numbers=left,
@@ -90,15 +92,21 @@ breakautoindent=true,
 %Estilos de comentários de Lua para uma e várias linhas
 morecomment=[l]{--},
 morecomment=[s]{--[[}{--]]}}
-[/tex]
+</code>
+</pre>
+
 
 Para destacar a sintaxe de um trecho de código Lua (nosso objetivo final), é bem simples, como mostrado a seguir:
 
-[tex]
+<pre>
+<code class="tex">
+
 \begin{lstlisting}[[caption=Título do trecho de código, label=list:meu-codigo-lua, language=lua]]
 --Inclua seu código Lua aqui
 \end{lstlisting}
-[/tex]
+</code>
+</pre>
+
 
 O atributo caption é para você definir um título para o seu trecho de código. Label define um rótulo que você pode usar para fazer referências a tal trecho de código com o comando \ref{nome-do-rotulo}, onde no exemplo, definimos como list:meu-codigo-lua.
 Por fim, language=lua define que o código é em linguagem Lua (poderia ser Java, C e várias outras que já são padrões no módulo listings).
@@ -110,9 +118,13 @@ O pacote listings também suporta estilos de formatação (que funciona com qual
 
 Para usar algum tema é bem simples. Basta alterar a linha \begin{listings} do exemplo anterior para a linha mostrada abaixo:
 
-[tex]
+<pre>
+<code class="tex">
+
 \begin{lstlisting}[[caption=Título do trecho de código, label=list:meu-codigo-lua, language=lua, style=colorful,style=numbered]]
-[/tex]
+</code>
+</pre>
+
 
 Para usar o estilo colorful, é preciso adicionar o pacote color no seu documento tex. A figura a seguir mostra como o código ficará no PDF gerado a partir do documento tex.
 

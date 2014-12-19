@@ -30,7 +30,9 @@ Para usar em suas aplicações Lua (de TV Digital ou não), basta colocar o arqu
 
 Para usar o módulo veja o exemplo de validação de CPF a seguir:
 
-[lua]
+<pre>
+<code class="lua">
+
 require "valid"
 local cpf = "11111111111"
 if valid.cpf(cpf) then
@@ -38,7 +40,9 @@ if valid.cpf(cpf) then
 else
    print("CPF inválido")
 end
-[/lua]
+</code>
+</pre>
+
 
 Fiz poucos testes mas todos deram o resultado esperado. Usem por sua conta e risco.
 

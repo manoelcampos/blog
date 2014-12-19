@@ -20,9 +20,12 @@ tags:
 Um post rápido hoje, pra não dizerem que o blog morreu :)
 Vou mostrar rapidamente como realizar um port scan no Linux usando o comando netcat (nc). Veja comando abaixo:
 
-[bash]
+<pre>
+<code class="bash">
 nc -z -v IpOuHostname PortaInicial-PortaFinal
-[/bash]
+</code>
+</pre>
+
 
 
 
@@ -38,15 +41,19 @@ Bem simples né? :)
 
 Se desejar exibir apenas as mensagens que indiquem portas abertas, use o comando como mostrado abaixo:
 
-[bash]
+<pre><code class="bash">
 nc -z -v IpOuHostname PortaInicial-PortaFinal 2>&1 | grep succeeded
-[/bash]
+</code>
+</pre>
 
 Veja o exemplo a seguir, que procura portas abertas no host de IP 10.1.1.1, desde a porta 1 até a 65535, exibindo apenas as mensagens de conexão bem sucedida (ou seja, porta aberta):
 
-[bash]
+<pre>
+<code class="bash">
 nc -z -v 10.1.1.1 1-65535 2>&1 | grep succeeded
-[/bash]
+</code>
+</pre>
+
 
 O 2>&1 no comando acima indica que a saída de erro (2) deve ser direcionada pra saída padrão (1).
 Usando o grep, filtramos então as mensagens que contenham a palavra succeeded e pronto.

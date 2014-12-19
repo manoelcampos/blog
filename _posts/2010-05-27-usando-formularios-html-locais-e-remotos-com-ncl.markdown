@@ -22,11 +22,6 @@ tags:
 [![](http://manoelcampos.com/wp-content/uploads/html.png)](http://www.iconarchive.com/show/adobe-cs4-icons-by-deleket/File-Adobe-Dreamweaver-HTML-01-icon.html)Neste artigo vou mostrar como é simples utilizar um formulário HTML, local ou remoto, dentro de uma aplicação NCL para TV Digital.
 
 
-## 
-
-
-
-
 ## Pré-requisitos
 
 
@@ -39,29 +34,27 @@ Um [tutorial de como estruturar o ambiente de desenvolvimento](http://www.peta5
 
 
 
-
-
 ## Iniciando
 
 
 Você pode criar um novo projeto no Eclipse, ou usar um projeto de aplicações NCL existente. Depois de selecionado o projeto desejado (ou criado um novo), crie uma página HTML, de nome form.html, com o código abaixo:
 
 [html]
-<html>
-<head>
-<title>Formulário</title>
-</head>
-<body>
-	<form id="frm" method="get">
-		Nome: <input type="text" id="nome" name="nome" size="30" /><br/>
-		Email: <input type="text" id="email" name="email" size="30" /><br/>
-		<input type="submit" value="ok" name="Enviar"  />
-	</form>
-	<hr/>
-	<p/>
-	<a href="form2.html">Ir para página 2</a>
-</body>
-</html>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Formulário&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;form id="frm" method="get"&gt;
+		Nome: &lt;input type="text" id="nome" name="nome" size="30" /&gt;&lt;br/&gt;
+		Email: &lt;input type="text" id="email" name="email" size="30" /&gt;&lt;br/&gt;
+		&lt;input type="submit" value="ok" name="Enviar"  /&gt;
+	&lt;/form&gt;
+	&lt;hr/&gt;
+	&lt;p/&gt;
+	&lt;a href="form2.html"&gt;Ir para página 2&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 [/html]
 
 Esta página apenas contém um formulário HTML comum. Crie uma nova página de nome form2.html, e coloque o conteúdo que desejar, apenas para mostrar um link entre as duas páginas.
@@ -73,27 +66,35 @@ A figura a seguir mostra o formulário criado.
 ## Criando o documento NCL
 
 
-Agora crie um novo documento NCL usando File >> New >> Other >> NCL >> NCL Document, com o nome de main.ncl (ou o nome que desejar). Vamos definir a região e o descritor para exibição da página HTML na aplicação NCL. Assim, dentro da tag head, insira o trecho de código abaixo:
+Agora crie um novo documento NCL usando File &gt;&gt; New &gt;&gt; Other &gt;&gt; NCL &gt;&gt; NCL Document, com o nome de main.ncl (ou o nome que desejar). Vamos definir a região e o descritor para exibição da página HTML na aplicação NCL. Assim, dentro da tag head, insira o trecho de código abaixo:
 
-[xml]
-		<regionBase>
-			<region id="rgHtml" width="100%" height="100%" />
-		</regionBase>
+<pre>
+<code class="xml">
 
-		<descriptorBase>
-			<descriptor id="dHtml" region="rgHtml" focusIndex="ixHtml" />
-		</descriptorBase>
-[/xml]
+		&lt;regionBase&gt;
+			&lt;region id="rgHtml" width="100%" height="100%" /&gt;
+		&lt;/regionBase&gt;
+
+		&lt;descriptorBase&gt;
+			&lt;descriptor id="dHtml" region="rgHtml" focusIndex="ixHtml" /&gt;
+		&lt;/descriptorBase&gt;
+</code>
+</pre>
+
 
 A única novidade aqui pode ser a propriedade focusIndex do descritor de nome dHtml. Esta propriedade é usada para definir o controle de foco à mídia que será associada a este descritor, no caso, a página HTML. No entanto, esta propriedade deve apontar para um elemento a ser definido, que chamamos de ixHtml (ix de index).
 
 Para definir o controle de foco para uma determinada mídia, devemos incluir uma mídia do tipo application/x-ginga-settings. Esta mídia possui uma propriedade do tipo service.currentKeyMaster, que define o controle de foco para a mídia a ela associada. No nosso caso, definirá o controle de foco para a página HTML, permitindo que possamos digitar dados nos campos do formulário. Assim, insira o trecho de código a seguir, dentro da tag body:
 
-[xml]
-		<media id="nodeSettings" type="application/x-ginga-settings">
-			<property name="service.currentKeyMaster" value="ixHtml" />
-		</media>
-[/xml]
+<pre>
+<code class="xml">
+
+		&lt;media id="nodeSettings" type="application/x-ginga-settings"&gt;
+			&lt;property name="service.currentKeyMaster" value="ixHtml" /&gt;
+		&lt;/media&gt;
+</code>
+</pre>
+
 
 O valor do atributo value define o nome do elemento de controle de foco que foi associado ao descritor dHtml, que por sua vez será associado à página HTML a ser inserida a seguir.
 
@@ -103,9 +104,13 @@ O valor do atributo value define o nome do elemento de controle de foco que foi 
 
 Agora, vamos exibir a página HTML na aplicação. Para isto, insira o trecho de código a seguir, dentro da tag body:
 
-[xml]
-<media id="html" src="form.html" descriptor="dHtml" type="text/html" />
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;media id="html" src="form.html" descriptor="dHtml" type="text/html" /&gt;
+</code>
+</pre>
+
 
 Veja que a mídia, de nome html, aponta para o arquivo form.html, que deve estar no mesmo diretório do nosso documento NCL. A mesma está vinculada ao descritor dHtml, que por sua vez está vinculado ao controlador de foco ixHtml, que permitirá que possamos digitar dados nos campos do formulário HTML.
 
@@ -113,9 +118,13 @@ Infelizmente a aparência de páginas HTML em aplicações NCL, pelo menos no Gi
 
 Bem, agora precisamos apenas incluir uma porta para iniciar a mídia html e fazê-la ser exibida na tela, inserindo o código abaixo dentro da tag body:
 
-[xml]
-<port id="pInicio" component="html"/>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;port id="pInicio" component="html"/&gt;
+</code>
+</pre>
+
 
 
 ## Conclusão

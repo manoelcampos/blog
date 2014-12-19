@@ -35,14 +35,23 @@ Seguem os passos necessários:
 Quase todos os tutoriais usam DSA (não sei e não estou muito interessado em saber a diferença entre os dois, mas são apenas algoritmos criptográficos diferentes).
 Então, use o comando abaixo para criar a chave pública no cliente (apenas pressione Enter em todas
 as perguntas, deixando as respostas padrões. Execute um man ssh-keygen para mais detalhes):
-[bash]ssh-keygen -t dsa[/bash]
+<pre>
+<code class="bash">ssh-keygen -t dsa</code>
+</pre>
+
 2. Adicione o conteúdo da chave pública, gerada no cliente, ao final do arquivo de chaves autorizadas no servidor. Assim, no terminal no cliente, execute o comando abaixo. Ele vai conectar ao servidor e já concatenar o conteúdo da chave gerada no cliente, ao final do arquivo de chaves autorizadas no servidor. A senha do usuário remoto será solicitada em sequência.
-[bash]cat ~/.ssh/id_dsa.pub | ssh usuario_remoto@servidor_remoto 'cat >> ~/.ssh/authorized_keys'[/bash]
+<pre>
+<code class="bash">cat ~/.ssh/id_dsa.pub | ssh usuario_remoto@servidor_remoto 'cat >> ~/.ssh/authorized_keys'</code>
+</pre>
+
 Se o comando a seguir informar que o arquivo ~/.ssh/authorized_keys não existe, conecte no servidor e execute o comando apresentado em 1 para criar o arquivo.
 
 3. Agora realize uma conexão ao servidor.
 Se tudo foi feito corretamente, não será solicitada a senha do usuario_remoto:
-[bash]ssh usuario_remoto@servidor_remoto[/bash]
+<pre>
+<code class="bash">ssh usuario_remoto@servidor_remoto</code>
+</pre>
+
 Se o seu servidor SSH for uma máquina virtual, cujo IP pode mudar, é provável que o processo deva ser refeito. Mas pelo menos o Ginga Virtual Set-top Box para VMWare, comigo, em modo NAT, o IP não altera, mesmo a máquina sendo reiniciada ou desligada.
 
 Bem, isto agilizou bastante o meu dia-a-dia no desenvolvimento de aplicações para TV Digital. Espero que seja útil para vocês também. T+

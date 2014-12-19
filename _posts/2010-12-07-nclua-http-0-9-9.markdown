@@ -32,7 +32,9 @@ Liberada nova versão do NCLua HTTP. Os novos recursos são listados a seguir. P
 
 Veja exemplo de uso da nova versão do módulo. As aplicações utilizando versões anteriores devem ser adaptadas para este novo modelo.
 
-[lua]
+<pre>
+<code class="lua">
+
 package.path = package.path .. ';lib/?.lua'
 require "http"
 
@@ -43,7 +45,9 @@ function callback(header, body)
 end
 
 http.request("http://manoelcampos.com/arquivos/pagina.html", callback)
-[/lua]
+</code>
+</pre>
+
 
 
 Observe que, como os arquivos do módulo não estão mais no diretório juntamente com as aplicações, tendo sido movidos para o diretório lib, é necessário adicionar tal diretório no path do interpretador Lua, usando a instrução apresentada na linha 1.

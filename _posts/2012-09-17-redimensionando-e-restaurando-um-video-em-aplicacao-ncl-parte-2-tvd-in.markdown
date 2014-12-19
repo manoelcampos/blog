@@ -39,23 +39,31 @@ Para isto, vamos inserir uma nova mídia do tipo "application/x-ginga-settings",
 
 Desta forma, vamos criar uma variável chamada bounds, em uma mídia deste tipo, para poder guardar as dimensões originais do vídeo. Assim, declare a mídia como mostrado a seguir:
 
-[xml]
-<media id="settings" type="application/x-ginga-settings">
-  <property name="bounds" />
-</media>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;media id=&quot;settings&quot; type=&quot;application/x-ginga-settings&quot;&gt;
+  &lt;property name=&quot;bounds&quot; /&gt;
+&lt;/media&gt;
+</code>
+</pre>
+
 
 Agora, precisaremos incluir um novo link onBeginSet para, quando o vídeo iniciar, guardar o valor da sua propriedade bounds na propriedade bounds da mídia settings (adicionada anteriormente). Com isto, quando desejarmos restaurar o vídeo, podemos pegar suas dimensões originais na propriedade bounds da mídia settings. Segue o código do link:
 
-[xml]
-<link xconnector="onBeginSet">
-  <bind role="onBegin" component="video" />
-  <bind role="get" component="video" interface="bounds"/>
-  <bind role="set" component="settings" interface="bounds">
-    <bindParam name="var" value="$get"/>
-  </bind>
-</link>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;link xconnector=&quot;onBeginSet&quot;&gt;
+  &lt;bind role=&quot;onBegin&quot; component=&quot;video&quot; /&gt;
+  &lt;bind role=&quot;get&quot; component=&quot;video&quot; interface=&quot;bounds&quot;/&gt;
+  &lt;bind role=&quot;set&quot; component=&quot;settings&quot; interface=&quot;bounds&quot;&gt;
+    &lt;bindParam name=&quot;var&quot; value=&quot;$get&quot;/&gt;
+  &lt;/bind&gt;
+&lt;/link&gt;
+</code>
+</pre>
+
 
 Note que estamos utilizando um papel "get" (no atributo role da tag bind) que não foi declarado no conector (já existente na aplicação anterior). O papel get é implicito em conectores que tenham o papel set.
 
@@ -65,29 +73,35 @@ Na verdade, para conectores que possuem o papel set, este papel que permite obte
 
 Com o uso dos papéis get e set, podemos obter o valor de uma propriedade de uma mídia e atribuir tal valor a outra propriedade de qualquer mídia. Esta atribuição não é direta, como podem ver no código. A variável $get é utilizada como uma variável intermediária. Logo, tal link poderia ser representado, de forma procedural, utilizando o seguinte pseudo-código:
 
-[php]
+<pre>
+<code class="php">
+
 $get = video.bounds;
- settings.bounds = $get;
-[/php]
+settings.bounds = $get;
+</code>
+</pre>
+
 
 Bem, pra finalizar, falta permitirmos que o vídeo volte ao tamanho original quando o usuário pressionar o botão vermelho (o link onBeginSet para reduzir o vídeo já existia na aplicação anterior). Para isto, precisaremos alterar o link onKeySelectionStopSet para o código seguinte:
 
-[xml]
-<link xconnector="onKeySelectionStopSet">
-  <bind role="onSelection" component="botao">
-    <bindParam name="key" value="RED"/>
-  </bind>
-  <bind role="get" component="settings" interface="bounds"/>
-  <bind role="set" component="video" interface="bounds">
-    <bindParam name="var" value="$get"/>
-  </bind>
-  <bind role="stop" component="botao" />
-</link>
-[/xml]
+<pre>
+<code class="xml">
+
+&lt;link xconnector=&quot;onKeySelectionStopSet&quot;&gt;
+  &lt;bind role=&quot;onSelection&quot; component=&quot;botao&quot;&gt;
+    &lt;bindParam name=&quot;key&quot; value=&quot;RED&quot;/&gt;
+  &lt;/bind&gt;
+  &lt;bind role=&quot;get&quot; component=&quot;settings&quot; interface=&quot;bounds&quot;/&gt;
+  &lt;bind role=&quot;set&quot; component=&quot;video&quot; interface=&quot;bounds&quot;&gt;
+    &lt;bindParam name=&quot;var&quot; value=&quot;$get&quot;/&gt;
+  &lt;/bind&gt;
+  &lt;bind role=&quot;stop&quot; component=&quot;botao&quot; /&gt;
+&lt;/link&gt;
+</code>
+</pre>
+
 
 Tal link utiliza a mesma lógica do anterior: utiliza os papéis get e set para pegar o valor da propriedade bounds da mídia settings (contendo as dimensões originais do vídeo) e atribuir de volta à propriedade bounds do vídeo.
 
 Então é isso. Finalizamos as 2 partes do artigo, deixando dinâmico a restauração das dimensões do vídeo usando apenas NCL.
 No link a seguir você pode baixar o código completo da aplicação. Até o próximo.
-
-[attachments title="Download" force_saveas="1" logged_users="0" size="custom"]

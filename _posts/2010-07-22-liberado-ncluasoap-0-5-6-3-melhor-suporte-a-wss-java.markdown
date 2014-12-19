@@ -44,13 +44,17 @@ Desta forma, como o NCLua SOAP ainda não possui uma ferramenta capaz de descobr
 
 Assim, em tal método foi adicionado um novo parâmetro, de nome externalXsd. Este é um parâmetro booleano, opcional, cujo valor padrão é false. Se for passado true, o módulo assumirá que o Web Service a ser consumido possui um arquivo XSD externo e gerará a requisição SOAP de acordo com o formato necessário. Abaixo é exemplificada uma chamada ao método call, para um Web Service com a citada característica:
 
-[lua]
+<pre>
+<code class="lua">
+
 --O último parâmetro (externalXsd), de valor true, indica
 --que o WS usa um arquivo XSD externo para especificar as definições
 --de tipos. Isto influencia no formato da requisição SOAP.
 --O valor padrão dele é false.
 ncluasoap.call(msgTable, getResponse, "1.1", 8080, true)
-[/lua]
+</code>
+</pre>
+
 
 Observe que o último parâmetro (true), indica que o Web Service usa um arquivo XSD externo ao WSDL. Veja documentação do método ncluasoap.call para mais detalhes.
 

@@ -22,7 +22,10 @@ tags:
 
 Convencionalmente utiliza-se o comando da seguinte forma:
 
-[bash]ssh usuario-remoto@ip-ou-nome-dns-servidor-remoto[/bash]
+<pre>
+<code class="bash">ssh usuario-remoto@ip-ou-nome-dns-servidor-remoto</code>
+</pre>
+
 
 Tal comando abre um shell para o servidor remoto, permitindo a execução de comandos no servidor, via terminal. A partir de uma sessão ssh, pode ser possível a realização de qualquer tarefa que o usuário faria a partir da interface gráfica do servidor (dependendo obviamente das permissões e conhecimento do usuário). Pode-se executar editores de texto como pico
 
@@ -38,19 +41,28 @@ Como exemplo, você poderia desejar conectar via SSH em um servidor Linux, e abr
 
 Pois bem, o aplicativo SSH para Linux (OpenSSH SSH client) permite isso, apenas utilizando-se o parâmetro -X (maiúsculo). Logo, o comando anteriormente mostrado ficaria como abaixo:
 
-[bash]ssh -X usuario-remoto@ip-ou-nome-dns-servidor-remoto[/bash]
+<pre>
+<code class="bash">ssh -X usuario-remoto@ip-ou-nome-dns-servidor-remoto</code>
+</pre>
+
 
 Com isto, é aberto um shell textual para a máquina remota. No entanto, se você executar alguma aplicação gráfica, como o Firefox (apenas digitando firefox), a mesma abrirá na interface gráfica da sua máquina local. Tal recurso é denominado **X11 Forwarding**. Isto permite que você opere a aplicação gráfica remota, como se fosse uma aplicação local.
 
 Como estamos em um shell textual, por padrão, não conseguimos trabalhar com várias aplicações simultaneamente, não tendo o recurso de multi-tarefa (a menos que abramos várias sessões de shell). Assim, se executarmos um aplicativo qualquer (gráfico ou não), não conseguiremos digitar outros comandos no terminal enquanto não fecharmos o aplicativo. Como desejamos abrir um aplicativo gráfico, que não operaremos por meio do terminal, podemos utilizar um & após o nome do aplicativo, para que o terminal seja liberado para digitação de outros comandos. Assim, para executar o Firefox, digite o comando abaixo:
 
-[bash]firefox &[/bash]
+<pre>
+<code class="bash">firefox &</code>
+</pre>
+
 
 Isto fará com que a aplicação seja executada, liberando o terminal para que outros comandos possam ser digitados.
 
 Bem, mas o mérito disso não é meu, é do professor Cláudio de Castro Monteiro, colega do [IFTO](http://www.ifto.edu.br), que descobriu tal fantástico parâmetro -X, no manual do comando ssh.
 
-[bash]man ssh[/bash]
+<pre>
+<code class="bash">man ssh</code>
+</pre>
+
 
 Veja o artigo "[Bê-á-bá do SSH, parte 6: X remoto](https://www.ibm.com/developerworks/mydeveloperworks/blogs/752a690f-8e93-4948-b7a3-c060117e8665/entry/b_C3_AA__C3_A1_b_C3_A1_do_ssh_parte_6_x_remoto10?lang=pt_br)" no site da IBM.
 

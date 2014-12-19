@@ -24,8 +24,24 @@
     </head>
     <body>
         <div id="wrap">
-            {% include 'nav.html' %}
+            {% include 'nav.html' %}            
             <div class="container">
+                <div>
+                    <script>
+                      (function() {
+                        var cx = '004136564319490649004:a1zcnc1-tyk';
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                            '//www.google.com/cse/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+
                 {% block content %}
                     {{ page.content }}
                 {% endblock %}
