@@ -1,5 +1,5 @@
 {
-    "name": "yosymfony/spress-theme-spresso",
+    "name": "spress/spress-theme-spresso",
     "type": "spress-theme",
     "description": "Spresso theme for Spress",
     "keywords": ["spress", "theme", "template"],
@@ -12,17 +12,18 @@
         }
     ],
     "require": {
-        "yosymfony/spress-installer": ">=1.0,<2.0",
-        "enzolutions/spress-plugin-google-analytics": "1.0.*@dev",
-		"yosymfony/spress-plugin-more-tag": "~1.0"
+        "spress/spress-installer": "2.0.*",
+        "enzolutions/spress-plugin-google-analytics": "2.0.*@dev",
+        "yosymfony/spress-plugin-more-tag": "2.0.*"
     },
-    "config": {
-        "vendor-dir": "_plugins/vendors"
+    "replace": {
+        "yosymfony/spress-theme-spresso": "self.version"
     },
+
     "extra": {
         "spress_name": "spresso",
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "2.0.x-dev"
         }
     }
 }

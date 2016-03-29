@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        {% include 'head.html' %}
+    </head>
+    <body>
+        {% include 'nav.html' %}
+
+        <div class="container spresso-wrap">
+			<div style="width: 100%" id="adsense">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- blog -->
+				<ins class="adsbygoogle"
+				     style="display:block"
+				     data-ad-client="ca-pub-5921494036699240"
+				     data-ad-slot="3541578449"
+				     data-ad-format="auto"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>	
+			</div>
+            {% block content %}
+                {{ page.content }}
+            {% endblock %}
+
+			<div style="width: 100%" id="adsense">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- blog -->
+				<ins class="adsbygoogle"
+				     style="display:block"
+				     data-ad-client="ca-pub-5921494036699240"
+				     data-ad-slot="3541578449"
+				     data-ad-format="auto"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>	
+			</div>
+            
+        </div>
+            
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        {% include 'menu.html' with { menu: site.bottom_menu } %}
+                    </div>
+                    <div class="col-md-6 text-right">
+                        {% include 'social-network.html' %}
+                    </div>
+                </div>
+                <p class="text-center">
+                    <a href="https://github.com/yosymfony/Spress-theme-spresso" title="Spresso theme">
+                        <img src="{{ site.url }}/assets/img/{{ site.logo }}"/>
+                    </a>
+                </p>
+                <p class="text-center">
+                    &copy; {{ 'now' | date('Y') }} {{ site.author.name }}.
+                    Powered by <a href="http://spress.yosymfony.com">Spress</a>.
+                </p>
+            </div>
+            
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+            <script src="{{ site.url }}/assets/js/bootstrap.min.js"></script>
+            
+            {% if site.code_highlight %}
+                <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+            {% endif %}
+            
+            {% block javascript %}{% endblock %}
+        </footer>
+    </body>
+</html>
