@@ -34,7 +34,6 @@ Primeiro, crie um diretório para a aplicação. Depois crie os arquivos main.nc
 
 <pre>
 <code class="xml">
-
 &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
 &lt;ncl id="main" xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile"&gt;
     &lt;head&gt;
@@ -82,8 +81,6 @@ Primeiro, crie um diretório para a aplicação. Depois crie os arquivos main.nc
 </code>
 </pre>
 
-
-
 ## Criando a classe Marquee
 
 
@@ -93,7 +90,6 @@ Então, abra o arquivo marquee.lua. Vamos iniciar adicionando o módulo rotinas 
 
 <pre>
 <code class="lua">
-
 require "rotinas"
 </code>
 </pre>
@@ -103,7 +99,6 @@ Classes em Lua nada mais são que tabelas. Assim, precisamos definir uma tabela 
 
 <pre>
 <code class="lua">
-
 ---Classe para exibição de letreiros em aplicações de TVD,
 --como o marquee da HTML
 --@author Manoel Campos da Silva Filho - http://manoelcampos.com
@@ -156,7 +151,6 @@ Vamos definir uma função para limpar a área ocupada pelo letreiro, utilizando
 
 <pre>
 <code class="lua">
-
 ---Limpa a área do letreiro
 function Marquee:clear()
   --Define a fonte do canvas. Mesmo não sendo desenhado nenhum texto na tela,
@@ -183,7 +177,6 @@ Vamos agora definir uma função para interromper a animação do letreiro, usan
 
 <pre>
 <code class="lua">
-
 ---Interrompe a animação do letreiro
 function Marquee:cancel()
   self.active = false
@@ -218,7 +211,6 @@ Vamos definir o construtor da classe. Mas antes disto, precisamos criar uma fun�
 
 <pre>
 <code class="lua">
-
 local print, pairs = print, pairs
 module "rotinas"
 </code>
@@ -231,7 +223,6 @@ Agora vamos adicionar o código da função que clonará uma tabela:
 
 <pre>
 <code class="lua">
-
 ---Clona uma tabela
 --@param tb Tabela ser clonada
 --@return Retorna a nova tabela
@@ -252,7 +243,6 @@ Volte agora ao arquivo marquee.lua e vamos definir o construtor da classe Marque
 
 <pre>
 <code class="lua">
-
 ---Construtor da classe
 --@param text Texto a ser exibido
 --@param top Posição vertical do letreiro
@@ -261,7 +251,7 @@ Volte agora ao arquivo marquee.lua e vamos definir o construtor da classe Marque
 --@return Retorna uma instância de Marquee
 function Marquee:new(text, top, left, charWidth)
   --Cria uma instância (cópia) da classe (tabela) Marquee
-  local obj = util.cloneTable(self)
+  local obj = rotinas.cloneTable(self)
 
   obj.text = text or Marquee.text
   obj.top = top or Marque.top
@@ -281,7 +271,6 @@ Agora vamos definir a função principal, que realiza toda a "mágica" de fazer 
 
 <pre>
 <code class="lua">
-
 ---Executa a animação do letreiro
 function Marquee:animate()
   --Função local para animar o texto. Todo o código está dentro desta
@@ -367,7 +356,6 @@ Agora precisamos apenas incluir o código do arquivo main.lua. Assim, abra tal a
 
 <pre>
 <code class="lua">
-
 dofile("marquee.lua")
 </code>
 </pre>
@@ -379,8 +367,6 @@ Vamos incluir dois letreiros na aplicação, então, vamos ao primeiro. Você ve
 
 <pre>
 <code class="lua">
-
-
 local text = "    Letreiro Digital em Aplicações NCLua para o SBTVD.    "
 --Cria um letreiro      (text, top, left, charWidth)
 local let1 = Marquee:new(text, 0,   10,   50)
@@ -397,7 +383,6 @@ Agora vamos ao segundo letreiro, usando o código abaixo:
 
 <pre>
 <code class="lua">
-
 text = "          Manoel Campos - http://manoelcampos.com           "
 local let2 = Marquee:new(text, 50,  10,   50)
 let2.moveToLeft = false
