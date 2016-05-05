@@ -1,0 +1,16 @@
+#!/bin/bash
+
+clear
+
+echo "Publish blog to Amazon S3"
+
+php ./spress.phar site:build --env=prod
+#cd build/ && php -S localhost:8080 && cd ..
+
+if [ $? -ne 0 ]; then echo "Could not generate the site"; exit 1; fi
+
+aws --version
+if [ $? -ne 0 ]; then echo "Check if you have the AWS CLI installed: https://github.com/aws/aws-cli"; exit 1; fi
+
+aws s3 sync  build/ s3://bucket-name/  --exclude ".git/*"
+if [ $? -ne 0 ]; then echo "Could not publish the site"; exit 1; fi

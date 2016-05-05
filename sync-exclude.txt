@@ -1,11 +1,10 @@
 #Arquivos para excluir durante o processo de rsync realizado pelo publish.sh
-app/logs
-app/cache
-nbproject
-docs
+src/
+vendor/
 *.pem
 .git
 *.lock
 sync-exclude.txt
 *.sh
+*.yml
 spress.phar
