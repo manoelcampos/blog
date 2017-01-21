@@ -9,7 +9,7 @@ categories:
 - TV Digital
 ---
 
-[![](http://manoelcampos.com/wp-content/uploads/tvd-error.png)](http://manoelcampos.com/wp-content/uploads/tvd-error.png)Quem utiliza o Ginga Virtual Set-top Box para desenvolvimento de aplicações NCL/Lua para a TV Digital, sabe que o trabalho de depurar uma aplicação Lua é algo um pouco chato. Primeiro porque, pelo menos até a versão 0.12.4 da máquina virtual (VM), os [erros gerados por scripts NCLua não são corretamente exibidos no terminal](http://manoelcampos.com/2012/07/25/exibindo-erros-em-scripts-nclua-tvd-ginga-ncl-lua/), como já relatei [neste post](http://manoelcampos.com/2012/07/25/exibindo-erros-em-scripts-nclua/).
+[![](http://manoelcampos.com/wp-content/uploads/tvd-error.png)](http://manoelcampos.com/wp-content/uploads/tvd-error.png)Quem utiliza o Ginga Virtual Set-top Box para desenvolvimento de aplicações NCL/Lua para a TV Digital, sabe que o trabalho de depurar uma aplicação Lua é algo um pouco chato. Primeiro porque, pelo menos até a versão 0.12.4 da máquina virtual (VM), os [erros gerados por scripts NCLua não são corretamente exibidos no terminal](http://manoelcampos.com/2012/07/25/exibindo-erros-em-scripts-nclua-tvd-ginga-ncl-lua/), como já relatei [neste post](http://manoelcampos.com/2012/07/25/exibindo-erros-em-scripts-nclua-tvd-ginga-ncl-lua/).
 
 Outro problema é que não temos um depurador por padrão na VM. 
 
