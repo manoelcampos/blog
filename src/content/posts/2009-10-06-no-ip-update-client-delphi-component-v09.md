@@ -21,10 +21,6 @@ tags:
 
 Quem utiliza o serviço de DNS dinâmico do No-IP sabe da necessidade de instalação  do programa cliente No-IP no computador, 
 
-
---more Leia Mais--
-
-
 um pequeno programa que fica executando em background  e detecta alterações no IP real da máquina, enviando o novo IP para os servidores  do No-IP, e assim fazendo com que o nome DNS que o usuário registrou no No-IP  (por exemplo manoelcampos.no-ip.org) seja redirecionado automaticamente  para o novo IP registrado.
 
 Este recurso de DNS dinâmico pode ser útil para o desenvolvedor que possui  aplicações cliente/servidor como chat, administração remota, aplicações comerciais  com acesso a banco de dados remoto, ou qualquer sistema que ecessite fazer acesso  a um servidor remoto cujo o IP real não é fixo. As aplicações clientes precisam conhecer o IP ou nome DNS do servidor. Considerando que o IP do mesmo pode mudar, não é nada prático configurar o IP do servidor nas aplicações clientes. Nestes casos, o usuário deverá utilizar um nome de DNS para abstrair o número do IP.
@@ -38,5 +34,3 @@ Com o componente os desenvolvedores podem incluir esse recurso de atualização 
 O componente é OpenSource e foi testado apenas no Delphi 2007, mas pode funcionar sem problemas nas versões anteriores. O código do componente está comentado, possuindo documentação em HTML (apenas em inglês) e um diagrama de classes. Um projeto de exemplo também é provido juntamente com os fontes do componente.
 
 Veja o arquivo readme.txt (somente em inglês) para mais algumas informações.
-
-[attachments title="Download" force_saveas="1" logged_users="0" size="custom"]

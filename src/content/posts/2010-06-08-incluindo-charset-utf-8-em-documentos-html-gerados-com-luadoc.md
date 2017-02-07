@@ -26,7 +26,9 @@ Quem utiliza Lua no Linux, principalmente com o Gedit, provavelmente deve salvar
 
 O problema é que, ao gerar a documentação HTML de um projeto Lua em UTF-8, os caracteres acentuados podem ser exibidos incorretamente. Pois no HTML gerado não é definido o charset usado no arquivo. Se você exibir o código fonte de um dos arquivos HTML de documentação, verá que há uma tag como abaixo:
 
-`<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8" --!>`
+```html
+<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8" --!>
+```
 
 Mas como pode ver, a mesma está comentada. Assim, para que o LuaDoc não gere a mesma desta forma, precisaremos alterar alguns arquivos. Se você instalou o runtime do Lua e o LuaDoc via apt-get, o diretório contendo os templates que precisam ser alterados é o /usr/share/lua/5.1/luadoc/doclet/html. Assim, abra os arquivos \*.lp neste diretório no Gedit e descomente a linha mostrada acima.
 

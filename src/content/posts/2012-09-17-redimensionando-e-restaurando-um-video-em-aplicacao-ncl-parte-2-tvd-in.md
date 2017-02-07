@@ -23,47 +23,33 @@ tags:
 
 Vou mostrar neste artigo como tornar a restauração do vídeo dinâmica, usando novamente apenas NCL.
 
-
---more Leia Mais--
-
-
 Vamos usar a mesma lógica da [aplicação anterior](http://manoelcampos.com/2012/09/13/redimensionando-e-restaurando-um-video-em-aplicacao-ncl-parte-1-tvd-in/), contendo um vídeo que, após 5 segundos de iniciado, será redimensionado e apresentará uma imagem de um botão vermelho. Quando o usuário acionar o respectivo botão no controle remoto, o vídeo volta ao tamanho original. Desta forma, você pode utilizar o código da aplicação anterior como base. Utilizaremos os mesmos conectores, sem alterar, adicionar nem remover nenhum. O que mudará será nos links.
 
 Bem, a lógica para tornar a restauração do vídeo dinâmica será a seguinte: quando o vídeo iniciar, vamos obter suas dimensões e guardá-las em uma variável. Após o vídeo ser redimensionado, quando o usuário acionar o botão vermelho para restaurar o vídeo, as dimensões serão obtidas desta variável e setadas para a propriedade bounds do vídeo.
 
 Para isto, vamos inserir uma nova mídia do tipo "application/x-ginga-settings", que, segundo a norma ABNT NBR 15606-2:
 
-
 <blockquote>suas propriedades são variáveis globais definidas pelo autor do documento ou variáveis de ambiente reservadas, que podem ser manipuladas pelo processamento do documento NCL.</blockquote>
-
 
 Desta forma, vamos criar uma variável chamada bounds, em uma mídia deste tipo, para poder guardar as dimensões originais do vídeo. Assim, declare a mídia como mostrado a seguir:
 
-<pre>
-<code class="xml">
-
-&lt;media id=&quot;settings&quot; type=&quot;application/x-ginga-settings&quot;&gt;
-  &lt;property name=&quot;bounds&quot; /&gt;
-&lt;/media&gt;
-</code>
-</pre>
-
+```xml
+<media id=&quot;settings&quot; type=&quot;application/x-ginga-settings&quot;>
+  <property name=&quot;bounds&quot; />
+</media>
+```
 
 Agora, precisaremos incluir um novo link onBeginSet para, quando o vídeo iniciar, guardar o valor da sua propriedade bounds na propriedade bounds da mídia settings (adicionada anteriormente). Com isto, quando desejarmos restaurar o vídeo, podemos pegar suas dimensões originais na propriedade bounds da mídia settings. Segue o código do link:
 
-<pre>
-<code class="xml">
-
-&lt;link xconnector=&quot;onBeginSet&quot;&gt;
-  &lt;bind role=&quot;onBegin&quot; component=&quot;video&quot; /&gt;
-  &lt;bind role=&quot;get&quot; component=&quot;video&quot; interface=&quot;bounds&quot;/&gt;
-  &lt;bind role=&quot;set&quot; component=&quot;settings&quot; interface=&quot;bounds&quot;&gt;
-    &lt;bindParam name=&quot;var&quot; value=&quot;$get&quot;/&gt;
-  &lt;/bind&gt;
-&lt;/link&gt;
-</code>
-</pre>
-
+```xml
+<link xconnector=&quot;onBeginSet&quot;>
+  <bind role=&quot;onBegin&quot; component=&quot;video&quot; />
+  <bind role=&quot;get&quot; component=&quot;video&quot; interface=&quot;bounds&quot;/>
+  <bind role=&quot;set&quot; component=&quot;settings&quot; interface=&quot;bounds&quot;>
+    <bindParam name=&quot;var&quot; value=&quot;$get&quot;/>
+  </bind>
+</link>
+```
 
 Note que estamos utilizando um papel "get" (no atributo role da tag bind) que não foi declarado no conector (já existente na aplicação anterior). O papel get é implicito em conectores que tenham o papel set.
 
@@ -73,33 +59,25 @@ Na verdade, para conectores que possuem o papel set, este papel que permite obte
 
 Com o uso dos papéis get e set, podemos obter o valor de uma propriedade de uma mídia e atribuir tal valor a outra propriedade de qualquer mídia. Esta atribuição não é direta, como podem ver no código. A variável $get é utilizada como uma variável intermediária. Logo, tal link poderia ser representado, de forma procedural, utilizando o seguinte pseudo-código:
 
-<pre>
-<code class="php">
-
+```
 $get = video.bounds;
 settings.bounds = $get;
-</code>
-</pre>
-
+```
 
 Bem, pra finalizar, falta permitirmos que o vídeo volte ao tamanho original quando o usuário pressionar o botão vermelho (o link onBeginSet para reduzir o vídeo já existia na aplicação anterior). Para isto, precisaremos alterar o link onKeySelectionStopSet para o código seguinte:
 
-<pre>
-<code class="xml">
-
-&lt;link xconnector=&quot;onKeySelectionStopSet&quot;&gt;
-  &lt;bind role=&quot;onSelection&quot; component=&quot;botao&quot;&gt;
-    &lt;bindParam name=&quot;key&quot; value=&quot;RED&quot;/&gt;
-  &lt;/bind&gt;
-  &lt;bind role=&quot;get&quot; component=&quot;settings&quot; interface=&quot;bounds&quot;/&gt;
-  &lt;bind role=&quot;set&quot; component=&quot;video&quot; interface=&quot;bounds&quot;&gt;
-    &lt;bindParam name=&quot;var&quot; value=&quot;$get&quot;/&gt;
-  &lt;/bind&gt;
-  &lt;bind role=&quot;stop&quot; component=&quot;botao&quot; /&gt;
-&lt;/link&gt;
-</code>
-</pre>
-
+```xml
+<link xconnector=&quot;onKeySelectionStopSet&quot;>
+  <bind role=&quot;onSelection&quot; component=&quot;botao&quot;>
+    <bindParam name=&quot;key&quot; value=&quot;RED&quot;/>
+  </bind>
+  <bind role=&quot;get&quot; component=&quot;settings&quot; interface=&quot;bounds&quot;/>
+  <bind role=&quot;set&quot; component=&quot;video&quot; interface=&quot;bounds&quot;>
+    <bindParam name=&quot;var&quot; value=&quot;$get&quot;/>
+  </bind>
+  <bind role=&quot;stop&quot; component=&quot;botao&quot; />
+</link>
+```
 
 Tal link utiliza a mesma lógica do anterior: utiliza os papéis get e set para pegar o valor da propriedade bounds da mídia settings (contendo as dimensões originais do vídeo) e atribuir de volta à propriedade bounds do vídeo.
 

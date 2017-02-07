@@ -23,42 +23,34 @@ Existem alguns módulos Lua que utilizam bibliotecas em C para fazer isto, como 
 
 No entanto, no Ginga-NCL (subsistema do middleware Ginga do Sistema Brasileiro de TV Digital), não é possível usar módulos em C em aplicações enviadas via broadcast. Assim, para fazer o parse de arquivos XML em aplicações Lua para TVD, é preciso usar um parser escrito inteiramente em Lua.
 
-
---more Leia Mais--
-
-
 No site [LuaUsers](http://lua-users.org/wiki/LuaXml) existem algumas opções de parsers XML para Lua, alguns deles usam módulos escritos em C também.
 Na seção Lua-only XML parsers existem algumas opções de módulos escritos inteiramente em Lua. Destes, o que acho mais completo e fácil de usar é o módulo LuaXML (isso mesmo, o mesmo nome do anterior, por isso há certa confusão quando se fala em LuaXML) .
 Com tal módulo é possível fazer o parse de um XML carregado a partir de um arquivo no disco, obtido via HTTP, ou estaticamente definido em uma variável string. O módulo transforma o arquivo XML em uma tabela Lua, assim, fica muito simples de manipular.
 
 Na página do [LuaXML no LuaUsers ](http://lua-users.org/wiki/LuaXml) existe a versão original do módulo para Lua 4. Uma versão para Lua 5, adaptada por mim a partir da versão original está disponível para download [no GitHub](http://github.com/manoelcampos/LuaXML).
 
-
 ## Usando o módulo LuaXML
-
 
 Vamos criar agora uma aplicação para mostrar como usar tal módulo. Primeiro crie um arquivo de nome dados.xml com o conteúdo abaixo:
 
-<pre>
-<code class="xml">
-&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
-&lt;pessoas&gt;
-  &lt;pessoa tipo="F"&gt;
-    &lt;nome&gt;Manoel&lt;/nome&gt;
-    &lt;cidade&gt;Palmas-TO&lt;/cidade&gt;
-  &lt;/pessoa&gt;
-  &lt;pessoa tipo="F"&gt;
-    &lt;nome&gt;Breno&lt;/nome&gt;
-    &lt;cidade&gt;Palmas-TO&lt;/cidade&gt;
-  &lt;/pessoa&gt;
-  &lt;pessoa tipo="J"&gt;
-    &lt;nome&gt;UnB&lt;/nome&gt;
-    &lt;cidade&gt;Brasília-DF&lt;/cidade&gt;
-  &lt;/pessoa&gt;
-&lt;/pessoas&gt;
-</code>
-</pre>
 
+```xml
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pessoas>
+  <pessoa tipo="F">
+    <nome>Manoel</nome>
+    <cidade>Palmas-TO</cidade>
+  </pessoa>
+  <pessoa tipo="F">
+    <nome>Breno</nome>
+    <cidade>Palmas-TO</cidade>
+  </pessoa>
+  <pessoa tipo="J">
+    <nome>UnB</nome>
+    <cidade>Brasília-DF</cidade>
+  </pessoa>
+</pessoas>
+```
 
 O arquivo XML armazena dados de pessoas físicas e jurídicas. Cada tag pessoa tem um atributo tipo que identifica isto.
 
@@ -69,9 +61,7 @@ Agora crie um arquivo de nome main.lua, na mesma pasta do dados.xml. A aplicaç
 O código de main.lua é mostrado abaixo, e comentado em seguida:
 (arquivo disponível no pacote para download no final do artigo)
 
-<pre>
-<code class="lua">
-
+```lua
 dofile("LuaXML/xml.lua")
 dofile("LuaXML/handler.lua")
 
@@ -120,9 +110,7 @@ xmlparser:parse(xmltext)
 for k, p in pairs(xmlhandler.root.pessoas.pessoa) do
   print("Nome:", p.nome, "Cidade:", p.cidade, "Tipo:", p._attr.tipo)
 end
-</code>
-</pre>
-
+```
 
 Nas linhas 1 e 2 o módulo é carregado. Como o mesmo não foi implementado usando o recurso module da linguagem Lua, o mesmo não pode ser carregado com require.
 
@@ -145,8 +133,7 @@ Quando você conhece previamente a estrutura do XML, pode usar um código mais p
 
 ## Conclusão
 
-
 Como pôde ser visto, fazer o parse de arquivos XML em Lua com o LuaXML do LuaUsers é bem simples e intuitivo.
-Um [tutorial em PDF, elaborado por Johnny Moreira Gomes](http://manoelcampos.com/wp-content/uploads/tutorial_lua_xml_parser1.pdf), está disponível [neste link](http://manoelcampos.com/wp-content/uploads/tutorial_lua_xml_parser1.pdf). Os fontes da aplicação podem ser baixados a seguir.
+Um [tutorial em PDF, elaborado por Johnny Moreira Gomes](http://manoelcampos.com/wp-content/uploads/tutorial_lua_xml_parser1.pdf), está disponível [neste link](http://manoelcampos.com/wp-content/uploads/tutorial_lua_xml_parser1.pdf). 
 
-[attachments title="Downloads" force_saveas=1 size="custom"]
+

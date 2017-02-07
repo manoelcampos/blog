@@ -25,13 +25,9 @@ No caso da instalação da biblioteca SIP 0.3.99 que mostrei no outro post, ela 
 
 Percebi que a biblioteca SIVP 0.5.0 era instalada no diretório /usr/lib/sivp-0.5.0, local totalmente diferente da SIP. Procurando mais um pouco, descobri que no diretório **/usr/share/scilab/contrib** existia um link simbólico para o diretório real de instalação do SIVP. Observe que esse diretório é parecido com o diretório onde o SIP é instalado, em /usr/_lib_/scilab/contrib/. Assim, para que o SciLab adicionasse a biblioteca SIP no menu ToolBoxes, para que você possa carregá-la apenas usando este menu, e não tendo mais que digitar o comando exec("/usr/lib/scilab/contrib/sip/loader.sce"), você deve criar um link simbólico para o diretório do SIP, dentro do diretório  **/usr/share/scilab/contrib**, executando os comandos abaixo:
 
-
-    
-    
-    cd /usr/share/scilab/contrib
-    sudo ln -s /usr/lib/scilab/contrib/sip
-    
-
-
+```    
+cd /usr/share/scilab/contrib
+sudo ln -s /usr/lib/scilab/contrib/sip
+``` 
 
 Pronto, agora basta fechar o SciLab e reabrir, que no menu Toolboxes terá um link para carregar o SIP. Pode ser que isto foi necessário apenas pelo fato de estarmos usando uma versão mais antiga da biblioteca SIP, instalada a partir de um pacote compilado .deb.

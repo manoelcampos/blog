@@ -27,30 +27,31 @@ Desta forma, precisei procurar no Google, até que encontrei as bibliotecas [SIP
 
 As duas ToolBox precisam da [biblioteca OpenCV](http://sourceforge.net/projects/opencvlibrary/). Tentei baixar o arquivo opencv-linux lá no site oficial, mas o mesmo não existia, então tive que procurar no google por opencv-linux1.1, que encontrei [nesse site](http://www.sfr-fresh.com/unix/privat/opencv-1.1pre1.tar.gz/).
 Você precisará compilar o pacote e fazer todo o processo manual de instalação, assim, abra um terminal na pasta onde baixar o arquivo e digite os comandos abaixo:
+    
+## Descompactar o arquivo
+`tar -zxvf opencv-1.1pre1.tar.gz`
+
+## Configurar o OpenCV para compilação
+
+Para configurar o OpenCV digite:
+
+`./configure --enable-apps --with-ffmpeg --with-gnu-ld --with-x --without-quicktime CXXFLAGS=-fno-strict-aliasing`
+
+Os parâmetros passados para o configure são:
+
+* --enable-apps - compilar aplicações de exemplo
+* --with-ffmpeg - habilitar suporte para manipulação de vídeos com a biblioteca ffmpeg, como explicado antes
+* --without-quicktime - não usar bibliotecas do QuickTime, acredito que só seja é necessário se você não tiver o QuickTime
+
+Para ajudar digite ./configure --help
 
 
-    
-    
-    # descompactar o arquivo
-    tar -zxvf opencv-1.1pre1.tar.gz
-    
-    # configurar o OpenCV para compilação
-    # os parâmetros passados para o configure são:
-    # --enable-apps = compilar aplicações de exemplo
-    # --with-ffmpeg = habilitar suporte para manipulação de vídeos com a biblioteca ffmpeg, como explicado antes
-    # --without-quicktime = não usar bibliotecas do QuickTime, acredito que só seja é necessário se você não tiver o QuickTime
-    # alguns dos parâmetros não sei pra que são, fico devendo :)
-    # para ajudar digite ./configure --help
-    ./configure --enable-apps --with-ffmpeg --with-gnu-ld --with-x --without-quicktime CXXFLAGS=-fno-strict-aliasing
-    
-    # compilar
-    make
-    
-    # instalar
-    sudo make install
-    
+Agora é só compilar e instalar:
 
-
+```
+make
+sudo make install
+```
 
 Os parâmetros de instalação retirei [desse site](http://dircweb.king.ac.uk/reason/opencv_cvs.php). Mas lá são informados mais passos que não foram necessários para mim.
 
@@ -59,14 +60,12 @@ E pra priorar, nem deixou remover e causau um problemão, pois toda vez que tent
 
 No caso dessa versão 0.5.0 do SIVP, a biblioteca é instalada em /usr/lib/sivp-0.5.0. Para carregar bibliotecas externas no SciLab você precisar carregar um arquivo .sce, normalmente de nome loader.sce. Para a biblioteca SIVP, você deve digitar o comando load no SciLab, seguido do nome do arquivo .sce a ser carregarado. Assim, digite exec("/usr/lib/sivp-0.5.0/loader.sce") que as funções estarão prontas para uso. Você encontra documentação das funções da biblioteca em [http://sivp.sourceforge.net/doc.php](http://sivp.sourceforge.net/doc.php).
 
-
 O [SIP](http://siptoolbox.sourceforge.net/), a outra biblioteca para processamento de imagens, na versão atual 0.4, não compila no SciLab 5.1, a versão atual, e não há um pacote deb para ela. Encontrei um [pacote deb para a versão 0.3.99rc2 no repositório do Ubuntu](http://packages.ubuntu.com/dapper/siptoolbox), não tão menor que a versão 0.4 disponibilizada no site oficial. Já tendo instalado o OpenCV, como mostrado anteriormente, todos os outros pré-requisitos são encontrados na página para download do pacote deb do SIP, mostrada logo acima.
 
 Esta versão é instalada no diretório /usr/lib/scilab/contrib/sip, diferente do diretório do SIVP. Assim, para carregar a biblioteca no SciLab, digite nele o comando exec("/usr/lib/scilab/contrib/sip/loader.sce"). Você encontra documentação, inclusive em portugês, na [página inicial do site oficial](http://siptoolbox.sourceforge.net/). Encontrei um tutorial [nesse link](http://genie-optique.chez-alice.fr/SIP/A_SIP_UM/pre-doc.pdf).
 
 Testei a biblioteca SIP e fiz algumas brincadeiras iniciais. O mais legal é que as funções tem a mesma assinatura das do MatLab (nome e parâmetros são iguais), assim, fica fácil pegar exercícios propostos para MatLab e executar no SciLab facilmente.
 
-<del>Tenho que descobrir ainda como fazer para carregar essas bibliotecas de forma automática. Se descobrir, postarei aqui.</del>
 Para carregar as bibliotecas dinamicamente, [veja esse outro post](http://manoelcampos.com/2009/04/08/instalando-bibliotecas-no-scilab-e-carregando-a-partir-do-menu-toolboxes/).
 
 Para finalizar, todos sabem que essas ferramentas OpenSouce não são tão completas e poderosas quanto o MatLab. Elas tem suas deficiências. Uma análise comparativa entre o SciLab e o MatLab pode ser vista [aqui](http://jeofizik.comu.edu.tr/sayfalar/egitim/egitim/ders_notlari/jfm204/comparative-study-of-Matlab-and-Scilab.pdf).

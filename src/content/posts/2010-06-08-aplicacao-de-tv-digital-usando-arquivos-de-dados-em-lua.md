@@ -14,51 +14,41 @@ Este exemplo mostra uma [aplicação de TV Digital](http://manoelcampos.com/wp-c
 
 Este artigo mostra como aplicar a linguagem Lua com uma das finalidades para qual a mesma foi desenvolvida: representação de dados estruturados. Com isto, dispensa-se a complexidade de tratar arquivos de texto ou XML, lendo os dados diretamente de um arquivo lua, de forma simples e transparente, usando os recursos básicos da linguagem.
 
-
---more Leia Mais--
-
-
-
-
-
 ## Pré-requisitos
-
 
 Para acompanhar este artigo, são necessários conhecimentos básicos de NCL, Lua e NCLua (como os módulos event e canvas). Você pode utilizar o [Eclipse](http://www.eclipse.org/) com o plugin [NCLEclipse](http://www.laws.deinf.ufma.br/~ncleclipse/). Recomenda-se utilizar a última versão do [Ginga Virtual Set-top Box](http://www.gingancl.org/ferramentas.html).
 
 Um [tutorial de como estruturar o ambiente de desenvolvimento](http://www.peta5.com.br/br/tutoriais/88-como-estruturar-seu-ambiente-de-desenvolvimento-para-o-ginga-ncl) está disponível [aqui](http://www.peta5.com.br/br/tutoriais/88-como-estruturar-seu-ambiente-de-desenvolvimento-para-o-ginga-ncl).
 
-
 ## A aplicação
-
 
 A aplicação que criei apenas exibe algumas informações gravadas em um arquivo de dados em Lua (dados.lua). O conteúdo do mesmo é apresentado abaixo:
 
-    
-    ---Informações a serem exibidas na aplicação
-    info = {
-      {
-        app = "NCLua Tweet",
-        desc="Cliente de Twitter para TV Digital",
-        url = "http://ncluatweet.manoelcampos.com"
-      },
-      {
-        app = "NCLua SOAP",
-        desc="Módulo p/ acesso a WS SOAP em aplicações de TVD",
-        url = "http://ncluasoap.manoelcampos.com"
-      },
-      {
-        app = "NCLua RSS Reader",
-        desc="Leitor de Notícias em RSS para TV Digital",
-        url = "http://ncluarss.manoelcampos.com"
-      },
-      {
-        app = "Enquete para TV Digital",
-        desc="Enquete com acesso ao canal de interatividade",
-        url = "http://enquetetvd.manoelcampos.com"
-      }
-    }
-
+```lua    
+---Informações a serem exibidas na aplicação
+info = {
+  {
+    app = "NCLua Tweet",
+    desc="Cliente de Twitter para TV Digital",
+    url = "http://ncluatweet.manoelcampos.com"
+  },
+  {
+    app = "NCLua SOAP",
+    desc="Módulo p/ acesso a WS SOAP em aplicações de TVD",
+    url = "http://ncluasoap.manoelcampos.com"
+  },
+  {
+    app = "NCLua RSS Reader",
+    desc="Leitor de Notícias em RSS para TV Digital",
+    url = "http://ncluarss.manoelcampos.com"
+  },
+  {
+    app = "Enquete para TV Digital",
+    desc="Enquete com acesso ao canal de interatividade",
+    url = "http://enquetetvd.manoelcampos.com"
+  }
+}
+```
 
 Como pode-se observar, o arquivo contendo os dados a serem exibidos, nada mais é que um script lua, que declara uma variável global de nome **info**. Esta variável é uma tabela (como se fosse um array de struct em C). Dentro da tabela **info** existem sub-tabelas (que funcionam como uma struct em C) para armazenar uma estrutura de dados contendo os campos app, desc e url. Tais dados representam nomes de aplicações, com suas respectivas descrições e endereço na internet. A partir de outro script lua, podemos acessar as variáveis definidas neste arquivo de dados (no caso, só existe a variável info), da mesma forma como fazemos convencionalmente. Para isto, precisamos carregar o arquivo de dados usando a função **loadfile** de Lua. Pelo que interpretei na norma ABNT NBR 15606-2 do Ginga-NCL, a função loadfile pode perfeitamente ser usada em aplicações de TVD, pois ela não é listada na seção **"10.1 Linguagem Lua - Funções removidas da biblioteca de Lua"** da norma, e a documentação da função está inclusa.
 
@@ -70,33 +60,29 @@ O arquivo main.lua contém todo o código da aplicação. Dentro dele é carrega
 
 Dentro da função tratadora de eventos, **main.handler**, quando a aplicação iniciar
 
-    
-    if evt.class == "ncl" and evt.type == "presentation" and evt.action=="start" then
-
+```lua
+if evt.class == "ncl" and evt.type == "presentation" and evt.action=="start" then
+```
 
 o arquivo de dados é carregado
 
-    
-    config.load(main.configFile)
-
+```lua    
+config.load(main.configFile)
+```
 
 A partir deste ponto, a variável **info**, definida em dados.lua, pode ser acessada usando-se **config.data.info**. Após o carregamento do arquivo de dados, a função **main.showInfo** é chamada para exibir o primeiro "registro" existente dentro da tabela info:
 
-    
-    main.showInfo(true)
-
+```lua    
+main.showInfo(true)
+```
 
 Quando o usuário pressionar as setas para esquerda e direita, a informação anterior e posterior é exibida, respectivamente, chamando novamente a função **main.showInfo**.
 
-
 ## Documentação
-
 
 Toda a documentação em HTML, gerada com [LuaDoc](http://luadoc.luaforge.net/), está disponível no diretório doc.
 
-
 ## Conclusão
-
 
 Com este exemplo o desenvolvedor pode ver como é simples usar arquivos de dados em Lua no lugar de arquivos de texto ou XML. Além de tudo, o processamento destes arquivos demanda maior carga de processamento e muito mais linhas de código. Com o uso da abordagem apresentada, usa-se todos os recursos nativas da linguagem Lua, de uma simples e transparente.
 
@@ -106,21 +92,13 @@ Caso seja preciso enviar os dados coletados para um servidor remoto, utilizando 
 
 No final, juntando as informações dos três projetos apresentados, é possível criar uma aplicação de enquete ou questionário de pesquisa, sem muita dificuldade.
 
-Se gostaram, deixe sua avaliação e comentário. Até mais.
-
-[attachments title="Download" force_saveas="1" logged_users="0" size="custom"]
-
-
 ## Para saber mais
-
 
 Deixo aqui uma dica para continuarem os estudos: Qual a diferença entre o uso de dois-pontos ( : ) e ponto ao acessar uma função dentro de uma tabela? [Veja minha resposta aqui](http://groups.google.com/group/lua-br/browse_thread/thread/586df782e62c77fd/34fee5cc59654a5e?lnk=gst&q=Dúvida+no+uso+do+dois+pontos).
 
 Como pode ser visto no código do aplicativo, eu usei ponto na definição e acesso de todas as funções da tabela **main** (em main.lua). Em um aplicativo maior, onde fosse utilizada uma abordagem orientada a objetos, eu usaria dois-pontos. Como este é um aplicativo pequeno, que não tem uma lógica de objetos (logo, nada de reutilização de classes dentro dele), acabei usando ponto.
 
-
 ## Licença
-
 
 [](http://creativecommons.org/licenses/by-nc-sa/2.5/br/)
 

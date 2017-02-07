@@ -25,13 +25,9 @@ Nas versões anteriores, caso os usuários precisassem usar uma porta diferente 
 
 O parâmetro port do método call do módulo ncluasoap ainda existe, para que os programas antigos que o usam não precisem ser alterados, mas vou avaliar a possibilidade de excluir definitivamente tal parâmetro. Assim, recomendo que passem a utilizar o número da porta diretamente na URL do serviço.
 
-
 ### Exemplo de chamada para um serviço na porta 8080, usando as versões anteriores do módulo:
 
-
-<pre>
-<code class="lua">
-
+```lua
 local msgTable = {
   address = "http://myserver.com/MyWebService",
   namespace = "MyNamespace",
@@ -43,17 +39,11 @@ local msgTable = {
 
 --A porta 8080 é passada como parâmetro para o método call
 ncluasoap.call(msgTable, getResponse, "1.1", 8080)
-</code>
-</pre>
-
-
+```
 
 ### Mesmo exemplo usando a nova versão do módulo:
 
-
-<pre>
-<code class="lua">
-
+```lua
 local msgTable = {
   --A porta 8080 é passada diretamente na URL do Web Service
   address = "http://myserver.com:8080/MyWebService",
@@ -65,8 +55,6 @@ local msgTable = {
 }
 
 ncluasoap.call(msgTable, getResponse, "1.1")
-</code>
-</pre>
-
+```
 
 Para baixar esta nova versão, acesse [http://github.com/manoelcampos/NCLuaSOAP](http://github.com/manoelcampos/NCLuaSOAP)

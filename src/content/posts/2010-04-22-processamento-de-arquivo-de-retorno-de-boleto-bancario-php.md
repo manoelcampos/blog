@@ -33,8 +33,6 @@ Atualmente estão implementados os padrões FEBRABAN/CNAB400 E FEBRABAN/CNAB240.
 ### Download
 Acessem o projeto em [http://github.com/manoelcampos/Retorno-BoletoPHP](http://github.com/manoelcampos/Retorno-BoletoPHP)
 
-
 ### Se inscreve no grupo de discussão do projeto para tirar dúvidas.
-
 
 [Fórum do Google Groups](http://groups.google.com/group/retorno-boletophp)

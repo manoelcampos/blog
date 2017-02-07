@@ -47,7 +47,6 @@ tags:
 ## Introdução 
 Semana passada iniciaram as transmissões de TV Digital aqui em Brasília, depois de muita enrolação, pois estavam pretendendo [criar uma nova torre de TV, a partir de um projeto do Oscar Niemeyer](http://www.telesintese.ig.com.br/index.php?option=com_content&task=view&id=11654&Itemid=105). Só sei que a Globo foi a primeira a transmitir, com sinal digital de [alta definição (HD)](http://pt.wikipedia.org/wiki/Alta_defini%C3%A7%C3%A3o), alguns programas como jogos de futebol e a novela das oito (ou seria das nove ??? :-) ).
 
-
 Um dos grandes benefícios da TV Digital (TVD) , além de alta qualidade de imagem e som e inexistência de interferências como fantasmas e chuviscos, é a tão falada interatividade, que permitirá que você tenha programas, jogos e até mesmo acesso à internet a partir da sua TV. 
 
 --more--
@@ -56,9 +55,7 @@ Para se ter uma idéia das possibilidades, até mesmo o [sistema de compartilham
 
 O acesso à internet vai depender de assinatura de um serviço, assim como acontece com internet ADSL ou 3G ou usando uma rede local, com ou sem fio, existente na sua residência.
 
-
 ## Transmissão e Recepção
-
 
 Para recepção de sinal de TV Digital na sua casa, você precisará de um equipamento chamado [Set-Top-Box (STB)](http://pt.wikipedia.org/wiki/Set-top_box), o conhecido Conversor Digital, um aparelho com formato e tamanho semelhante ao de um DVD Player. Ele é responsável por receber e decodificar o sinal digital. Esses sinais são recebidos na faixa de frequência UHF (Ultra High Frequence), assim você precisará de uma antena UHF também. Os canais digitais são diferentes dos canais analógicos. As emissoras transmitirão dois sinais. Logo, existirá, por exemplo, um canal para receber a Globo em formato analógico, e outro canal para receber em formato digital. Isto é chamado de transmissão [Simulcast (Simultaneos Broadcast)](http://en.wikipedia.org/wiki/Simulcast).
 
@@ -76,15 +73,11 @@ A onda pode sofrer distorções, pois como ela é transportada pelo ar, está su
 
 Com um vídeo modulado de forma digital para transmissão, essas deformações não interferem, pois o sinal acima do eixo X (positivo) pode representar um bit 1, e o sinal abaixo do eixo x (negativo) pode representar um bit zero. Isso depende da técnica de modulação usada. Esse foi um exemplo básico para entender porque a onda modulada digitalmente não é normalmente prejudicada por interferências. Além do mais, em sistemas digitais, podem existir algoritmos de Forward Error Correction - FEC, ou seja, correção de erro no destino, onde bits corrompidos são corrigidos ao chegarem no conversor digital. Uma forma de detectar erros é com a utilização de [checksum](http://pt.wikipedia.org/wiki/Checksum) com algoritmos de [hash](http://pt.wikipedia.org/wiki/Hash) como [MD5](http://pt.wikipedia.org/wiki/MD5). No caso da transmissão analógica, são transmitidos muito mais dados numa onda de rádio, num trecho como mostrado nas figuras acima. Assim, se a onda sofre deformação, muito mais informações são perdidas, acarretando chuviscos e fantasmas na imagem.
 
-
 ## Sistema Brasileiro de TV Digital
-
 
 O [Sistema Brasileiro de TV Digital - SBTVD](http://sbtvd.cpqd.com.br) foi baseado no sistema japonês [ISDB](http://pt.wikipedia.org/wiki/ISDB), um dos poucos existentes pelo mundo. O padrão mais conhecido e utilizado é o padrão europeu [Digital Video Broadcast - DVB](http://pt.wikipedia.org/wiki/DVB).
 
-
 ## O Ginga
-
 
 A interatividade depende da inclusão de um [middleware](http://pt.wikipedia.org/wiki/Middleware) nos STBs. Este é um software que faz interface entre o sistema operacional dos [Set-Top-Boxes - STB](http://pt.wikipedia.org/wiki/Set-top_box) (os aparelhos para recepção de sinal digital, como já comentado), e as aplicações, abstraindo o tipo de hardware e sistema operacional do equipamento, o que permite que as aplicações geradas se tornem independentes destes, que podem variar de fabricante para fabricante.
 
@@ -106,7 +99,6 @@ Foram veiculadas na mídia algumas notícias incorretas sobre a definição do [
 [Uma matéria mais técnica sobre o JavaDTV pode ser vista aqui](http://www.overmedianetworks.com.br/noticia-overmedia-liberacao-java-dtv.html).
 [Outra sobre Ginga-NCL e Ginga-J pode ser vista aqui.](http://www.convergenciadigital.com.br/cgi/cgilua.exe/sys/start.htm?infoid=18353&query=simple&search_by_authorname=all&search_by_field=tax&search_by_keywords=any&search_by_priority=all&search_by_section=&search_by_state=all&search_text_options=all&sid=54&text=pai+ginga)
 
-
 ## Desenvolvimento de Aplicações
 
 Os desenvolvedores podem utilizar algumas ferramentas livres. Para desenvolvimento com a linguagem NCL, existe a ferramenta [Composer](http://www.ncl.org.br/ferramentas.html), que está completamente obsoleta, mas uma nova versão está em desenvolvimento. A ferramenta é mais voltada para iniciantes em NCL ou pessoas que não possuem conhecimento em linguagens de programação, pois NCL é uma linguagem de marcação,  como a XML. O Composer permite a construção de aplicações interativas utilizando um editor [WYSIWYG](http://pt.wikipedia.org/wiki/WYSIWYG), da mesma forma como os famosos editores HTML.
@@ -123,9 +115,7 @@ Para aplicações em JavaDTV, existe o [OpenGinga](http://www.openginga.org), u
 
 [Alguns projetos que desenvolvi podem ser acessados aqui.](/tvd)
 
-
 ## Padrão de codificação de vídeo
-
 
 O formato de codificação dos vídeos transmitidos no [SBTVD](http://sbtvd.cpqd.com.br) é o [MPEG-4](http://pt.wikipedia.org/wiki/MPEG4), também conhecido como MPEG-4 Part 10, MPEG-4 AVC (Advanced Video Coding) ou H.264, que permite uma maior compressão de dados em relação ao [MPEG-2](http://pt.wikipedia.org/wiki/MPEG-2).
 
@@ -135,9 +125,7 @@ O formato LD permite vídeos de resolução de 320x180, por exemplo. O SD é a d
 
 O formato HD tem o aspecto de 16x9, ou seja, widescreen. O formato SD, apenas na resolução de 720x480 tem aspecto 16x9. No formato 640x480 o aspecto é 4x3.
 
-
 ## TV's LCD/Plasma com conversor digital (Set-Top-Box) embutido
-
 
 Atualmente já estão sendo vendidos aparelhos de TV LCD ou plasma com conversor digital (Set-Top-Box) embutido. Uma grande desvantagem que vejo nisso é quanto a atualização do middleware nesse conversor. Se não houver uma forma de isso ser feito, para você poder ficar em dia com os novos recursos de interatividade desenvolvidos para o Ginga, terá que trocar a TV inteira. Algumas opções de atualização do middleware podem ser disponibilizadas. Por exemplo, o usuário pode baixar a atualização do site do fabricante, salvar num pendrive e conectar por uma porta USB no seu conversor digital, caso ele tenha uma porta USB, obviamente.
 
@@ -145,28 +133,25 @@ Discussões sobre quem é melhor: LCD ou Plasma, estão fora do escopo deste art
 
 Mais informações sobre LCD x Plasma podem ser encontradas no [blog da TV Globo Digital](http://www.tvglobodigital.com/blog/2009/10/15/plasma-ou-lcd-ou-led-ou-oled-ou-tv-de-tubo-qual-a-melhor-opca-do-momento/) e [nesse blog](http://gingadf.blogspot.com/2009/02/como-escolher-uma-hdtv.html). Excelentes vídeos e artigos também podem ser vistos no olhar digital, [neste link](http://olhardigital.uol.com.br/links/video_wide.php?id_conteudo=8065) e [neste](http://olhardigital.uol.com.br/central_de_videos/video_wide.php?id_conteudo=7119).
 
-
 ## Conversores Digitais (Set-Top-Boxes, STB)
-
 
 A [Proview](http://www.proviewbr.com.br/) já está vendendo seu conversor digital XPS-1000. <del>O mesmo não possui nenhuma implementação do Ginga, o middleware (software) necessário para permitir interatividade na TV Digital.</del> Algumas empresas como a [TQTVD](http://www.tqtvd.com.br/) e a [RCASoft](http://www.rcasoft.com.br/) desenvolveram uma implementação do Ginga. [A RCASoft já está vendendo seu middleware, que é compatível, por enquanto, apenas com o Conversor Digital da Proview](http://www.rcasoft.com.br/midd_instal.php)<del>, e precisa ser instalado manualmente</del>.
 
 O conversor Proview XPS-1000 possui uma porta USB 2.0, para conexão de dispositivos como teclado e mouse. Como tem-se apenas uma porta, será necessário um Hub USB para poder conectar os dois dispositivos. Possui ainda uma RJ 45 para conexão a uma rede local cabeada, do tipo Ethernet, permitindo que as aplicações interativas de TVD possam fazer acesso à internet. Infelizmente o conversor não permite conexão com redes Wireless.
 
 Abaixo algumas especificações do conversor:
--Recepção com resolução máxima de 1920x1080
--Saída HDMI 1080i para conexão com outros dispositivos digitais como um leitor/gravador de DVD/Blu Ray
--Interface ethernet de 100Mbs para conexão a uma rede local cabeada, permitindo acesso à internet
--Porta USB 2.0 para conexão de dispositivos como mouse, teclado, pendrive e outros
--Atualização do software (middleware) via USB
--EPG (Guia de Programação Eletrônica) para você poder ver a programação do dia, semana ou mês inteiro do canal
--Controle remoto
--Proteção parental (controle de conteúdo) para broquear canais desejados
--Navegação na internet com mini browser e acesso remoto a cliente/servidor via VNC
 
+- Recepção com resolução máxima de 1920x1080
+- Saída HDMI 1080i para conexão com outros dispositivos digitais como um leitor/gravador de DVD/Blu Ray
+- Interface ethernet de 100Mbs para conexão a uma rede local cabeada, permitindo acesso à internet
+- Porta USB 2.0 para conexão de dispositivos como mouse, teclado, pendrive e outros
+- Atualização do software (middleware) via USB
+- EPG (Guia de Programação Eletrônica) para você poder ver a programação do dia, semana ou mês inteiro do canal
+- Controle remoto
+- Proteção parental (controle de conteúdo) para broquear canais desejados
+- Navegação na internet com mini browser e acesso remoto a cliente/servidor via VNC
 
 ## Dispositivos USB para Recepção de TV Digital
-
 
 Depois da notícia do início das transmissões de TV Digital aqui em Brasília, como falei no início do artigo, fui logo procurar um dispositivo USB para receber sinal de TV Digital no meu notebook. Assim, se você pretende comprar um destes adaptadores, é bom conhecer antes as especificações, para não comprar gato por lebre.
 
@@ -190,15 +175,11 @@ ATUALIZADO: A [Placa de Captura Externa Visus USB TV Stick Extreme](http://www.v
 
 Mais informações sobre receptores USB de TV Digital podem ser encontrados no [Blog da TV Globo Digital](http://www.tvglobodigital.com/noticias/ler/geral/guia_do_one_seg_conheca_os_receptores_moveis_e_portateis_de_t_v_digital/59).
 
-
 ## O Sistema Brasileiro em outros Países
-
 
 O Sistema Brasileiro trouxe muitas inovações, que só lendo as normas ABNT para detalhar. A transmissão em Low Definition para dispositivos móveis já incorporado no sistema foi uma delas. Essas inovações fizeram com que o middleware do Sistema Brasileiro, o Ginga, recebesse respeito pelos países do Mercosul. [O Peru já decidiu pela utilização do Sistema Brasileiro. A Argentina, Venezuela e o Chile já estão em processo de negociação com o Brasil para a adoção do Ginga](http://www.telesintese.ig.com.br/index.php?option=com_content&task=view&id=11684&Itemid=105).
 
-
 ## Inclusão Digital
-
 
 Uma das propostas do Sistema Brasileiro de TV Digital é propiciar a inclusão digital. Com a TVD, podemos ter aplicações de [e-learning](http://pt.wikipedia.org/wiki/E-learning) a partir da TV, aparelho existente em 92% das casas dos brasileiros, como mostrou pesquisa do IBGE de 2007, informada [nessa matéria](http://www1.folha.uol.com.br/folha/dinheiro/ult91u355724.shtml). Porém, essa proposta do governo é muito bonita e louvável, se não permanecer apenas no papel. Como já mencionado, o acesso à internet a partir da TV só será possível com o pagamento de uma mensalidade, como em qualquer outro serviço de internet como [ADSL](http://pt.wikipedia.org/wiki/ADSL) e [3G](http://pt.wikipedia.org/wiki/3G). <del>Desta forma, se o governo não subsidiar o acesso à internet para essas pessoas, a inclusão digital ficará apenas no discurso.</del>
 
@@ -208,12 +189,9 @@ Mais informações nos links abaixo:
 [ http://www.planejamento.gov.br/secretarias/upload/Arquivos/noticias/gerais/100505_banda_Larga.pps](http://www.planejamento.gov.br/secretarias/upload/Arquivos/noticias/gerais/100505_banda_Larga.pps)
 [http://www.mc.gov.br/images/pnbl/o-brasil-em-alta-velocidade1.pdf](http://www.mc.gov.br/images/pnbl/o-brasil-em-alta-velocidade1.pdf)
 
-
 ## Término das Transmissões Analógicas
 
-
 Como foi previsto pelo governo, as [transmissões analógicas serão finalizadas em 2016](http://www.abert.org.br/n_clipping_2.cfm?noticia=110046), ano em que toda a área do Brasil deve ter acesso ao sinal de TV Digital. Depois dessa data, quem não tiver adquirido um conversor digital ou TV com conversor embutido, não terá mais como assistir TV. Porém, nos Estados Unidos, que já possuem transmissão de TV Digital há muitos anos, o término das transmissões analógicas estava previsto para esse ano (2009). O presidente Barack Obama [sugeriu a extensão desse prazo](http://www.convergenciadigital.com.br/cgi/cgilua.exe/sys/start.htm?infoid=17351&sid=8), pois percebeu-se que a TVD não chegou à casa de todos os norte-americanos. O calendário de implantação da TVD, elaborado pelo Ministério das Comunicações, está acelerado. Vamos torcer para em 2016 todos as TVs do Brasil já estejam recebendo o sinal digital. Neste [link do site oficial da TV Digital Brasileira](http://www.dtv.org.br/materias.asp?menuid=3&id=11), é possível ver as cidades que já possuem o sinal digital e o calendário de implantação.
-
 
 ## Links
 
@@ -222,33 +200,21 @@ Como foi previsto pelo governo, as [transmissões analógicas serão finalizadas
 * [Blog for Digital TV (Em português)](http://b4dtv.blogspot.com/)
 * [Ginga DF](http://gingadf.com.br/)
 * [Grupo de Pesquisa em TV Digital Interativa da UCPel](http://www.tvdi.inf.br/)
-
 * [Sistema Brasileiro de TV Digital - SBTVD](http://sbtvd.cpqd.com.br)
 * [Fórum SBTVD](http://www.forumsbtvd.org.br/)
 * [Middleware Ginga](http://www.ginga.org.br)
 * [TV Digital Detalhada Lançamento do SBTVD](http://www.hxd.com.br/site/index.php?option=com_content&task=view&id=18&Itemid=69t)
 
-
 ## Livros sobre o Assunto
 	
-  * [Desenvolvimento de Aplicações para Middleware Ginga, TV Digital e Web. Luiz Fernando Gomes Soares, Simone Diniz Junqueira Barbosa](http://www.elsevier.com.br/site/produtos/Detalhe-produto.aspx?tid=3826&seg=6&isbn=9788535234572&cat=269&origem=)
-
-  * [TV Digital.Br: Conceitos e Estudos sobre o ISDB-Tb. Valdecir Becker, S. Squirra](http://www.atelie.com.br/shop/detalhe.php?id=484)
-	
-  * [TV Digital Interativa: Conceitos, desafios e perspectivas para o Brasil. Valdecir Becker e Carlos Montez. ](http://www.tvdigitalinterativa.ufsc.br/sumario.htm)
-	
-  * Televisão Digital Interativa: reflexões, sistemas e padrões, Guido Lemos e Edna Brennand.
-
-	
-  * Interactive TV Standards. Steven Morris & Anthony Smith-Chaigneau.
-
-	
-  * ITV Handbook - Technologies and Standards. Edward M. Schwalb.
-
-
+* [Desenvolvimento de Aplicações para Middleware Ginga, TV Digital e Web. Luiz Fernando Gomes Soares, Simone Diniz Junqueira Barbosa](http://www.elsevier.com.br/site/produtos/Detalhe-produto.aspx?tid=3826&seg=6&isbn=9788535234572&cat=269&origem=)
+* [TV Digital.Br: Conceitos e Estudos sobre o ISDB-Tb. Valdecir Becker, S. Squirra](http://www.atelie.com.br/shop/detalhe.php?id=484)
+* [TV Digital Interativa: Conceitos, desafios e perspectivas para o Brasil. Valdecir Becker e Carlos Montez. ](http://www.tvdigitalinterativa.ufsc.br/sumario.htm)
+* Televisão Digital Interativa: reflexões, sistemas e padrões, Guido Lemos e Edna Brennand.
+* Interactive TV Standards. Steven Morris & Anthony Smith-Chaigneau.
+* ITV Handbook - Technologies and Standards. Edward M. Schwalb.
 
 ## Iniciando no Desenvolvimento de Aplicações para TVD
-
 
 Quer começar a desenvolver aplicações para TV Digital? Veja o artigo [Como estruturar o ambiente de desenvolvimento Ginga NCL](http://www.peta5.com.br/br/tutoriais/88-como-estruturar-seu-ambiente-de-desenvolvimento-para-o-ginga-ncl) no blog da empresa [Peta5](http://www.peta5.com.br). 
 
