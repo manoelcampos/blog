@@ -38,7 +38,7 @@ feed:
 
 # Facebook Open Graph
 open_graph:
-    locale: "en_US"
+    locale: "pt_BR"
 
 # Code highlight for <pre> and <code> tags
 # Powered by http://highlightjs.org/
