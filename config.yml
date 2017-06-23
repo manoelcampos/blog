@@ -4,7 +4,7 @@ description: "Open source and software development"
 logo: "spresso-logo.png"
 
 # Your site's domain. E.g: http://yoursite.com
-url: "http://manoelcampos.com"
+url: "http://manoelcampos.com.br"
 
 parsedown_actived: true
 
@@ -59,4 +59,4 @@ bottom_menu:
 
 google_analytics:
     id: UA-2501696-2
-    site: manoelcampos.com
+    site: manoelcampos.com.br
