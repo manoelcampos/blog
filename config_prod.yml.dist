@@ -1,10 +1,10 @@
 title: "Manoel Campos Blog"
 site.title: "Manoel Campos Blog"
-description: "Just about open source and software development"
+description: "Open source e desenvolvimento de software"
 logo: "spresso-logo.png"
 
 # Your site's domain. E.g: http://yoursite.com
-url: "http://manoelcampos.com"
+url: "http://manoelcampos.com.br"
 
 parsedown_actived: true
 
@@ -38,7 +38,7 @@ feed:
 
 # Facebook Open Graph
 open_graph:
-    locale: "en_US"
+    locale: "pt_BR"
 
 # Code highlight for <pre> and <code> tags
 # Powered by http://highlightjs.org/
@@ -51,12 +51,11 @@ bing_verify:
 # Page menus
 top_menu:
     - { name: Home, url: "/" }
-    - { name: "Digital TV", url: /dtv }
-    - { name: About, url: /about }
-    - { name: Contact, url: /contact }
+    - { name: "TV Digital", url: /dtv }
+    - { name: Sobre, url: /sobre }
 
 bottom_menu:
-    - { name: "About", url: "http://about.me/manoelcampos" }
+    - { name: "Sobre", url: "http://about.me/manoelcampos" }
 
 google_analytics:
     id: UA-2501696-2
