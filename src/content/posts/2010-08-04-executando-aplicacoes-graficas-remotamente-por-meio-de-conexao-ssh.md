@@ -18,7 +18,7 @@ tags:
 - X11 Forwarding
 ---
 
-[![](http://manoelcampos.com/wp-content/uploads/ssh.jpg)](http://manoelcampos.com/wp-content/uploads/ssh.jpg)Profissionais de TI usuários de distribuições Linux, provavelmente utilizam bastante o comando ssh para realizar conexões remotas a outras máquinas Linux.
+[![](http://manoelcampos.com.br/wp-content/uploads/ssh.jpg)](http://manoelcampos.com.br/wp-content/uploads/ssh.jpg)Profissionais de TI usuários de distribuições Linux, provavelmente utilizam bastante o comando ssh para realizar conexões remotas a outras máquinas Linux.
 
 Convencionalmente utiliza-se o comando da seguinte forma:
 

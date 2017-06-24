@@ -111,7 +111,7 @@ Para testar as aplicações desenvolvidas existem alguns emuladores, como o [Gin
 
 O laboratório de TV Digital Interativa da [Universidade de Brasília](http://www.unb.br) foi o primeiro a desenvolver um Ginga NCL Live CD, mas que não chegou a ser disponibilizado. O mesmo foi apresentado no evento [I2TS](http://www.i2ts.org/) 2009, na Universidade Federal de Santa Catarina, em [Florianópolis](http://www.ufsc.br/).
 
-Para aplicações em JavaDTV, existe o [OpenGinga](http://www.openginga.org), uma implementação do sub-sistema Ginga-J. Os desenvolvedores não liberaram uma versão compilada do projeto (pelo menos não até a data em que foi elaborado este artigo). Assim, é necessário compilar os fontes do mesmo em um sistema operacional Linux. Como este processo de compilação é extremamente extenso e complicado, liberei uma [máquina virtual para VirtualBox, contendo, tanto a implementação do OpenGinga quanto do Ginga-NCL](http://manoelcampos.com/2010/01/28/virtualbox-vm-gingancl-0112-openginga-beta-1/).
+Para aplicações em JavaDTV, existe o [OpenGinga](http://www.openginga.org), uma implementação do sub-sistema Ginga-J. Os desenvolvedores não liberaram uma versão compilada do projeto (pelo menos não até a data em que foi elaborado este artigo). Assim, é necessário compilar os fontes do mesmo em um sistema operacional Linux. Como este processo de compilação é extremamente extenso e complicado, liberei uma [máquina virtual para VirtualBox, contendo, tanto a implementação do OpenGinga quanto do Ginga-NCL](http://manoelcampos.com.br/2010/01/28/virtualbox-vm-gingancl-0112-openginga-beta-1/).
 
 [Alguns projetos que desenvolvi podem ser acessados aqui.](/tvd)
 
@@ -218,7 +218,7 @@ Como foi previsto pelo governo, as [transmissões analógicas serão finalizadas
 
 Quer começar a desenvolver aplicações para TV Digital? Veja o artigo [Como estruturar o ambiente de desenvolvimento Ginga NCL](http://www.peta5.com.br/br/tutoriais/88-como-estruturar-seu-ambiente-de-desenvolvimento-para-o-ginga-ncl) no blog da empresa [Peta5](http://www.peta5.com.br). 
 
-Alguns projetos estão disponíveis aqui no meu blog, no menu [Projetos TVD](http://manoelcampos.com/tvd/). Pequenas aplicações de exemplo podem ser encontradas na [Categoria TV Digital](http://manoelcampos.com/category/tv-digital/).
+Alguns projetos estão disponíveis aqui no meu blog, no menu [Projetos TVD](http://manoelcampos.com.br/tvd/). Pequenas aplicações de exemplo podem ser encontradas na [Categoria TV Digital](http://manoelcampos.com.br/category/tv-digital/).
 
 --
 por Manoel Campos da Silva Filho

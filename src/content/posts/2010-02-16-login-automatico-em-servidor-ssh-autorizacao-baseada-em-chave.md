@@ -16,7 +16,7 @@ tags:
 - Login automático
 ---
 
-[![](http://manoelcampos.com/wp-content/uploads/user-login-icon.png)](http://www.iconarchive.com/show/cms-icons-by-iconshock/user-login-icon.html)Este artigo mostra como conectar em um servidor SSH, sem necessidade de informar senha.
+[![](http://manoelcampos.com.br/wp-content/uploads/user-login-icon.png)](http://www.iconarchive.com/show/cms-icons-by-iconshock/user-login-icon.html)Este artigo mostra como conectar em um servidor SSH, sem necessidade de informar senha.
 
 Existem alguns tutoriais explicando este processo, porém, muitos não deixam claro em qual computador cada passo deve ser executado, causando confusão. Assim, isto me motivou a escrever este pequeno tutorial, que é basicamente uma tradução do [tutorial disponível aqui](http://philippe-millet.blogspot.com/2008/07/automatic-ssh-login-key-based.html).
 

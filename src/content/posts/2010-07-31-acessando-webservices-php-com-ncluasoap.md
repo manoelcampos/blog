@@ -54,7 +54,7 @@ Esta forma é mais simples e a ordem dos parâmetros é obedecida ao gerar o XML
 
 ## Tutoriais
 
-[Criando um Web Service PHP com NuSoap e acessando-o com NCLua Soap - por Johnny Moreira Gomes](http://manoelcampos.com/wp-content/uploads/tutorial-nusoap-ncluasoap.pdf)
+[Criando um Web Service PHP com NuSoap e acessando-o com NCLua Soap - por Johnny Moreira Gomes](http://manoelcampos.com.br/wp-content/uploads/tutorial-nusoap-ncluasoap.pdf)
 
 Se você tiver exemplos, compartilhe conosco. [Entre em contato aqui](/contato).
 

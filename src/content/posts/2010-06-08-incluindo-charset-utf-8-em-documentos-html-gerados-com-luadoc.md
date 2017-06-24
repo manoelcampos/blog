@@ -20,7 +20,7 @@ tags:
 - UTF-8
 ---
 
-[![](http://manoelcampos.com/wp-content/uploads/luadoc.png)](http://manoelcampos.com/wp-content/uploads/luadoc.png)Hoje vou mostrar uma dica rápida para usuários do [LuaDoc](http://luadoc.luaforge.net/), a ferramenta de geração de documentação de códigos fontes em [lua](http://www.lua.org), que tenho usado para documentar minhas aplicações em Lua para TV Digital.
+[![](http://manoelcampos.com.br/wp-content/uploads/luadoc.png)](http://manoelcampos.com.br/wp-content/uploads/luadoc.png)Hoje vou mostrar uma dica rápida para usuários do [LuaDoc](http://luadoc.luaforge.net/), a ferramenta de geração de documentação de códigos fontes em [lua](http://www.lua.org), que tenho usado para documentar minhas aplicações em Lua para TV Digital.
 
 Quem utiliza Lua no Linux, principalmente com o Gedit, provavelmente deve salvar todos os arquivos Lua em codificação UTF-8, já que esta é a codificação padrão deste editor de texto (muito bom por sinal). Com tal codificação você não terá problemas de exibição incorreta de caracteres acentuados. Além do mais, as aplicações de TV Digital só reconhecem caracteres acentuados nesta codificação (acredito que seja uma particularidade da linguagem Lua).
 

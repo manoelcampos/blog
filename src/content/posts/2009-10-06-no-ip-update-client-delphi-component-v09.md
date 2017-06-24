@@ -17,7 +17,7 @@ tags:
 - No-IP Update Client
 ---
 
-[![](http://manoelcampos.com/wp-content/uploads/no-ip.png)](http://manoelcampos.com/wp-content/uploads/no-ip.png)O No-IP Update Client Compoent é um componente para Delphi que implementa  a [API](http://www.no-ip.com/integrate/) do [No-IP](http://www.noip.com), um serviço de DNS  dinâmico.
+[![](http://manoelcampos.com.br/wp-content/uploads/no-ip.png)](http://manoelcampos.com.br/wp-content/uploads/no-ip.png)O No-IP Update Client Compoent é um componente para Delphi que implementa  a [API](http://www.no-ip.com/integrate/) do [No-IP](http://www.noip.com), um serviço de DNS  dinâmico.
 
 Quem utiliza o serviço de DNS dinâmico do No-IP sabe da necessidade de instalação  do programa cliente No-IP no computador, 
 

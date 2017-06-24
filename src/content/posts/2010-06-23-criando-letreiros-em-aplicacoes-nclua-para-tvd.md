@@ -86,7 +86,7 @@ Classes em Lua nada mais são que tabelas. Assim, precisamos definir uma tabela 
 ```lua
 ---Classe para exibição de letreiros em aplicações de TVD,
 --como o marquee da HTML
---@author Manoel Campos da Silva Filho - http://manoelcampos.com
+--@author Manoel Campos da Silva Filho - http://manoelcampos.com.br
 --@license http://creativecommons.org/licenses/by-nc-sa/2.5/br/
 Marquee = {
     --Texto a ser exibido
@@ -336,7 +336,7 @@ O uso de espaços antes e depois do texto foi intencional. Execute a aplicação
 Agora vamos ao segundo letreiro, usando o código abaixo:
 
 ```lua
-text = "          Manoel Campos - http://manoelcampos.com           "
+text = "          Manoel Campos - http://manoelcampos.com.br           "
 local let2 = Marquee:new(text, 50,  10,   50)
 let2.moveToLeft = false
 --Após 20 segundos, o letreiro para

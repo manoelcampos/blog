@@ -15,9 +15,9 @@ tags:
 - NCL
 ---
 
-[caption id="attachment_1496" align="alignright" width="180" caption="Aplicação NCL com botão vermelho para interrompê-la"][![](http://manoelcampos.com/wp-content/uploads/stop-ncl-app-300x225.png)](http://manoelcampos.com/wp-content/uploads/stop-ncl-app.png)[/caption]
+[caption id="attachment_1496" align="alignright" width="180" caption="Aplicação NCL com botão vermelho para interrompê-la"][![](http://manoelcampos.com.br/wp-content/uploads/stop-ncl-app-300x225.png)](http://manoelcampos.com.br/wp-content/uploads/stop-ncl-app.png)[/caption]
 
-[![](http://manoelcampos.com/wp-content/uploads/stop.png)](http://manoelcampos.com/wp-content/uploads/stop.png)Hoje estou iniciando uma nova seção no Blog, onde mostrarei algumas dicas de desenvolvimento de aplicações de TV Digital utilizando as linguagens NCL e Lua. Como vejo muitas dúvidas recorrentes nos fóruns que participo, resolvi registrar aqui estas dicas, de uma forma didática e em exemplos completos.
+[![](http://manoelcampos.com.br/wp-content/uploads/stop.png)](http://manoelcampos.com.br/wp-content/uploads/stop.png)Hoje estou iniciando uma nova seção no Blog, onde mostrarei algumas dicas de desenvolvimento de aplicações de TV Digital utilizando as linguagens NCL e Lua. Como vejo muitas dúvidas recorrentes nos fóruns que participo, resolvi registrar aqui estas dicas, de uma forma didática e em exemplos completos.
 
 Nesta primeira dica, vou mostrar como incluir um botão para interromper uma aplicação NCL após o usuário/telespectador pressionar um botão no controle remoto. Isto é algo simples de ser feito e tem sido uma dúvida recorrente.
 
@@ -32,7 +32,7 @@ Um [tutorial de como estruturar o ambiente de desenvolvimento](http://www.peta5.
 Vamos criar uma aplicação que apenas exibe um vídeo em loop e um botão vermelho para indicar que, ao pressionar o respectivo botão no controle remoto, a aplicação será finalizada.
 
 Então vamos lá. No Eclipse, crie um novo projeto usando File >> New >> Other >> General >> Project. Dê o nome de **stop_app** ao projeto.
-Dentro dele crie um diretório media. Baixe [este arquivo](http://manoelcampos.com/wp-content/uploads/media.zip) e descompacte dentro deste diretório. O mesmo contém um vídeo (sob licença [Creative Commons](http://creativecommons.org/videos/wanna-work-together)) e uma imagem de um botão vermelho.
+Dentro dele crie um diretório media. Baixe [este arquivo](http://manoelcampos.com.br/wp-content/uploads/media.zip) e descompacte dentro deste diretório. O mesmo contém um vídeo (sob licença [Creative Commons](http://creativecommons.org/videos/wanna-work-together)) e uma imagem de um botão vermelho.
 
 Agora crie um novo documento NCL usando File >> New >> Other >> NCL >> NCL Document.
 

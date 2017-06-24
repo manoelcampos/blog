@@ -17,7 +17,7 @@ tags:
 - Vídeo
 ---
 
-[![](http://manoelcampos.com/wp-content/uploads/resize.png)](http://manoelcampos.com/wp-content/uploads/resize.png)Quando se reduz um objeto, como um vídeo, em uma aplicação NCL (ou qualquer outra) para 50%, por exemplo, para voltar ao tamanho original, não adianta setar as propriedades width e height para 100%. Isto apenas fará com que as dimensões do vídeo sejam alteradas para 100% do valor atual.
+[![](http://manoelcampos.com.br/wp-content/uploads/resize.png)](http://manoelcampos.com.br/wp-content/uploads/resize.png)Quando se reduz um objeto, como um vídeo, em uma aplicação NCL (ou qualquer outra) para 50%, por exemplo, para voltar ao tamanho original, não adianta setar as propriedades width e height para 100%. Isto apenas fará com que as dimensões do vídeo sejam alteradas para 100% do valor atual.
 
 Se o vídeo tinha 400x400 e foi reduzido para 50%, seu tamanho atual é 200x200. Assim, 100% será referente ao tamanho atual. Assim, alterar as dimensões para 100% não fará efeito nenhum sobre o tamanho do vídeo, pois 100% de 200x200 é 200x200 :).
 

@@ -55,7 +55,7 @@ local function getResponse(result)
 end
 
 local msgTable = {
-  address = "http://manoelcampos.com/estadosws/server.php",
+  address = "http://manoelcampos.com.br/estadosws/server.php",
   namespace = "manoelcampos.com",
   operationName = "estados2",
   params = {

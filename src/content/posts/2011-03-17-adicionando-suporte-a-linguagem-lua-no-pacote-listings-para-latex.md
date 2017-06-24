@@ -19,7 +19,7 @@ tags:
 - Syntax Highlight
 ---
 
-[![](http://manoelcampos.com/wp-content/uploads/lua-latex-150x150.png)](http://manoelcampos.com/wp-content/uploads/lua-latex.png)Bem, nunca falei de [Latex](http://www.latex-project.org/) antes aqui no blog, principalmente por falta de tempo e porque não sou um profundo conhecedor da ferramenta.
+[![](http://manoelcampos.com.br/wp-content/uploads/lua-latex-150x150.png)](http://manoelcampos.com.br/wp-content/uploads/lua-latex.png)Bem, nunca falei de [Latex](http://www.latex-project.org/) antes aqui no blog, principalmente por falta de tempo e porque não sou um profundo conhecedor da ferramenta.
 
 Mas como tenho usado muito a mesma, resolvi falar dela hoje. Vou mostrar uma dica bastante útil para programadores Lua que estejam no meio acadêmico e também usem Latex em trabalhos desta categoria.
 
@@ -83,7 +83,7 @@ Por fim, language=lua define que o código é em linguagem Lua (poderia ser Java
 
 A imagem a seguir mostra um exemplo de como o código Lua ficará no PDF gerado a partir do tex.
 
-[![](http://manoelcampos.com/wp-content/uploads/exemplo-codigo-lua-tex.png)](http://manoelcampos.com/wp-content/uploads/exemplo-codigo-lua-tex.png)
+[![](http://manoelcampos.com.br/wp-content/uploads/exemplo-codigo-lua-tex.png)](http://manoelcampos.com.br/wp-content/uploads/exemplo-codigo-lua-tex.png)
 O pacote listings também suporta estilos de formatação (que funciona com qualquer linguagem). O colega [Renato Maia](http://www.inf.puc-rio.br/~maia/) deu uma grande contribuição disponibilizando três estilos que adicionei ao pacote: monochrome, colorful e numbered. No final deste artigo existe um arquivo zip com o pacote listings já com suporte à linguagem Lua e com tais temas incorporados, bastando instalar o mesmo.
 
 Para usar algum tema é bem simples. Basta alterar a linha \begin{listings} do exemplo anterior para a linha mostrada abaixo:
@@ -94,6 +94,6 @@ Para usar algum tema é bem simples. Basta alterar a linha \begin{listings} do e
 
 Para usar o estilo colorful, é preciso adicionar o pacote color no seu documento tex. A figura a seguir mostra como o código ficará no PDF gerado a partir do documento tex.
 
-[![](http://manoelcampos.com/wp-content/uploads/exemplo-codigo-lua-tex2.png)](http://manoelcampos.com/wp-content/uploads/exemplo-codigo-lua-tex2.png)
+[![](http://manoelcampos.com.br/wp-content/uploads/exemplo-codigo-lua-tex2.png)](http://manoelcampos.com.br/wp-content/uploads/exemplo-codigo-lua-tex2.png)
 
 Então é isso, espero que seja útil.

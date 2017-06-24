@@ -10,7 +10,7 @@ categories:
 - TV Digital
 ---
 
-[![](http://manoelcampos.com/wp-content/uploads/tvd-error.png)](http://manoelcampos.com/wp-content/uploads/tvd-error.png)Como muitos desenvolvedores NCLua já devem ter notado, em algumas situações no Ginga Virtual Set-top Box (pelo menos até a versão  0.12.4), quando algo está errado no código Lua, o Ginga não mostra nada no terminal, simplesmente parando a execução da aplicação.
+[![](http://manoelcampos.com.br/wp-content/uploads/tvd-error.png)](http://manoelcampos.com.br/wp-content/uploads/tvd-error.png)Como muitos desenvolvedores NCLua já devem ter notado, em algumas situações no Ginga Virtual Set-top Box (pelo menos até a versão  0.12.4), quando algo está errado no código Lua, o Ginga não mostra nada no terminal, simplesmente parando a execução da aplicação.
 Isto é um "Gingantesco" problema, pois ficamos no escuro sem saber o que está errado e é muito trabalhoso encontrar o erro, só na base da depuração usando print :(.
 
 Erros comuns são a tentativa de acessar um campo em uma tabela que não existe (por ter digitado o nome da tabela incorretamente, por exemplo), chamar funções sem passar todos os parâmetros requeridos, etc.

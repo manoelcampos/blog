@@ -18,7 +18,7 @@ tags:
 - TVD
 ---
 
-[![](http://manoelcampos.com/wp-content/uploads/luaprofiler.png)](http://manoelcampos.com/wp-content/uploads/luaprofiler.png)O [LuaProfiler](http://luaprofiler.luaforge.net) é um módulo que permite fazer o [profilling](http://en.wikipedia.org/wiki/Profiling_(computer_programming)) de um programa escrito em Lua. Com tal ferramenta é possível identificar gargalos em sua aplicação, ou seja, partes do código fonte que levem mais tempo para executar que o normal, e assim poder melhorar tal código para tentar ganhar desempenho.
+[![](http://manoelcampos.com.br/wp-content/uploads/luaprofiler.png)](http://manoelcampos.com.br/wp-content/uploads/luaprofiler.png)O [LuaProfiler](http://luaprofiler.luaforge.net) é um módulo que permite fazer o [profilling](http://en.wikipedia.org/wiki/Profiling_(computer_programming)) de um programa escrito em Lua. Com tal ferramenta é possível identificar gargalos em sua aplicação, ou seja, partes do código fonte que levem mais tempo para executar que o normal, e assim poder melhorar tal código para tentar ganhar desempenho.
 
 A forma mais fácil de instalar módulos Lua em uma distribuição Linux, como no caso do Ginga Virtual Set-top Box 0.11.2 que utiliza Ubuntu, é por meio do [LuaRocks](http://luarocks.org). No entanto, alguns módulos como o LuaProfiler não funcionam no Ginga se instalados com o LuaRocks, que automatiza o processo de instalação de módulos da mesma forma que a ferramenta apt-get (existente em várias distribuições Linux).
 

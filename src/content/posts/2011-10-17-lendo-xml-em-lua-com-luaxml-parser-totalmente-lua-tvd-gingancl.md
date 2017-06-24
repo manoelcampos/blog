@@ -134,6 +134,6 @@ Quando você conhece previamente a estrutura do XML, pode usar um código mais p
 ## Conclusão
 
 Como pôde ser visto, fazer o parse de arquivos XML em Lua com o LuaXML do LuaUsers é bem simples e intuitivo.
-Um [tutorial em PDF, elaborado por Johnny Moreira Gomes](http://manoelcampos.com/wp-content/uploads/tutorial_lua_xml_parser1.pdf), está disponível [neste link](http://manoelcampos.com/wp-content/uploads/tutorial_lua_xml_parser1.pdf). 
+Um [tutorial em PDF, elaborado por Johnny Moreira Gomes](http://manoelcampos.com.br/wp-content/uploads/tutorial_lua_xml_parser1.pdf), está disponível [neste link](http://manoelcampos.com.br/wp-content/uploads/tutorial_lua_xml_parser1.pdf). 
 
 

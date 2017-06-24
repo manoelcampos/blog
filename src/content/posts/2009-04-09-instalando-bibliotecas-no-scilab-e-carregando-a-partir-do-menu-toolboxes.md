@@ -19,7 +19,7 @@ tags:
 - ToolBox
 ---
 
-Se você instalou alguma biblioteca (ToolBox) no SciLab, como por exemplo a SIP - SciLab Image Processing ToolBox, como exemplificado no [post anterior](http://manoelcampos.com/2009/04/03/carregando-bibliotecas-adicionais-no-scilab-o-matlab-opensource/), e está tendo quer carregar a bibilioteca digitando o comando exec, seguido do caminho do arquivo loader.sce da biblioteca, então seus problemas acabaram :).
+Se você instalou alguma biblioteca (ToolBox) no SciLab, como por exemplo a SIP - SciLab Image Processing ToolBox, como exemplificado no [post anterior](http://manoelcampos.com.br/2009/04/03/carregando-bibliotecas-adicionais-no-scilab-o-matlab-opensource/), e está tendo quer carregar a bibilioteca digitando o comando exec, seguido do caminho do arquivo loader.sce da biblioteca, então seus problemas acabaram :).
 
 No caso da instalação da biblioteca SIP 0.3.99 que mostrei no outro post, ela era um pacote deb mais antigo, mas que funcionou sem problemas no Ubuntu 8.10 com SciLab 5.0, porém, sua instalação era feita em /usr/lib/scilab/contrib/sip. Nesta local, o SciLab não reconhece a biblioteca, e não adiciona uma opção para carregá-la por meio do menu Toolboxes. Depois que instalei a outra biblioteca SIVP (que deu um trabalhão, como comentado no outro post), percebi a existência desse menu. Assim, fui procurar no disco para ver onde é que esses arquivos deveriam estar para que a biblioteca fosse reconhecida pelo SciLab.
 

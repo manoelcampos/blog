@@ -66,6 +66,6 @@ Esta versão é instalada no diretório /usr/lib/scilab/contrib/sip, diferente d
 
 Testei a biblioteca SIP e fiz algumas brincadeiras iniciais. O mais legal é que as funções tem a mesma assinatura das do MatLab (nome e parâmetros são iguais), assim, fica fácil pegar exercícios propostos para MatLab e executar no SciLab facilmente.
 
-Para carregar as bibliotecas dinamicamente, [veja esse outro post](http://manoelcampos.com/2009/04/08/instalando-bibliotecas-no-scilab-e-carregando-a-partir-do-menu-toolboxes/).
+Para carregar as bibliotecas dinamicamente, [veja esse outro post](http://manoelcampos.com.br/2009/04/08/instalando-bibliotecas-no-scilab-e-carregando-a-partir-do-menu-toolboxes/).
 
 Para finalizar, todos sabem que essas ferramentas OpenSouce não são tão completas e poderosas quanto o MatLab. Elas tem suas deficiências. Uma análise comparativa entre o SciLab e o MatLab pode ser vista [aqui](http://jeofizik.comu.edu.tr/sayfalar/egitim/egitim/ders_notlari/jfm204/comparative-study-of-Matlab-and-Scilab.pdf).

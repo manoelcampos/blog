@@ -24,7 +24,7 @@ tags:
 - Título de Cobrança
 ---
 
-[![](http://manoelcampos.com/wp-content/uploads/txt-150x150.png)](http://manoelcampos.com/wp-content/uploads/txt.png)Recentemente precisei implementar o processamento de arquivos de retorno de boleto bancário para o meu [Sistema de Inscrições On-Line](http://inscricoes.manoelcampos.com/). Assim, resolvi criar um projeto para disponibilizar os fontes para a comunidade e também receber contribuições no desenvolvimento do mesmo, como ocorre com o projeto [BoletoPHP](http://www.boletophp.com.br).
+[![](http://manoelcampos.com.br/wp-content/uploads/txt-150x150.png)](http://manoelcampos.com.br/wp-content/uploads/txt.png)Recentemente precisei implementar o processamento de arquivos de retorno de boleto bancário para um Sistema de Inscrições On-Line. Assim, resolvi criar um projeto para disponibilizar os fontes para a comunidade e também receber contribuições no desenvolvimento do mesmo, como ocorre com o projeto [BoletoPHP](http://www.boletophp.com.br).
 
 Desta forma nasce o [Retorno-BoletoPHP](http://github.com/manoelcampos/Retorno-BoletoPHP), um projeto em PHP 5+ que conta com um conjunto de classes para processamento de arquivos de retorno de títulos de cobrança (boleto bancário) de bancos brasileiros. O projeto utiliza Design Patters para permitir sua fácil extensão, sem modificar as classes que já estão funcionando, no conceito "Fechado para alteração e aberto para extensão".
 
