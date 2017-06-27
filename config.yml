@@ -11,7 +11,7 @@ parsedown_actived: true
 # Comments in posts
 comments:
     enabled: true
-    disqus_shortname: "manoelcampos"
+    disqus_shortname: "mcampos"
 
 # Information about author
 author:
