@@ -1,3 +1,18 @@
+author: admin
+comments: true
+layout: post
+slug: convertendo-xml-para-arquivos-lua-tvd-gingancl
+title: 'Convertendo XML para arquivos Lua. #TVD #GingaNCL'
+categories:
+- TV Digital
+tags:
+- Ginga-NCL
+- Lua
+- Parser
+- TVD
+- XML
+---
+
 # Introducão
 
 XML é um padrão internacional da W3C para intercâmbio de dados, amplamente utilizado e conhecido. Tal formato permite a troca de dados entre sistemas heterogêneos, garantindo a interoperabilidade entre os mesmos. No entanto, em aplicações interativas para o Sistema Brasileiro de TV Digital, desenvolvidas em NCL e Lua, tem-se uma alternativa bem mais simples que o uso de arquivos XML para a representação, armazenamento e troca de dados: os arquivos de dados em formato Lua, como já mostrei [neste post](http://manoelcampos.com.br/2010/06/08/aplicacao-de-tv-digital-usando-arquivos-de-dados-em-lua/).
