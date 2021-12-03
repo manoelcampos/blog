@@ -49,10 +49,6 @@ Semana passada iniciaram as transmissões de TV Digital aqui em Brasília, depoi
 
 Um dos grandes benefícios da TV Digital (TVD) , além de alta qualidade de imagem e som e inexistência de interferências como fantasmas e chuviscos, é a tão falada interatividade, que permitirá que você tenha programas, jogos e até mesmo acesso à internet a partir da sua TV. 
 
---more--
-
-Para se ter uma idéia das possibilidades, até mesmo o [sistema de compartilhamento de arquivos via torrent está sendo implementando para TVD, por uma universidade holandesa](http://info.abril.com.br/noticias/tecnologia-pessoal/torrent-na-tv-promete-matar-mininova-15042009-35.shl).
-
 O acesso à internet vai depender de assinatura de um serviço, assim como acontece com internet ADSL ou 3G ou usando uma rede local, com ou sem fio, existente na sua residência.
 
 ## Transmissão e Recepção
@@ -61,43 +57,40 @@ Para recepção de sinal de TV Digital na sua casa, você precisará de um equip
 
 A capacidade da transmissão digital de ser muito menos sujeita a interferência é devida ao fato do uso de modulação digital no sinal de TV. Os dados dos canais (imagem, som, programas aplicativos) são enviados em forma binária (zeros e uns) por meio de ondas de rádio, por um processo denominado modulação digital. Esse processo transforma os bits (zeros e uns), que representam um vídeo de um canal de TV, em uma onda para ser transmitida pelo ar. Se a onda sofrer pequenas alterações, isso não vai interferir na interpretação do sinal, permitindo demodulá-lo e recuperar o vídeo que ela transporta.
 
-[Exemplo de uma onda de rádio, usada para transmitir sinal de TV, tanto digital quanto analógico](http://upload.wikimedia.org/wikipedia/commons/8/8c/Standing_wave.gif)
+> Exemplo de uma onda de rádio, usada para transmitir sinal de TV, tanto digital quanto analógico.
+
+![](http://upload.wikimedia.org/wikipedia/commons/8/8c/Standing_wave.gif)
 
 A onda de rádio, como pode ser observado na figura a seguir, tem amplitudes positivas e negativas.
 
-[Exemplo de onda de rádio - Sinais positivos e negativos ao longo do comprimento da onda](http://puredata.files.wordpress.com/2007/07/sinoidal.png)
+> Exemplo de onda de rádio - Sinais positivos e negativos ao longo do comprimento da onda
 
-A onda pode sofrer distorções, pois como ela é transportada pelo ar, está sujeita,  por exemplo, a interferências climáticas. Porém um sinal digital transmitido por essa onda, sofre menos com essas interferências, que deformam a mesma. A figura anterior mostra um modelo teórico de um formato de onda perfeito. Na figura a seguir, podemos ver um exemplo de uma onda deformada.
+![](https://upload.wikimedia.org/wikipedia/commons/1/13/Sine_Cosine_Graph.png)
 
-[Onda de rádio deformada](http://www.phdrep.com.br/images/senoide4.jpg)
+A onda pode sofrer distorções, pois como ela é transportada pelo ar, está sujeita,  por exemplo, a interferências climáticas. Porém um sinal digital transmitido por essa onda, sofre menos com essas interferências, que deformam a mesma. A figura anterior mostra um modelo teórico de um formato de onda perfeito. 
 
 Com um vídeo modulado de forma digital para transmissão, essas deformações não interferem, pois o sinal acima do eixo X (positivo) pode representar um bit 1, e o sinal abaixo do eixo x (negativo) pode representar um bit zero. Isso depende da técnica de modulação usada. Esse foi um exemplo básico para entender porque a onda modulada digitalmente não é normalmente prejudicada por interferências. Além do mais, em sistemas digitais, podem existir algoritmos de Forward Error Correction - FEC, ou seja, correção de erro no destino, onde bits corrompidos são corrigidos ao chegarem no conversor digital. Uma forma de detectar erros é com a utilização de [checksum](http://pt.wikipedia.org/wiki/Checksum) com algoritmos de [hash](http://pt.wikipedia.org/wiki/Hash) como [MD5](http://pt.wikipedia.org/wiki/MD5). No caso da transmissão analógica, são transmitidos muito mais dados numa onda de rádio, num trecho como mostrado nas figuras acima. Assim, se a onda sofre deformação, muito mais informações são perdidas, acarretando chuviscos e fantasmas na imagem.
 
 ## Sistema Brasileiro de TV Digital
 
-O [Sistema Brasileiro de TV Digital - SBTVD](http://sbtvd.cpqd.com.br) foi baseado no sistema japonês [ISDB](http://pt.wikipedia.org/wiki/ISDB), um dos poucos existentes pelo mundo. O padrão mais conhecido e utilizado é o padrão europeu [Digital Video Broadcast - DVB](http://pt.wikipedia.org/wiki/DVB).
+O [Sistema Brasileiro de TV Digital - SBTVD](http://forumsbtvd.org.br) foi baseado no sistema japonês [ISDB](http://pt.wikipedia.org/wiki/ISDB), um dos poucos existentes pelo mundo. O padrão mais conhecido e utilizado é o padrão europeu [Digital Video Broadcast - DVB](http://pt.wikipedia.org/wiki/DVB).
 
 ## O Ginga
 
 A interatividade depende da inclusão de um [middleware](http://pt.wikipedia.org/wiki/Middleware) nos STBs. Este é um software que faz interface entre o sistema operacional dos [Set-Top-Boxes - STB](http://pt.wikipedia.org/wiki/Set-top_box) (os aparelhos para recepção de sinal digital, como já comentado), e as aplicações, abstraindo o tipo de hardware e sistema operacional do equipamento, o que permite que as aplicações geradas se tornem independentes destes, que podem variar de fabricante para fabricante.
 
-O middleware do Sistema Brasileiro é denominado [Ginga](http://www.ginga.org.br/), tendo grande parte sido desenvolvida no Brasil, com muitas inovações na área de interatividade, em relação a outros middlewares. Ele possui a capacidade de comunicação com diversos dispositivos usando tecnologia Bluetooth, Wi-Fi, Infravermelho e outras, como pode ser visto no [artigo Ginga-J: The Procedural Middleware for the Brazilian Digital TV System](https://www.sbc.org.br/bibliotecadigital/?module=Public&action=PublicationObject&subject=306&publicationobjectid=67), o que é um grande diferencial no Sistema Brasileiro. Isso permite a comunicação com aparelhos como celulares, smartphones e [PDAs](http://pt.wikipedia.org/wiki/PDA) para funcionarem como dispositivos de entrada, trocar informações ou receber conteúdo de TV nesses dispositivos.
+O middleware do Sistema Brasileiro é denominado [Ginga](http://www.ginga.org.br/), tendo grande parte sido desenvolvida no Brasil, com muitas inovações na área de interatividade, em relação a outros middlewares. Ele possui a capacidade de comunicação com diversos dispositivos usando tecnologia Bluetooth, Wi-Fi, Infravermelho e outras, como pode ser visto no [artigo Ginga-J: The Procedural Middleware for the Brazilian Digital TV System](https://doi.org/10.1007/BF03192401), o que é um grande diferencial no Sistema Brasileiro. Isso permite a comunicação com aparelhos como celulares, smartphones e [PDAs](http://pt.wikipedia.org/wiki/PDA) para funcionarem como dispositivos de entrada, trocar informações ou receber conteúdo de TV nesses dispositivos.
 
 Cada um dos padrões de TVD pelo mundo possui seu próprio middleware para execução de aplicações. No caso do sistema europeu DVB, o middleware se chama [Multimedia Home Plataform - MHP](http://en.wikipedia.org/wiki/Multimedia_Home_Platform) e a maioria dos middlewares existentes possuem certa compatibilidade com esse sistema. O Ginga  também possui certa compatibilidade com o sistema europeu.
 
 O sistema operacional embarcado nos STBs com Ginga são baseados em Linux. Um sub-sistema do Ginga, chamado [Ginga-NCL](http://www.gingancl.org.br/), permite a utilização da linguagem [NCL](http://www.ncl.org.br/), criada no Brasil, para desenvolvimento de aplicações interativas. Ela é baseada na linguagem XML e permite a construção de aplicações interativas com sincronismo de mídias, como por exemplo, sincronismo entre um vídeo e uma legenda, ideal para profissionais da área de [edição de vídeo não linear](http://www.cybercollege.com/port/tvp056.htm), que não tem conhecimento de programação. Como a linguagem [NCL](http://www.ncl.org.br/) permite somente a construção de aplicações estáticas, o [Ginga-NCL](http://www.gingancl.org.br/) inclui também a linguagem 
 [Lua](http://www.lua.org), desenvolvida pela [PUC-Rio](http://www.puc-rio.br/), que trabalha em conjunto com a linguagem [NCL](http://www.ncl.org.br/), para permitir a construção de aplicações procedurais com a possibilidade de exibir conteúdos dinâmicos.
 
-A linguagem Lua se tornou muito conhecida e utilizada mundialmente, principalmente para o desenvolvimento de jogos como o [World of Warcraft](http://pt.wikipedia.org/wiki/World_of_Warcraft) e [SimCity](http://pt.wikipedia.org/wiki/SimCity). A [Lucas Arts](http://www.lucasarts.com), [uma das grandes empresas da área de entretenimento, utiliza a linguagem Lua para a construção de jogos, como pode ser visto nessa matéria aqui](http://www.inovacao.unicamp.br/report/news-lua.shtml). O motivo do grande sucesso da linguagem é que á mesma é uma linguagem interpretada, extremamente leve e poderosa. Em Linux, o interpretador Lua tem apenas 153KB,  [como informado no site oficial](http://www.lua.org/about.html). Um tutorial sobre programação de jogos em Lua pode ser encontrado nesse [link da PUC-Rio](http://www.tecgraf.puc-rio.br/~lhf/ftp/doc/wjogos04.pdf).
+A linguagem Lua se tornou muito conhecida e utilizada mundialmente, principalmente para o desenvolvimento de jogos como o [World of Warcraft](http://pt.wikipedia.org/wiki/World_of_Warcraft) e [SimCity](http://pt.wikipedia.org/wiki/SimCity). A [Lucas Arts](http://www.lucasarts.com), uma das grandes empresas da área de entretenimento, utiliza a linguagem Lua para a construção de jogos. O motivo do grande sucesso da linguagem é que á mesma é uma linguagem interpretada, extremamente leve e poderosa. Em Linux, o interpretador Lua tem apenas 153KB,  [como informado no site oficial](http://www.lua.org/about.html). Um tutorial sobre programação de jogos em Lua pode ser encontrado nesse [link da PUC-Rio](http://www.tecgraf.puc-rio.br/~lhf/ftp/doc/wjogos04.pdf).
 
 Os programas (scripts interpretados) desenvolvidos usando NCL e Lua são denominados scripts [NCLua](http://www.telemidia.puc-rio.br/~francisco/nclua/).
 
-Além das linguagem [NCL](http://www.ncl.org.br/) e Lua, é possível construir aplicações em Java, utilizando um sub-sistema do [Ginga](http://www.ginga.org.br/), chamado [Ginga-J](http://www.ginga.org.br/), que incorpora algumas bibliotecas da linguagem Java. Inicialmente pretendia-se utilizar a biblioteca [JavaTV](http://java.sun.com/javame/technology/javatv/), para haver compatibilidade do SBTVD com outros padrões de TV Digital, como o europeu DVB. No entanto, devido à problemas com pagamento de [royalties](http://pt.wikipedia.org/wiki/Royalties) para a [Sun Microsystems](http://www.sun.com/), detentora dos direitos do [Java](http://www.java.com) e [JavaTV](http://java.sun.com/javame/technology/javatv/), decidiu-se, em acordo entre o [Fórum do SBTVD](http://www.forumsbtvd.org.br/) e a [Sun](http://www.sun.com),  pelo desenvolvimento de uma nova biblioteca chamada JavaDTV ([matéria na Sun](http://br.sun.com/sunnews/press/2009/20090417.jsp) e no [Fórum SBTVD](http://www.forumsbtvd.org.br/materias.asp?id=75)).
-
-Foram veiculadas na mídia algumas notícias incorretas sobre a definição do [Ginga-J](http://www.ginga.org.br/) (o Ginga com a parte de [JavaTV](http://java.sun.com/products/javatv/)/[JavaDTV](http://www.forumsbtvd.org.br/materias.asp?id=75)), onde os jornalistas não tinham muito conhecimento técnico da área, e acabaram confundindo alguns termos, chamando, por exemplo, o Ginga-J de middleware do Sistema Brasileiro, sendo que este é apenas uma parte do Ginga.
-
-[Uma matéria mais técnica sobre o JavaDTV pode ser vista aqui](http://www.overmedianetworks.com.br/noticia-overmedia-liberacao-java-dtv.html).
-[Outra sobre Ginga-NCL e Ginga-J pode ser vista aqui.](http://www.convergenciadigital.com.br/cgi/cgilua.exe/sys/start.htm?infoid=18353&query=simple&search_by_authorname=all&search_by_field=tax&search_by_keywords=any&search_by_priority=all&search_by_section=&search_by_state=all&search_text_options=all&sid=54&text=pai+ginga)
+Além das linguagem [NCL](http://www.ncl.org.br/) e Lua, é possível construir aplicações em Java, utilizando um sub-sistema do [Ginga](http://www.ginga.org.br/), chamado [Ginga-J](http://www.ginga.org.br/), que incorpora algumas bibliotecas da linguagem Java. Inicialmente pretendia-se utilizar a biblioteca [JavaTV](https://www.oracle.com/java/technologies/javameoverview.html), para haver compatibilidade do SBTVD com outros padrões de TV Digital, como o europeu DVB. No entanto, devido à problemas com pagamento de royalties para a antiga Sun (hoje Oracle), detentora dos direitos do [Java](http://www.java.com) e JavaTV, decidiu-se, em acordo entre o [Fórum do SBTVD](http://www.forumsbtvd.org.br/) e a empresa, pelo desenvolvimento de uma nova biblioteca chamada JavaDTV.
 
 ## Desenvolvimento de Aplicações
 
@@ -127,7 +120,7 @@ Atualmente já estão sendo vendidos aparelhos de TV com conversor digital (Set-
 
 ## Conversores Digitais (Set-Top-Boxes, STB)
 
-A [Proview](http://www.proviewbr.com.br/) já está vendendo seu conversor digital XPS-1000. Algumas empresas como a [TQTVD](http://www.tqtvd.com.br/) e a [RCASoft](http://www.rcasoft.com.br/) desenvolveram uma implementação do Ginga. [A RCASoft já está vendendo seu middleware, que é compatível, por enquanto, apenas com o Conversor Digital da Proview](http://www.rcasoft.com.br/midd_instal.php).
+A [Proview](http://www.proviewbr.com.br/) já está vendendo seu conversor digital XPS-1000. Algumas empresas como a TQTVD e a RCASoft desenvolveram uma implementação do Ginga. A RCASoft já está vendendo seu middleware, que é compatível, por enquanto, apenas com o Conversor Digital da Proview.
 
 O conversor Proview XPS-1000 possui uma porta USB 2.0, para conexão de dispositivos como teclado e mouse. Como tem-se apenas uma porta, será necessário um Hub USB para poder conectar os dois dispositivos. Possui ainda uma RJ 45 para conexão a uma rede local cabeada, do tipo Ethernet, permitindo que as aplicações interativas de TVD possam fazer acesso à internet. Infelizmente o conversor não permite conexão com redes Wireless.
 
@@ -149,9 +142,7 @@ Depois da notícia do início das transmissões de TV Digital aqui em Brasília,
 
 Primeiramente, se você espera receber TV de alta definição no seu notebook ou desktop, usando um desses dispositivos, é preciso tomar cuidado, pois a grande maioria, na faixa de preço entre R$100,00 e R$150,00, permitem transmissão apenas em formato Low Definition-LD, que é o formato apropriado para dispositivos móveis como celulares, de telas reduzidas e baixo poder de processamento. Esses dispositivos exibem imagens de resolução em torno de 320x180 pixels, semelhante ao tamanho de um vídeo do YouTube, sem ter como redimensionar nem pôr em tela cheia. Estes são classificados como dispositivos [One Seg (1-Seg)](http://en.wikipedia.org/wiki/1seg), ou seja, utilizam apenas 1 segmento dos 13 disponibilizados para cada canal de TV para transmissão de conteúdo. Os canais de TV fixa utilizam 12 desses 13 segmentos, deixando um disponível para transmissão para dispositivos móveis. Assim, a [largura de banda](http://pt.wikipedia.org/wiki/Largura_de_banda) disponibilizada para transmissão de conteúdo para dispositivos móveis é bem restrita, devido a isto, a qualidade é extremamente inferior a dos outros formatos de vídeo como SD e HD.
 
-Porém, você pode comprar um dispositivo USB Full Seg, que utiliza os 12 segmentos para transmissão de conteúdo, e receber o sinal SD ou HD, como já explicado. Encontrei apenas dois dispositivos destes. O [PixelView PlayTV USB SBTVD (Full-Seg)](http://www.pixelview.com.br/play_tv_usb_sbtvd_fullseg.asp) e o [Evolute TV Way+](http://www.evolutepc.com.br/produtos_tv-way.aspx), este último criado pela Evolute, uma empresa brasileira.
-
-O artigo [Pixelview - TV Digital USB em ALTA DEFINIÇÃO](http://www.forumpcs.com.br/coluna.php?b=246862) mostra mais detalhes do receptor da Pixelview.
+Porém, você pode comprar um dispositivo USB Full Seg, que utiliza os 12 segmentos para transmissão de conteúdo, e receber o sinal SD ou HD, como já explicado. Encontrei apenas dois dispositivos destes. O PixelView PlayTV USB SBTVD (Full-Seg) e o [Evolute TV Way+](http://www.evolutepc.com.br/produtos_tv-way.aspx), este último criado pela Evolute, uma empresa brasileira.
 
 Esses dispositivos vem com um software, somente para Windows :(, com algumas funções de [Digital Video Record - DVR](http://pt.wikipedia.org/wiki/DVR), que podem permitir ao usuário gravar, agendar gravação, pausar e retroceder um programa de TV, mesmo transmitido ao vivo. A gravação de vídeo pode ser em um formato proprietário, que não permite a distribuição do mesmo. Alguns programas protegidos por direitos autorais, por meio de sistema de [Digital Rights Management- DRM](http://pt.wikipedia.org/wiki/Drm), não poderão ser gravados. O recurso de pausa usa o disco rígido do computador para armazenar localmente o programa transmitido, permitindo que o usuário não perca nenhuma parte do seu programa, e possa com isso, ter o recurso de retroceder o vídeo.
 
@@ -161,11 +152,9 @@ A taxa de frames (quadros de imagem) por segundo que o dispositivo suporta é al
 
 Outro ponto muito importante a ser observado antes da compra de um dispositivo USB destes, é a configuração de hardware necessária para executar bem o programa de exibição dos canais de TVD. Quanto maior a resolução de exibição, um computador mais potente será necessário. É importante observar isso, para depois você não ter uma decepção em descobrir que o dispositivo não funciona bem no seu antigo Pentium 2 com 128MB de RAM, onde o vídeo engasga a todo momento. Somente os computadores e notebook mais modernos permitem imagens em alta definição de até 1920x1080.
 
-Infelizmente, os [drivers](http://en.wikipedia.org/wiki/Device_driver) e softwares desses dispositivos USB são apenas para Windows. Não fiz uma busca para saber qual a compatibilidade deles com Linux. Os fabricantes nunca se preocupam com os usuários do Linux, no máximo com os do Mac OS, mas a comunidade de software livre sempre desenvolve alternativas.
+Infelizmente, os drivers e softwares desses dispositivos USB são apenas para Windows. Não fiz uma busca para saber qual a compatibilidade deles com Linux. Os fabricantes nunca se preocupam com os usuários do Linux, no máximo com os do Mac OS, mas a comunidade de software livre sempre desenvolve alternativas.
 
-ATUALIZADO: A [Placa de Captura Externa Visus USB TV Stick Extreme](http://www.visustv.com/images/PRD/prd01.html), promete TV Digital em alta definição, no PC ou Notebook.
-
-Mais informações sobre receptores USB de TV Digital podem ser encontrados no [Blog da TV Globo Digital](http://www.tvglobodigital.com/noticias/ler/geral/guia_do_one_seg_conheca_os_receptores_moveis_e_portateis_de_t_v_digital/59).
+ATUALIZADO: A Placa de Captura Externa Visus USB TV Stick Extreme, promete TV Digital em alta definição, no PC ou Notebook.
 
 ## O Sistema Brasileiro em outros Países
 
@@ -177,7 +166,7 @@ Uma das propostas do Sistema Brasileiro de TV Digital é propiciar a inclusão d
 
 ## Término das Transmissões Analógicas
 
-Como foi previsto pelo governo, as [transmissões analógicas serão finalizadas em 2016](http://www.abert.org.br/n_clipping_2.cfm?noticia=110046), ano em que toda a área do Brasil deve ter acesso ao sinal de TV Digital. Depois dessa data, quem não tiver adquirido um conversor digital ou TV com conversor embutido, não terá mais como assistir TV. Porém, nos Estados Unidos, que já possuem transmissão de TV Digital há muitos anos, o término das transmissões analógicas estava previsto para esse ano (2009). O presidente Barack Obama [sugeriu a extensão desse prazo](http://www.convergenciadigital.com.br/cgi/cgilua.exe/sys/start.htm?infoid=17351&sid=8), pois percebeu-se que a TVD não chegou à casa de todos os norte-americanos. O calendário de implantação da TVD, elaborado pelo Ministério das Comunicações, está acelerado. Vamos torcer para em 2016 todos as TVs do Brasil já estejam recebendo o sinal digital. Neste [link do site oficial da TV Digital Brasileira](http://www.dtv.org.br/materias.asp?menuid=3&id=11), é possível ver as cidades que já possuem o sinal digital e o calendário de implantação.
+Como foi previsto pelo governo, as transmissões analógicas serão finalizadas em 2016, ano em que toda a área do Brasil deve ter acesso ao sinal de TV Digital. Depois dessa data, quem não tiver adquirido um conversor digital ou TV com conversor embutido, não terá mais como assistir TV. Porém, nos Estados Unidos, que já possuem transmissão de TV Digital há muitos anos, o término das transmissões analógicas estava previsto para esse ano (2009). O presidente Barack Obama sugeriu a extensão desse prazo, pois percebeu-se que a TVD não chegou à casa de todos os norte-americanos. O calendário de implantação da TVD, elaborado pelo Ministério das Comunicações, está acelerado. Vamos torcer para em 2016 todos as TVs do Brasil já estejam recebendo o sinal digital.
 
 ## Links
 
