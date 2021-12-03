@@ -101,19 +101,15 @@ Foram veiculadas na mídia algumas notícias incorretas sobre a definição do [
 
 ## Desenvolvimento de Aplicações
 
-Os desenvolvedores podem utilizar algumas ferramentas livres. Para desenvolvimento com a linguagem NCL, existe a ferramenta [Composer](http://www.ncl.org.br/ferramentas.html), que está completamente obsoleta, mas uma nova versão está em desenvolvimento. A ferramenta é mais voltada para iniciantes em NCL ou pessoas que não possuem conhecimento em linguagens de programação, pois NCL é uma linguagem de marcação,  como a XML. O Composer permite a construção de aplicações interativas utilizando um editor [WYSIWYG](http://pt.wikipedia.org/wiki/WYSIWYG), da mesma forma como os famosos editores HTML.
+Os desenvolvedores podem utilizar algumas ferramentas livres. Para desenvolvimento com a linguagem NCL, existe a ferramenta [Composer](http://composer.telemidia.puc-rio.br), que está completamente obsoleta, mas uma nova versão está em desenvolvimento. A ferramenta é mais voltada para iniciantes em NCL ou pessoas que não possuem conhecimento em linguagens de programação, pois NCL é uma linguagem de marcação,  como a XML. O Composer permite a construção de aplicações interativas utilizando um editor [WYSIWYG](http://pt.wikipedia.org/wiki/WYSIWYG), da mesma forma como os famosos editores HTML.
 
-Já para quem é programador e tem um conhecimento maior na linguagem NCL, é recomendável o uso do [NCLEclipse](http://laws.deinf.ufma.br/~ncleclipse), um plugin para o ambiente de desenvolvimento Eclipse. Este é um excelente plugin e está atualizado com as normas ABNT do Ginga-NCL.
+Já para quem é programador e tem um conhecimento maior na linguagem NCL, é recomendável o uso do [NCLEclipse](http://www.telemidia.puc-rio.br/~roberto/ncleclipse/pt-br/start), um plugin para o ambiente de desenvolvimento Eclipse. Este é um excelente plugin e está atualizado com as normas ABNT do Ginga-NCL.
 
-Para desenvolvimento em Lua, existe também um excelente plugin para Eclipse, o [LuaEclipse](http://luaeclipse.luaforge.net/).
+Para desenvolvimento em Lua, existe o plugin [LuaEclipse](https://github.com/jasonsantos/LuaEclipse) ou mais recentemente o [Lua Development Tools (LDT)](https://www.eclipse.org/ldt/).
 
-Para testar as aplicações desenvolvidas existem alguns emuladores, como o [Ginga NCL Emulator](http://www.gingancl.org.br/ferramentas.html), o [Ginga Virtual STB](http://www.gingancl.org.br/ferramentas.html) e o [Ginga Live CD](http://www.gingancl.org.br/ferramentas.html), para aplicações em NCL e Lua. O primeiro é um pequeno programa que permite a execução direta de aplicações em NCL, em ambiente Windows, Mac e Linux, mas também está completamente obsoleto. O segundo é uma máquina virtual (VM) para VMWare, que necessita que as aplicações a serem testadas, sejam transferidas via SSH para a VM, mas é o ambiente mais utilizado para testes. O terceiro é um distribuição em CD, que não necessita de instalação, e pode ser executada em qualquer PC, dando boot no sistema direto do CD. É um ambiente com interface mais amigável, possuindo funcionalidades bastante úteis para usuários finais, como o carregamento de aplicações NCL/Lua a partir de PenDrives.
+Para testar as aplicações NCL/Lua desenvolvidas existem alguns opções como o Ginga Virtual STB, Ginga4Linux e Ginga4Windows, [disponíveis aqui](http://www.gingancl.org.br/pt-br/ferramentas). O primeiro é uma máquina virtual (VM) para VMWare, que necessita que as aplicações a serem testadas, sejam transferidas via SSH para a VM, mas é o ambiente mais utilizado para testes. Os dois últimos são implementações nativas do Ginga para Linux e Windows, não necessitando uma máquina virtual.
 
-O laboratório de TV Digital Interativa da [Universidade de Brasília](http://www.unb.br) foi o primeiro a desenvolver um Ginga NCL Live CD, mas que não chegou a ser disponibilizado. O mesmo foi apresentado no evento [I2TS](http://www.i2ts.org/) 2009, na Universidade Federal de Santa Catarina, em [Florianópolis](http://www.ufsc.br/).
-
-Para aplicações em JavaDTV, existe o [OpenGinga](http://www.openginga.org), uma implementação do sub-sistema Ginga-J. Os desenvolvedores não liberaram uma versão compilada do projeto (pelo menos não até a data em que foi elaborado este artigo). Assim, é necessário compilar os fontes do mesmo em um sistema operacional Linux. Como este processo de compilação é extremamente extenso e complicado, liberei uma [máquina virtual para VirtualBox, contendo, tanto a implementação do OpenGinga quanto do Ginga-NCL](http://manoelcampos.com.br/2010/01/28/virtualbox-vm-gingancl-0112-openginga-beta-1/).
-
-[Alguns projetos que desenvolvi podem ser acessados aqui.](/tvd)
+Para aplicações em JavaDTV, existia o [OpenGinga](http://www.openginga.org), uma implementação do sub-sistema Ginga-J. Os desenvolvedores não liberaram uma versão compilada do projeto (pelo menos não até a data em que foi elaborado este artigo). Assim, é necessário compilar os fontes do mesmo em um sistema operacional Linux.
 
 ## Padrão de codificação de vídeo
 
@@ -125,17 +121,13 @@ O formato LD permite vídeos de resolução de 320x180, por exemplo. O SD é a d
 
 O formato HD tem o aspecto de 16x9, ou seja, widescreen. O formato SD, apenas na resolução de 720x480 tem aspecto 16x9. No formato 640x480 o aspecto é 4x3.
 
-## TV's LCD/Plasma com conversor digital (Set-Top-Box) embutido
+## TV's com conversor digital (Set-Top-Box) embutido
 
-Atualmente já estão sendo vendidos aparelhos de TV LCD ou plasma com conversor digital (Set-Top-Box) embutido. Uma grande desvantagem que vejo nisso é quanto a atualização do middleware nesse conversor. Se não houver uma forma de isso ser feito, para você poder ficar em dia com os novos recursos de interatividade desenvolvidos para o Ginga, terá que trocar a TV inteira. Algumas opções de atualização do middleware podem ser disponibilizadas. Por exemplo, o usuário pode baixar a atualização do site do fabricante, salvar num pendrive e conectar por uma porta USB no seu conversor digital, caso ele tenha uma porta USB, obviamente.
-
-Discussões sobre quem é melhor: LCD ou Plasma, estão fora do escopo deste artigo. Já li algumas matérias a respeito bem interessantes. Mas recentemente li uma que informava que não existem mais grandes diferenças, não lembro mais onde li esse artigo. Mas pelo que me consta, a TV de plasma ainda consome mais energia que a LCD. O problema de [Dead Pixel (Pixel Morto)](http://pt.wikipedia.org/wiki/Pixel_morto) existente nessas TVs também parece ter sido superado. Mas para quem não sabe, já aviso que há uma nova tecnologia disponível no mercado, ainda cara, chamada [OLED - Organic Light-Emitting Diode (Diodo Orgânico de Emissão de Luz)](http://pt.wikipedia.org/wiki/Oled), além das já um tanto conhecidas TVs de LED.
-
-Mais informações sobre LCD x Plasma podem ser encontradas no [blog da TV Globo Digital](http://www.tvglobodigital.com/blog/2009/10/15/plasma-ou-lcd-ou-led-ou-oled-ou-tv-de-tubo-qual-a-melhor-opca-do-momento/) e [nesse blog](http://gingadf.blogspot.com/2009/02/como-escolher-uma-hdtv.html). Excelentes vídeos e artigos também podem ser vistos no olhar digital, [neste link](http://olhardigital.uol.com.br/links/video_wide.php?id_conteudo=8065) e [neste](http://olhardigital.uol.com.br/central_de_videos/video_wide.php?id_conteudo=7119).
+Atualmente já estão sendo vendidos aparelhos de TV com conversor digital (Set-Top-Box) embutido. Uma grande desvantagem que vejo nisso é quanto a atualização do middleware nesse conversor. Se não houver uma forma de isso ser feito, para você poder ficar em dia com os novos recursos de interatividade desenvolvidos para o Ginga, terá que trocar a TV inteira. Algumas opções de atualização do middleware podem ser disponibilizadas. Por exemplo, o usuário pode baixar a atualização do site do fabricante, salvar num pendrive e conectar por uma porta USB no seu conversor digital, caso ele tenha uma porta USB, obviamente.
 
 ## Conversores Digitais (Set-Top-Boxes, STB)
 
-A [Proview](http://www.proviewbr.com.br/) já está vendendo seu conversor digital XPS-1000. <del>O mesmo não possui nenhuma implementação do Ginga, o middleware (software) necessário para permitir interatividade na TV Digital.</del> Algumas empresas como a [TQTVD](http://www.tqtvd.com.br/) e a [RCASoft](http://www.rcasoft.com.br/) desenvolveram uma implementação do Ginga. [A RCASoft já está vendendo seu middleware, que é compatível, por enquanto, apenas com o Conversor Digital da Proview](http://www.rcasoft.com.br/midd_instal.php)<del>, e precisa ser instalado manualmente</del>.
+A [Proview](http://www.proviewbr.com.br/) já está vendendo seu conversor digital XPS-1000. Algumas empresas como a [TQTVD](http://www.tqtvd.com.br/) e a [RCASoft](http://www.rcasoft.com.br/) desenvolveram uma implementação do Ginga. [A RCASoft já está vendendo seu middleware, que é compatível, por enquanto, apenas com o Conversor Digital da Proview](http://www.rcasoft.com.br/midd_instal.php).
 
 O conversor Proview XPS-1000 possui uma porta USB 2.0, para conexão de dispositivos como teclado e mouse. Como tem-se apenas uma porta, será necessário um Hub USB para poder conectar os dois dispositivos. Possui ainda uma RJ 45 para conexão a uma rede local cabeada, do tipo Ethernet, permitindo que as aplicações interativas de TVD possam fazer acesso à internet. Infelizmente o conversor não permite conexão com redes Wireless.
 
@@ -186,8 +178,8 @@ Uma das propostas do Sistema Brasileiro de TV Digital é propiciar a inclusão d
 Mas esta realidade está prestes a mudar, pelo menos um pouco, se aprovado o Plano Nacional de Banda Larga (PNBL).
 Mais informações nos links abaixo:
 
-[ http://www.planejamento.gov.br/secretarias/upload/Arquivos/noticias/gerais/100505_banda_Larga.pps](http://www.planejamento.gov.br/secretarias/upload/Arquivos/noticias/gerais/100505_banda_Larga.pps)
-[http://www.mc.gov.br/images/pnbl/o-brasil-em-alta-velocidade1.pdf](http://www.mc.gov.br/images/pnbl/o-brasil-em-alta-velocidade1.pdf)
+- [ http://www.planejamento.gov.br/secretarias/upload/Arquivos/noticias/gerais/100505_banda_Larga.pps](http://www.planejamento.gov.br/secretarias/upload/Arquivos/noticias/gerais/100505_banda_Larga.pps)
+- [http://www.mc.gov.br/images/pnbl/o-brasil-em-alta-velocidade1.pdf](http://www.mc.gov.br/images/pnbl/o-brasil-em-alta-velocidade1.pdf)
 
 ## Término das Transmissões Analógicas
 
@@ -195,28 +187,23 @@ Como foi previsto pelo governo, as [transmissões analógicas serão finalizadas
 
 ## Links
 
-* [Artigo super interessante sobre TV Digital, com informações técnicas, mas também básicas para qualquer usuário](http://webinsider.uol.com.br/index.php/2009/03/18/tv-digital-no-ar-recepcao-ou-decepcao/)
-* [Dez coisas que você precisa saber sobre TVD (Antigo, mas útil, apenas algumas previsões já se tornaram realidade)](http://www.tvdigital.blog.br/2007/12/05/10-coisas-que-voce-precisa-saber-sobre-a-tv-digital/)
 * [Blog for Digital TV (Em português)](http://b4dtv.blogspot.com/)
 * [Ginga DF](http://gingadf.com.br/)
-* [Grupo de Pesquisa em TV Digital Interativa da UCPel](http://www.tvdi.inf.br/)
-* [Sistema Brasileiro de TV Digital - SBTVD](http://sbtvd.cpqd.com.br)
 * [Fórum SBTVD](http://www.forumsbtvd.org.br/)
 * [Middleware Ginga](http://www.ginga.org.br)
-* [TV Digital Detalhada Lançamento do SBTVD](http://www.hxd.com.br/site/index.php?option=com_content&task=view&id=18&Itemid=69t)
 
 ## Livros sobre o Assunto
 	
-* [Desenvolvimento de Aplicações para Middleware Ginga, TV Digital e Web. Luiz Fernando Gomes Soares, Simone Diniz Junqueira Barbosa](http://www.elsevier.com.br/site/produtos/Detalhe-produto.aspx?tid=3826&seg=6&isbn=9788535234572&cat=269&origem=)
-* [TV Digital.Br: Conceitos e Estudos sobre o ISDB-Tb. Valdecir Becker, S. Squirra](http://www.atelie.com.br/shop/detalhe.php?id=484)
-* [TV Digital Interativa: Conceitos, desafios e perspectivas para o Brasil. Valdecir Becker e Carlos Montez. ](http://www.tvdigitalinterativa.ufsc.br/sumario.htm)
+* [Programando em NCL 3.0: Desenvolvimento de Aplicações para Middleware Ginga, TV Digital e Web. Luiz Fernando Gomes Soares, Simone Diniz Junqueira Barbosa](http://comissoes.sbc.org.br/ce-ihc/livro/programando-em-ncl-3-0/?lang=en)
+* [TV Digital.Br: Conceitos e Estudos sobre o ISDB-Tb. Valdecir Becker, S. Squirra](https://www.amazon.com.br/Digital-Br-Conceitos-Estudos-Sobre-ISDB-Tb/dp/857480455X)
+* [TV Digital Interativa: Conceitos, desafios e perspectivas para o Brasil. Valdecir Becker e Carlos Montez.](https://www.gingadf.com.br/blogGinga/ebook-gratis-tv-digital-interativa-conceitos-desafios-e-perspectivas-para-o-brasil/)
 * Televisão Digital Interativa: reflexões, sistemas e padrões, Guido Lemos e Edna Brennand.
 * Interactive TV Standards. Steven Morris & Anthony Smith-Chaigneau.
 * ITV Handbook - Technologies and Standards. Edward M. Schwalb.
 
 ## Iniciando no Desenvolvimento de Aplicações para TVD
 
-Quer começar a desenvolver aplicações para TV Digital? Veja o artigo [Como estruturar o ambiente de desenvolvimento Ginga NCL](http://www.peta5.com.br/br/tutoriais/88-como-estruturar-seu-ambiente-de-desenvolvimento-para-o-ginga-ncl) no blog da empresa [Peta5](http://www.peta5.com.br). 
+Quer começar a desenvolver aplicações para TV Digital? Veja o artigo [Como estruturar o ambiente de desenvolvimento Ginga NCL](https://rafaelcarvalho.tv/como-estruturar-seu-ambiente-de-desenvolvimento-para-o-ginga-ncl/) no blog do Rafael Carvalho. 
 
 Alguns projetos estão disponíveis aqui no meu blog, no menu [Projetos TVD](http://manoelcampos.com.br/tvd/). Pequenas aplicações de exemplo podem ser encontradas na [Categoria TV Digital](http://manoelcampos.com.br/category/tv-digital/).
 
