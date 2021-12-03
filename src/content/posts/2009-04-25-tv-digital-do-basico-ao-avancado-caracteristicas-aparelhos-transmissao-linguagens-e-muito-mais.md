@@ -173,13 +173,7 @@ O Sistema Brasileiro trouxe muitas inovações, que só lendo as normas ABNT par
 
 ## Inclusão Digital
 
-Uma das propostas do Sistema Brasileiro de TV Digital é propiciar a inclusão digital. Com a TVD, podemos ter aplicações de [e-learning](http://pt.wikipedia.org/wiki/E-learning) a partir da TV, aparelho existente em 92% das casas dos brasileiros, como mostrou pesquisa do IBGE de 2007, informada [nessa matéria](http://www1.folha.uol.com.br/folha/dinheiro/ult91u355724.shtml). Porém, essa proposta do governo é muito bonita e louvável, se não permanecer apenas no papel. Como já mencionado, o acesso à internet a partir da TV só será possível com o pagamento de uma mensalidade, como em qualquer outro serviço de internet como [ADSL](http://pt.wikipedia.org/wiki/ADSL) e [3G](http://pt.wikipedia.org/wiki/3G). <del>Desta forma, se o governo não subsidiar o acesso à internet para essas pessoas, a inclusão digital ficará apenas no discurso.</del>
-
-Mas esta realidade está prestes a mudar, pelo menos um pouco, se aprovado o Plano Nacional de Banda Larga (PNBL).
-Mais informações nos links abaixo:
-
-- [ http://www.planejamento.gov.br/secretarias/upload/Arquivos/noticias/gerais/100505_banda_Larga.pps](http://www.planejamento.gov.br/secretarias/upload/Arquivos/noticias/gerais/100505_banda_Larga.pps)
-- [http://www.mc.gov.br/images/pnbl/o-brasil-em-alta-velocidade1.pdf](http://www.mc.gov.br/images/pnbl/o-brasil-em-alta-velocidade1.pdf)
+Uma das propostas do Sistema Brasileiro de TV Digital é propiciar a inclusão digital. Com a TVD, podemos ter aplicações de [e-learning](http://pt.wikipedia.org/wiki/E-learning) a partir da TV, aparelho existente em 92% das casas dos brasileiros, como mostrou pesquisa do IBGE de 2007, informada [nessa matéria](http://www1.folha.uol.com.br/folha/dinheiro/ult91u355724.shtml). Porém, essa proposta do governo é muito bonita e louvável, se não permanecer apenas no papel. Como já mencionado, o acesso à internet a partir da TV só será possível com o pagamento de uma mensalidade, como em qualquer outro serviço de internet como [ADSL](http://pt.wikipedia.org/wiki/ADSL) e [3G](http://pt.wikipedia.org/wiki/3G).
 
 ## Término das Transmissões Analógicas
 
