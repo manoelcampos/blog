@@ -1,0 +1,2 @@
+Arquivo de exemplo para download pelo módulo NCLua HTTP. 
+https://github.com/manoelcampos/nclua-http
