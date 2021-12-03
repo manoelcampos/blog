@@ -169,7 +169,7 @@ Mais informações sobre receptores USB de TV Digital podem ser encontrados no [
 
 ## O Sistema Brasileiro em outros Países
 
-O Sistema Brasileiro trouxe muitas inovações, que só lendo as normas ABNT para detalhar. A transmissão em Low Definition para dispositivos móveis já incorporado no sistema foi uma delas. Essas inovações fizeram com que o middleware do Sistema Brasileiro, o Ginga, recebesse respeito pelos países do Mercosul. [O Peru já decidiu pela utilização do Sistema Brasileiro. A Argentina, Venezuela e o Chile já estão em processo de negociação com o Brasil para a adoção do Ginga](http://www.telesintese.ig.com.br/index.php?option=com_content&task=view&id=11684&Itemid=105).
+O Sistema Brasileiro trouxe muitas inovações, que só lendo as normas ABNT para detalhar. A transmissão em Low Definition para dispositivos móveis já incorporado no sistema foi uma delas. Essas inovações fizeram com que o middleware do Sistema Brasileiro, o Ginga, recebesse respeito pelos países do Mercosul. O Peru já decidiu pela utilização do Sistema Brasileiro. A Argentina, Venezuela e o Chile já estão em processo de negociação com o Brasil para a adoção do Ginga.
 
 ## Inclusão Digital
 
