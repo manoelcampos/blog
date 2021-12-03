@@ -79,11 +79,11 @@ Agora vamos incluir a mídia para o arquivo main.lua (que por enquanto está vaz
 </media>
 ```
 
-Tais propriedades são a chave para permitir iniciar mídias no NCL a partir do script Lua. O nome delas indica que serão utilizadas como um sinal para que mídias específicas sejam iniciadas. Assim, quando for atribuído, a partir do script Lua, um valor à propriedade sinal1 (qualquer valor), o NCL iniciará a mídia img1. O mesmo ocorrerá com a propriedade sinal2 e a mídia img2.
+Tais propriedades são a chave para permitir iniciar mídias no NCL a partir do script Lua. O nome delas indica que serão utilizadas como um sinal para que mídias específicas sejam iniciadas. Assim, quando for atribuído um valor à propriedade sinal1 (qualquer valor), a partir do script Lua, o NCL iniciará a mídia img1. O mesmo ocorrerá com a propriedade sinal2 e a mídia img2.
 
 Agora fica clara a finalidade do conector onEndAttributionStart, que será usado em um link NCL: quando for atribuído um valor a uma propriedade de uma mídia, outra mídia é iniciada.
 
-Bem, agora precisamos incluir uma porta para iniciar a mídia Lua, com o código a seguir:
+Bem, agora precisamos incluir uma porta para iniciar a mídia Lua automaticamente, com o código a seguir:
 
 ```xml
 <port id="pInicio" component="lua"/>
@@ -152,7 +152,7 @@ Inicialmente é criada uma tabela de nome evt, que contém os dados necessários
 	
 * class: o valor "ncl" define um tipo de evento que permite a comunicação entre o script lua e o documento NCL (e vice-versa).
 * type: o valor "attribution" define que o evento a ser disparado atribuirá um valor a uma propriedade. Como estamos dentro do script lua, este só pode, de forma direta, alterar apenas as propriedades do nó NCL onde foi definido.
-* name: o valor "sinal2" define o nome da propriedade que será alterada no nó lua
+* name: o valor "sinal1" define o nome da propriedade que será alterada no nó lua
 * value: indica o valor a ser atribuído à propriedade, neste caso, o valor 1.
 
 Na penúltima linha, é atribuído o valor "start" para o campo action, para indicar que deve ser iniciada a atribuição do valor à propriedade do nó lua. Depois o evento é disparado com event.post(evt).

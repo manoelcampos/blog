@@ -17,9 +17,9 @@ tags:
 - service.currentKeyMaster
 ---
 
-[![](http://manoelcampos.com.br/wp-content/uploads/tabs.jpg)](http://manoelcampos.com.br/wp-content/uploads/tabs.jpg)Uma das grandes dificuldades que alguns desenvolvedores NCL/Lua tem é em alternar o controle de foco entre a aplicação NCL e Lua, para, quando estiver na aplicação NCL, esta controlar o foco, por exemplo, dos itens de um menu, quando o usuário utilizar as setas do controle remoto para navegar por eles. Quando uma aplicação Lua é iniciada, normalmente deseja-se que o controle de foco e captura de teclas passar para ela. Nestes casos, quando a aplicação lua é finalizada, é preciso fazer o controle de foco voltar para a aplicação NCL, para que o usuário continue alternando o foco entre os itens do menu.
+[![](http://manoelcampos.com.br/wp-content/uploads/tabs.jpg)](http://manoelcampos.com.br/wp-content/uploads/tabs.jpg)Uma das grandes dificuldades que alguns desenvolvedores NCL/Lua tem é em alternar o controle de foco entre a aplicação NCL e Lua. Isto é usado para, quando estiver na aplicação NCL, esta controlar o foco,por exemplo, dos itens de um menu, quando o usuário utilizar as setas do controle remoto para navegar por eles. Quando uma aplicação Lua é iniciada, normalmente deseja-se que o controle de foco e captura de teclas passe para ela. Nestes casos, quando a aplicação lua é finalizada, é preciso fazer o controle de foco voltar para a aplicação NCL, para que o usuário continue alternando o foco entre os itens do menu.
 
-Neste artigo vou mostrar como resolver esta questão. Para isto, vamos criar uma aplicação NCL contendo imagens que representarão itens de um menu.  A aplicação terá 3 itens no menu que ficará posicionado verticalmente, no canto superior esquerdo da tela. Quando o usuário utilizar as setas para cima e para baixo no controle remoto, o foco mudará de um item para o outro. Quando ele pressionar enter sobre o primeiro item, uma aplicação Lua será iniciada e um imagem de um botão vermelho será iniciado. A aplicação lua passará a ter o controle de foco, capturando os eventos ocorridos (como pressionamento de teclas) e exibindo isso na tela. Quando o usuário pressionar o botão vermelho, a aplicação Lua será finalizada, voltando para o NCL que passará a controlar o foco novamente.
+Neste artigo vou mostrar como resolver esta questão. Para isto, vamos criar uma aplicação NCL contendo imagens que representarão itens de um menu.  A aplicação terá 3 itens no menu que ficará posicionado verticalmente, no canto superior esquerdo da tela. Quando o usuário utilizar as setas para cima e para baixo no controle remoto, o foco mudará de um item para o outro. Quando ele pressionar enter sobre o primeiro item, uma aplicação Lua e um imagem de um botão vermelho serão iniciados. A aplicação lua passará a ter o controle de foco, capturando os eventos ocorridos (como pressionamento de teclas) e exibindo isso na tela. Quando o usuário pressionar o botão vermelho, a aplicação Lua será finalizada, voltando para o NCL que passará a controlar o foco novamente.
 
 Bem, vou mostrar apenas os pontos principais. Todo o código pode ser baixado no final do artigo.
 Para começar, vamos criar as regiões para nossas mídias, com o código a seguir:
@@ -45,11 +45,11 @@ Agora vamos inserir os descritores para as mídias:
 
 Para permitir a navegação entre os itens do menu, é preciso definir um focusIndex para cada um. Este é um valor inteiro que funciona como um tabindex do HTML, definindo a ordem dos itens. Por meio das propriedades moveDown, moveUp, moveLeft e moveRight (estas duas últimas não utilizadas aqui) podemos definir para qual item do menu o foco irá quando o usuário pressionar, respectivamente, as setas para baixo, para cima, para a esquerda e para a direita.
 
-Um detalhe importante, para fazer a troca do controle de foco entre a aplicação NCL e a Lua funcionar, é definir um focusIndex para a mídia Lua. Neste caso, utilizei o valor 0 (zero).
+Um detalhe importante, para fazer a troca do controle de foco entre a aplicação NCL e a Lua funcionar, é a definição de um focusIndex para a mídia Lua. Neste caso, utilizei o valor 0 (zero).
 
 O botão voltar não precisa de focusIndex pois ele não receberá o foco. Quando ele for iniciado, independente de onde o foco esteja, se o usuário pressionar o vermelho, a aplicação Lua será finalizada.
 
-Para o sincronismo das mídias vamos precisar de alguns conectores (que não mostrarei o código por serem básicos e podem ser vistos no arquivo para download) sendo os primeiros: onBeginStartN, onBeginStopN, onEndStop, onEndStartNStop. Se você está criando a aplicação do zero, sugiro utilizar o plugin NCLEclipse que já permite automaticamente criar um arquivo contendo todos estes conectores básicos e mais alguns.
+Para o sincronismo das mídias vamos precisar de alguns conectores (que não mostrarei o código por serem básicos) sendo os primeiros: onBeginStartN, onBeginStopN,onEndStop, onEndStartNStop. Se você está criando a aplicação do zero, sugiro utilizar o plugin NCLEclipse que já permite automaticamente criar um arquivo contendo todos estes conectores básicos e mais alguns.
 
 Precisaremos ainda de um conector onKeySelectionStop. O mesmo define que, quando uma tecla for pressionada, será dado stop em uma determinada mídia.
 
@@ -57,7 +57,7 @@ Ainda precisaremos de um conector onSelectionStart. Este define que, quando um 
 
 Para finalizar, precisaremos ainda de conectores onBeginSet (que, quando uma mídia iniciar, seta valor para uma propriedade de qualquer mídia) e um onEndSet (que, quando uma mídia finalizar, seta valor para uma propriedade de qualquer mídia).
 
-Incluídos os conectores, vamos inserir a porta para iniciar a primeira mídia e as mídias:
+Incluídos os conectores, vamos inserir a porta para iniciar as mídias:
 
 ```xml
 <port id="pInicial" component="menu1"/>
@@ -140,7 +140,7 @@ Agora sim, vamos incluir os links responsáveis pela alternância do controle de
 </link>
 ```
 
-Note que, quando a mídia Lua iniciar, o valor da propriedade service.currentKeyMaster  da mídia settings será alterado para "lua", que é o id da mídia Lua que controlará o foco.
+Note que, quando a mídia Lua iniciar, o valor da propriedade service.currentKeyMaster da mídia settings será alterado para "lua", que é o id da mídia Lua que controlará o foco.
 
 Quando a mídia Lua for finalizada, precisaremos voltar o controle de foco para a aplicação NCL utilizando outro link. Para isto, apenas setamos o valor da propriedade service.currentKeyMaster para vazio, como mostrado a seguir:
 
